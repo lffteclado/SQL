@@ -1,0 +1,8 @@
+delete  tbEncomenda where CodigoProduto = 	'A6010110371'		and NumeroDocumentoEncomenda =	'0000081304'
+delete  tbEncomenda where CodigoProduto = 	'A3440107666'		and NumeroDocumentoEncomenda =	'0000080555'
+delete  tbEncomenda where CodigoProduto = 	'A3440107666'		and NumeroDocumentoEncomenda =	'0000080555'
+delete  tbEncomenda where CodigoProduto = 	'A3440107666'		and NumeroDocumentoEncomenda =	'0000080555'
+delete  tbEncomenda where CodigoProduto = 	'A3440107666'		and NumeroDocumentoEncomenda =	'0000080555'
+delete  tbEncomenda where CodigoProduto = 	'A3440107666'		and NumeroDocumentoEncomenda =	'0000080555'
+delete  tbEncomenda where CodigoProduto = 	'A3440107666'		and NumeroDocumentoEncomenda =	'0000080555'
+delete  tbEncomenda where CodigoProduto = 	'A3440107666'		and NumeroDocumentoEncomenda =	'0000080555'

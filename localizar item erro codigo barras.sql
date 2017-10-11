@@ -1,0 +1,1 @@
+select * from tbProdutoFT where CodigoBarrasProduto like '%109%'

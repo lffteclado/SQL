@@ -1,0 +1,1 @@
+select count(*),'MOC' from tbDMSTransitoNFe where DataDocumento between '2016-11-30 00:00:00.000' and '2016-11-30 23:59:00.000' and MsgRetorno like '%sendo processado no SEFAZ.'

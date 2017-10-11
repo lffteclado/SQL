@@ -1,0 +1,1 @@
+select * from tbParametro where Parametro = 'CERTIFICADO' and CNPJ like '23338197%'

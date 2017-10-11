@@ -1,0 +1,3 @@
+EXECUTE whExportLancto @CodigoEmpresa = 3140,@OrigemLancto = 'CP',@DataLancto = '20150731',@NumControle = 1655
+
+INSERT rtImportacaoLancto SELECT 76,1,0000,'2015-08-01','2102090901',00000,'1199999902',null,'C','CONF. NF. 011115-01 / TUPINAMBA E CHAVES LTDA.','00000000001109.31',0
