@@ -1,1 +1,1 @@
-EXEC sp_change_users_login 'Auto_Fix', 'wbhrafn125'
+EXEC sp_change_users_login 'Auto_Fix', 'lmatar'
