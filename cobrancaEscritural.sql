@@ -1,6 +1,6 @@
 select * from sysobjects where name like 'tb%Lay%'
 
---select * into tbAux from dbCardiesel_I.dbo.tbLayOutCobrancaEscritural where CodigoBanco = 784 and TipoArquivoOcorDoctoRecPag = 1
+--select * into tbAux from dbUberlandia.dbo.tbLayOutCobrancaEscritural where CodigoBanco = 341 and TipoArquivoOcorDoctoRecPag = 1
 --select * into tbAux from tbLayOutCobrancaEscritural where CodigoBanco = 1025 and TipoArquivoOcorDoctoRecPag = 2
 
 
