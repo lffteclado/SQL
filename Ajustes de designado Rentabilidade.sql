@@ -16,8 +16,18 @@ select * from usuario where nome_usuario = 'João Alexandre' --id 62  id_tipo_usu
 
 --BA6F5319E1A220B1C3F9C3CD16FA2308
 
-update usuario set login = 'BA6F5319E1A220B1C3F9C3CD16FA2308' where id_empresa = 5 and id = 63 and nome_usuario = 'Edimar Ferreira'
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where id_empresa = 1 and id = 102 and nome_usuario = 'Luis Felipe Ferreira'
 
 --update usuario set senha = 'F169D2F349791496310BDD7676180A08' where id_empresa = 5 and id = 63 and nome_usuario = 'Edimar Ferreira'
 --update usuario set senha = 'USERDESAT', login = 'USERDESAT' where id_empresa = 1 and id = 20 and nome_usuario = 'Gleidson'
+
+SELECT statusTransferencia, * FROM base
+inner join usuario
+on base.id_designado = usuario.id
+inner join cliente C on base.id_cliente = C.id_cliente
+WHERE base.id = 3150
+
+--select * from Designados_por_empresa
+
+--select statusTransferencia, * from base order by data desc
 

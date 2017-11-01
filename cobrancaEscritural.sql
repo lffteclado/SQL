@@ -6,11 +6,13 @@ select * from sysobjects where name like 'tb%Lay%'
 
 select * from dbCardiesel_I.dbo.tbLayOutCobrancaEscritural where CodigoBanco = 784
 
-select * from tbLayOutCobrancaEscritural where CodigoBanco = 784 and TipoArquivoOcorDoctoRecPag = 1
+select * from tbLayOutCobrancaEscritural where CodigoBanco = 341 and TipoArquivoOcorDoctoRecPag = 1
 
 select  * from tbDoctoRecPag order by DataDocumento desc
 
 select * from dbVDL.dbo.tbAux where TipoArquivoOcorDoctoRecPag = 1
+
+select * from tbAux
 
 --drop table tbAux
 
