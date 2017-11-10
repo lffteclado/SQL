@@ -12,7 +12,7 @@ select  * from tbDoctoRecPag order by DataDocumento desc
 
 select * from dbVDL.dbo.tbAux where TipoArquivoOcorDoctoRecPag = 1
 
-select * from tbAux
+select * from dbVDL.dbo.tbAux
 
 --drop table tbAux
 

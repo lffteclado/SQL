@@ -1,0 +1,6 @@
+OUTPUT TO "C:\TEMP\PESOITEM67.TXT".
+FOR EACH item where SUBSTR(it-codigo,1,2) = '67':
+DISP it-codigo peso-bruto peso-liquido WITH WIDTH 300.
+END.
+MESSAGE "FIM" VIEW-AS ALERT-BOX.
+OUTPUT CLOSE.

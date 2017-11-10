@@ -3,6 +3,11 @@ select * from tbApontamentoPendentePO
 
 delete from tbApontamentoPendentePO
 
+select * from tbDocumentoNFe where NumeroDocumento = 304477
+
+select * from tbDMSTransitoNFe where NumeroDocumento = 304477
+
+select * from tbLocal
 
 select * from sysobjects where name like 'tb%Servi%'
 
@@ -33,8 +38,8 @@ select BloqueioVendaVeiculoFloorPlan, * from tbClienteCredito where BloqueioVend
 -- update tbClienteCredito set BloqueioVendaVeiculoFloorPlan = 'F' where CodigoCliFor = '18080887000130' and CodigoEmpresa = 1200
 
 --Desconto Invisivel
--- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'V' where CodigoPlanoPagamento = '500'
-select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '500'
+-- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'V' where CodigoPlanoPagamento = '515'
+select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '515'
 
 /* Alterar Preço Unitátio Pedido */
 
