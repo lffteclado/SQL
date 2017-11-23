@@ -1,11 +1,11 @@
 --Verificar Status OS, NF emitidas e outras informações refrentes a OS.
-select * from tbOROSCIT where NumeroOROS = 183557
+select * from tbOROSCIT where NumeroOROS = 184443
 
 select * from tbOROSCIT where NumeroOROS = 125481
 
 
-select * from tbPedidoOS where CodigoOrdemServicoPedidoOS = 183557
-select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (238) and SequenciaPedido = 1 and CentroCusto = 21330
+select * from tbPedidoOS where CodigoOrdemServicoPedidoOS = 184443
+select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (666700) and SequenciaPedido = 1 and CentroCusto = 21330
 select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (170303) and SequenciaPedido = 2 and CentroCusto = 21330
 select * from tbDocumento where NumeroDocumento in (62206, 2837) and NumeroPedidoDocumento in(170302, 170303)
 
@@ -13,7 +13,7 @@ select * from tbDocumento where NumeroDocumento = 4770 and CodigoLocal = 1
 
 select * from tbPedido where NumeroPedido in (516281) and OrigemPedido = 'OS'
 
-SELECT * FROM tbOS WHERE CodigoEmpresa = 2630 and CodigoLocal = 1 and NumeroOROS = 11102
+SELECT * FROM tbOS WHERE CodigoEmpresa = 2630 and CodigoLocal = 1 and NumeroOROS = 184443
 
 --update tbOS set StatusOS = 'N' WHERE CodigoEmpresa = 2630 and CodigoLocal = 1 and NumeroOROS = 11102
 

@@ -38,8 +38,8 @@ select BloqueioVendaVeiculoFloorPlan, * from tbClienteCredito where BloqueioVend
 -- update tbClienteCredito set BloqueioVendaVeiculoFloorPlan = 'F' where CodigoCliFor = '18080887000130' and CodigoEmpresa = 1200
 
 --Desconto Invisivel
--- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'V' where CodigoPlanoPagamento = '515'
-select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '515'
+-- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'V' where CodigoPlanoPagamento = '714'
+select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '714'
 
 /* Alterar Preço Unitátio Pedido */
 
@@ -92,7 +92,7 @@ sp_help tbPlanoPagtoVDL
 
 alter table tbOROSCIT disable trigger tnu_DSPa_StatusOSCIT
 
-update tbOROSCIT set StatusOSCIT = 'A' where CodigoEmpresa = 2630 and CodigoLocal = 1 and NumeroOROS = 11102 and CodigoCIT = 'C1N'
+update tbOROSCIT set StatusOSCIT = 'A' where CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 184493 and CodigoCIT = 'C1U'
 
 alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
@@ -102,7 +102,7 @@ alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
 alter table tbOROSCIT disable trigger tnu_DSPa_StatusOSCIT
 
-update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 183915 and CodigoCIT = 'C1N'
+update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 184493 and CodigoCIT = 'C1U'
 
 alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
