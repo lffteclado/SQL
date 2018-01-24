@@ -1,6 +1,6 @@
 --EXECUTE whObtemInfoArqPrecos @VcArqImport = '3140_0000_prcamb0197',@InCodigoEmpresa = 3140
 
-EXECUTE whObtemInfoArqPrecos @VcArqImport = '0930_0000_prcamb0208',@InCodigoEmpresa = 930
+EXECUTE whObtemInfoArqPrecos @VcArqImport = '1200_0000_prcam0199',@InCodigoEmpresa = 1200
 
 --select * from tbEmpresa
 

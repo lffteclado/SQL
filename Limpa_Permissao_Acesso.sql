@@ -1,12 +1,14 @@
 --- Limpar tabela quando via CS não consegue retirar ou dar permissao
 
-select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHRADM3' and CodigoFormulario like '%frmos%'
+select * from  tbPermissaoAcesso where CodigoUsuario = 'EFRANCA' and CodigoFormulario like '%frmtg%'
 
 select * from tbFormulariosSistema where CodigoSistema = '' and DescricaoFormulario like '%Capt%'
 
+select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'CR079'
+
 select * from  tbPermissaoAcesso where CodigoUsuario = 'VALADARES' and CodigoFormulario like '%frmft%'
 
---DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHRADM3' and CodigoFormulario = 'frmosMaoObra'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'EFRANCA' and CodigoFormulario = 'frmtgPosicaoAnaliseCredito'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpCaptacaoDocumentos'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpConsumoServico'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpDocumentosPrevistos'

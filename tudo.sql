@@ -25,7 +25,7 @@ select XmlNFE,NumeroDocumento from tbDMSTransitoNFe
 					                          and NumeroDocumento = 55611
 
 --XML de Nota Parada no Gerenciador
-select XmlNFE from tbDMSTransitoNFe where NumeroDocumento like '%16368%' for xml path
+select XmlNFE from tbDMSTransitoNFe where NumeroDocumento like '%69063%' for xml path
 
 --Notas Paradas no Gerenciador
 select * from tbDMSTransitoNFe where DataDocumento between '2016-11-30 00:00:00.000' and '2016-11-30 23:59:00.000' and MsgRetorno like '%sendo processado no SEFAZ.'
@@ -38,8 +38,8 @@ select BloqueioVendaVeiculoFloorPlan, * from tbClienteCredito where BloqueioVend
 -- update tbClienteCredito set BloqueioVendaVeiculoFloorPlan = 'F' where CodigoCliFor = '18080887000130' and CodigoEmpresa = 1200
 
 --Desconto Invisivel
--- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'V' where CodigoPlanoPagamento = '714'
-select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '714'
+-- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'F' where CodigoPlanoPagamento = '502'
+select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '502'
 
 /* Alterar Preço Unitátio Pedido */
 

@@ -12,7 +12,7 @@ Motivo: O scrit foi alterado para buscar as informações da tabela tempProdutoImp
 /*
 Para o script funcionar é preciso criar a tabela abaixo na Base dbVDL que será alimentada pelo script gerado pelo Portal DTI
 DELETE FROM [dbVDL].dbo.tempProdutoImportados
-SELECT * FROM [dbVDL].dbo.tempProdutoImportados WHERE Tipo = 'G'
+SELECT * FROM [dbVDL].dbo.tempProdutoImportados WHERE Tipo = 'F'
 CREATE TABLE tempProdutoImportados (
 	Codigo VARCHAR(30),
 	Tipo VARCHAR(10) -- O tipo de produto: G = Importado, F = Fabricação Propria e N = Nacional

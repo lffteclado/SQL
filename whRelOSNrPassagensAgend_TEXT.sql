@@ -47,7 +47,7 @@ SELECT
 @CodigoEmpresa = 930,
 @CodigoLocal = 0,
 @PeriodoInicial = '2017-01-01 00:00:00:000',
-@PeriodoFinal = '2017-12-31 00:00:00:000',
+@PeriodoFinal = '2017-10-31 23:59:00:000',
 @Analitico = 'V'
 
 CREATE TABLE #tmp1 
@@ -306,4 +306,8 @@ END
 
 --select * into tmpAnaliticoRel2015 from #tmpAnalitico
 --select * into tmpAnaliticoRel2016 from #tmpAnalitico
-select * into tmpAnaliticoRel2017 from #tmpAnalitico
+--select * into tmpAnaliticoRelNov2017 from #tmpAnalitico
+select * into tmpAnaliticoRelOut2017 from #tmpAnalitico
+
+select * from tmpAnaliticoRelOut2017 order by Periodo
+--select * from tmpAnaliticoRelNov2017 order by DataEncerramento desc

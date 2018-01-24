@@ -1,6 +1,8 @@
-select * from tbEncomenda where CodigoProduto = 'A9042030574' and NumeroDocumentoEncomenda = '0000080803' and CodigoEmpresa = 2630 and CodigoLocal = 1
+select * from tbEncomenda where CodigoProduto = 'A9412683278' and NumeroDocumentoEncomenda = 'TESTE AMOSTRA .' and CodigoEmpresa = 2630 and CodigoLocal = 0
 
-select * from tbEncomenda where NumeroDocumentoEncomenda like '%000008181%'
+update 
+
+select * from tbEncomenda where NumeroDocumentoEncomenda like '%0000081964%'
 
 select * from tbEDIATProcesso  where SequenciaProcessoAT = 100
 
@@ -12,4 +14,4 @@ sp_helptext spAEDIATProcesso
 
 sp_helptext spPEDIProcesso
 
---delete from tbEncomenda where CodigoProduto = 'A9042030574' and NumeroDocumentoEncomenda = '0000080803' and CodigoEmpresa = 2630 and CodigoLocal = 1
+--delete from tbEncomenda where CodigoProduto = 'A9412683278' and NumeroDocumentoEncomenda = 'PROT 4534/4682' and CodigoEmpresa = 2630 and CodigoLocal = 0
