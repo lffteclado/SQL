@@ -1,8 +1,8 @@
-select * from modelo order by id desc where modelo = 'FURGAO 313 F32B'
+select * from modelo where modelo like '%CHASSI 313%'
 
 --Modulo: Sprinter Modelo: FURGAO 313 F32B
 
-insert into modelo (modelo, id_modelo_tipo, modelo_excluido) values ('FURGAO 313 F32B', 7, 41)
+insert into modelo (modelo, id_modelo_tipo, modelo_excluido) values ('CHASSI 313 - C32B', 7, 41)
 
 select * from modelo_seguimento
 

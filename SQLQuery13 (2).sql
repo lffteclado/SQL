@@ -1,1 +1,0 @@
-select * from tbTabelaPreco where DataValidadeTabelaPreco = '2016-09-15 00:00:00.000'

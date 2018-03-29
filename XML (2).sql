@@ -1,1 +1,0 @@
-select XmlNFE from tbDMSTransitoNFe where NumeroDocumento like '%30925%' for xml path

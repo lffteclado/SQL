@@ -1,4 +1,4 @@
-select * from tbOROSCIT where NumeroOROS = 98063 and CodigoCIT = 'CCV'
+select * from tbOROSCIT where NumeroOROS = 1433 and CodigoCIT = 'CN' and CodigoEmpresa = 2620 and CodigoLocal = 2
 
 select * from tbApontamentoMO where CodigoColaboradorOS = 53 NumeroOROS = 98063 and CodigoCIT = 'CCV'
 
@@ -12,9 +12,9 @@ select * from tbItemMOOROS where NumeroOROS = 162715 and CodigoCIT = 'C1N'
 --delete tbItemMOOROS where NumeroOROS = 162654 and CodigoCIT = 'I5N'
 --insert into tbItemMOOROS select * from tbItemMOOROS_162654
 
-select * from tbItensBlocoPO where NumeroOROS = 98063 and CodigoCIT = 'CCV'
+select * from tbItensBlocoPO where NumeroOROS = 1433 and CodigoCIT = 'CN' and CodigoEmpresa = 2620 and CodigoLocal = 2
 
-select * from tbApontamentoMO where NumeroOROS = 98063 and CodigoCIT = 'CCV'
+select * from tbApontamentoMO where NumeroOROS = 1433 and CodigoCIT = 'CN' and CodigoEmpresa = 2620 and CodigoLocal = 2
 
 select * from sysobjects where name like 'tbApontamentoMO_BKP'
 
@@ -24,6 +24,7 @@ select * into tbApontamentoMO_BKP from tbApontamentoMO where NumeroOROS = 162709
 
 --select * into tbApontamentoMO_BKP from tbApontamentoMO where NumeroOROS = 183181 and CodigoCIT = 'I5NM'
 select * from tbApontamentoMO where NumeroOROS = 162715 and CodigoCIT = 'C1N'
+--insert into tbApontamentoMO select * from tbApontamentoMOBKPOROS1433
 --delete tbApontamentoMO where NumeroOROS = 162715 and CodigoCIT = 'C1N'
 
 SELECT CHASSIVEICULOOS, DATAPROGRAMACAOPO, * FROM TBPROGRAMACAOOFICINAPO

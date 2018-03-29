@@ -1,25 +1,27 @@
 --Verificar Status OS, NF emitidas e outras informações refrentes a OS.
-select * from tbOROSCIT where NumeroOROS = 99045
+select * from tbOROSCIT where NumeroOROS = 303379 and CodigoCIT = 'C1SE'
+union all
+select * from tbOROSCIT where NumeroOROS = 185335
 
-select * from tbOROSCIT where NumeroOROS = 184495
 
-
-select * from tbPedidoOS where CodigoOrdemServicoPedidoOS = 184495
-select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (666834) and SequenciaPedido in (1) and CentroCusto = 21330
-select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (170303) and SequenciaPedido = 2 and CentroCusto = 21330
-select * from tbDocumento where NumeroDocumento in (62206, 2837) and NumeroPedidoDocumento in(170302, 170303)
+select * from tbPedidoOS where CodigoOrdemServicoPedidoOS = 303379
+select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (936910) and SequenciaPedido in (2) and CentroCusto = 21330
+select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (517987) and SequenciaPedido = 1 and CentroCusto = 22330
+select * from tbDocumento where NumeroDocumento in (936910) and NumeroPedidoDocumento in(170302, 170303)
 
 select * from tbDocumento where NumeroDocumento = 4770 and CodigoLocal = 1
 
-select * from tbPedido where NumeroPedido in (516281) and OrigemPedido = 'OS'
+select * from tbPedido where NumeroPedido in (936910) and OrigemPedido = 'OS'
 
-SELECT * FROM tbOS WHERE CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 184812
+SELECT * FROM tbOS WHERE CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 185337
+union all
+SELECT * FROM tbOS WHERE CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 185335
 
 SELECT * FROM tbOROSCIT WHERE CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 184812
 
 --update tbOROSCIT set DataEmissaoNotaFiscalOS = '2017-12-18 17:39:00.000' WHERE CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 184812 and CodigoCIT = 'C1N'
 
---update tbOS set StatusOS = 'A' WHERE CodigoEmpresa = 130 and CodigoLocal = 0 and NumeroOROS = 99045
+--update tbOS set StatusOS = 'N' WHERE CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 185337
 
 /* Liberar OS encerrada para transferencia entre itens
 
@@ -31,11 +33,11 @@ alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
 */
 
-/*Bloquear OS encerrada para transferencia entre itens
+/*Bloquear OS encerrada após a transferencia entre itens
 
 alter table tbOROSCIT disable trigger tnu_DSPa_StatusOSCIT
 
-update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 184495 and CodigoCIT = 'C1N'
+update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 930 and CodigoLocal = 0 and NumeroOROS = 303379 and CodigoCIT = 'C1SE'
 
 alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 

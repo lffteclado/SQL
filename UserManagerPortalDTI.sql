@@ -70,20 +70,31 @@ select * from LOOKUPRole
 select * from SYSUserProfile
 select * from SYSUserRole
 
+/*Inserindo Usuário*/
 --INSERT INTO SYSUser (LoginName, PasswordEncryptedText, RowCreatedSYSUserID, RowModifiedSYSUserID)
---VALUES ('cid.abreu@grupovdl.com.br', '***', 1, 1)
-
---INSERT INTO LOOKUPRole (RoleName,RoleDescription,RowCreatedSYSUserID,RowModifiedSYSUserID)
---VALUES ('Admin','Can Edit, Update, Delete',1,1)
-
---INSERT INTO LOOKUPRole (RoleName,RoleDescription,RowCreatedSYSUserID,RowModifiedSYSUserID)
---VALUES ('Member','Read only',1,1)
-
---UPDATE SYSUserProfile SET SYSUserID = 3 WHERE SYSUserProfileID = 3
+--VALUES ('efigenia@cardiesel.com.br', '***', 1, 1)
 
 --INSERT INTO SYSUserProfile (SYSUserID,FirstName,LastName,Gender,RowCreatedSYSUserID,RowModifiedSYSUserID)
---VALUES (4,'Cid','Roberto','M',1,1)
+--VALUES (6,'Shirlei','Financeiro','F',1,1)
 
 --INSERT INTO SYSUserRole (SYSUserID,LOOKUPRoleID,IsActive,RowCreatedSYSUserID,
 --RowModifiedSYSUserID)
---VALUES (4,1,1,1,1)
+--VALUES (6,2,1,1,1)
+
+/* Cadastrar Perfis */
+
+--INSERT INTO LOOKUPRole (RoleName,RoleDescription,RowCreatedSYSUserID,RowModifiedSYSUserID)
+--VALUES ('Dti','Can Edit, Update',1,1)
+
+--INSERT INTO LOOKUPRole (RoleName,RoleDescription,RowCreatedSYSUserID,RowModifiedSYSUserID)
+--VALUES ('Finan','Read only',1,1)
+
+--UPDATE SYSUserProfile SET SYSUserID = 4 WHERE SYSUserProfileID = 4
+
+--UPDATE SYSUser SET LoginName = 'shirleyc@cardiesel.com.br' WHERE SYSUserID = 6
+
+--UPDATE SYSUserRole SET LOOKUPRoleID = 4 WHERE SYSUserRoleID = 5 AND SYSUserID = 5
+
+
+
+

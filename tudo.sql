@@ -34,12 +34,12 @@ select * from tbDMSTransitoNFe where DataDocumento between '2016-11-30 00:00:00.
 select top (2) XmlNFE, NumeroDocumento from tbDMSTransitoNFe
 
 --Cliente com Crédito Bloqueado no Modulo Veículos
-select BloqueioVendaVeiculoFloorPlan, * from tbClienteCredito where BloqueioVendaVeiculoFloorPlan = 'F' and CodigoCliFor = '18080887000130' and CodigoEmpresa = 1200
--- update tbClienteCredito set BloqueioVendaVeiculoFloorPlan = 'F' where CodigoCliFor = '18080887000130' and CodigoEmpresa = 1200
+select BloqueioVendaVeiculoFloorPlan, * from tbClienteCredito where BloqueioVendaVeiculoFloorPlan = 'F' and CodigoCliFor = '03862607000179' and CodigoEmpresa = 1200
+-- update tbClienteCredito set BloqueioVendaVeiculoFloorPlan = 'F' where CodigoCliFor = '03862607000179' and CodigoEmpresa = 1200
 
 --Desconto Invisivel
--- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'F' where CodigoPlanoPagamento = '502'
-select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '502'
+-- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'F' where CodigoPlanoPagamento = '614'
+select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '614'
 
 /* Alterar Preço Unitátio Pedido */
 
@@ -92,7 +92,7 @@ sp_help tbPlanoPagtoVDL
 
 alter table tbOROSCIT disable trigger tnu_DSPa_StatusOSCIT
 
-update tbOROSCIT set StatusOSCIT = 'A' where CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 184493 and CodigoCIT = 'C1U'
+update tbOROSCIT set StatusOSCIT = 'A' where CodigoEmpresa = 2630 and CodigoLocal = 1 and NumeroOROS = 11350 and CodigoCIT = 'C1N'
 
 alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
@@ -102,7 +102,7 @@ alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
 alter table tbOROSCIT disable trigger tnu_DSPa_StatusOSCIT
 
-update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 184493 and CodigoCIT = 'C1U'
+update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 2630 and CodigoLocal = 1 and NumeroOROS = 11350 and CodigoCIT = 'C1N'
 
 alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
