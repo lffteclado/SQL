@@ -4,7 +4,7 @@ select * from sysobjects where name like 'tb%Lay%'
 --select * into tbAux from tbLayOutCobrancaEscritural where CodigoBanco = 1025 and TipoArquivoOcorDoctoRecPag = 2
 
 
-select * from dbCardiesel_I.dbo.tbLayOutCobrancaEscritural where CodigoBanco = 784
+select * from dbCardiesel.dbo.tbLayOutCobrancaEscritural where CodigoBanco = 637 and TipoRegistroLayOut = 2
 
 select * from tbLayOutCobrancaEscritural where CodigoBanco = 784 and TipoArquivoOcorDoctoRecPag = 1
 

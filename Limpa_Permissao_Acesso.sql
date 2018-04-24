@@ -1,20 +1,39 @@
 --- Limpar tabela quando via CS não consegue retirar ou dar permissao
 
-select * from  tbPermissaoAcesso where CodigoUsuario = 'LFERREIRA' and CodigoFormulario like '%frmcg%'
+select * from  tbPermissaoAcesso where CodigoUsuario = 'hsreboucas' and CodigoFormulario like '%frmos%'
 
 select * from tbFormulariosSistema where CodigoSistema = '' and DescricaoFormulario like '%Capt%'
 
-select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'CR079'
+select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'AG002'
 
-select * from  tbPermissaoAcesso where CodigoUsuario = 'VALADARES' and CodigoFormulario like '%frmft%'
+select * from  tbPermissaoAcesso where CodigoUsuario = 'CJUNIOR' and CodigoFormulario like '%frmcpDocumentosPrevistos%'
 
---DELETE tbPermissaoAcesso where CodigoUsuario = 'WGOAD11' and CodigoFormulario = 'frmcgHistoricoLancto'
---DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpCaptacaoDocumentos'
+select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Inventário%'
+
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'hsreboucas' and CodigoFormulario = 'frmosCadastroTTR'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario = 'frmceAlmoxarifadoCCusto'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpConsumoServico'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpDocumentosPrevistos'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'LUIS6' and CodigoFormulario = 'frmceReajusteTabela'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'LUIS6' and CodigoFormulario = 'frmceReajusteTabelaEscalonado'
 
+sp_helptext whPermissaoManutencaoE
+
+--select * from update tbPermissaoManutencao set IndiceControle where CodigoUsuario = 'AUDITORIA' and CodigoFormulario = 'frmceRelCEObsolescencia'
+
+--select * from tbPermissaoManutencao  where CodigoUsuario = 'AUDITORIA' and CodigoFormulario = 'frmceRelCEObsolescencia'
+--select * from tbPermissaoManutencao  where CodigoUsuario = 'AUDITORIA' and CodigoFormulario = 'frmceAcessoInventario'
+
+
+--execute whPermissaoManutencaoE @CodigoEmpresa = 1200,@CodigoUsuario = 'AUDITORIA',@CodigoFormulario = 'CE153 frmcePesquisaKardexConversao',@CodigoControle = null,@IndiceControle = 99
+
 
 
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM47' and CodigoFormulario ='frmcvCaptacaoNFEDealer'
+
+--Bloquenado Acesso
+
+--execute whPermissaoManutencaoI @CodigoEmpresa = 1200,@CodigoUsuario = 'AUDITORIA',@CodigoFormulario = 'CS005 frmcsCopiarPerfil',@CodigoControle = null,@IndiceControle = 99,@Permissao = 'IAE'
+
+--Liberando Permissão
+--execute whPermissaoManutencaoE @CodigoEmpresa = 1200,@CodigoUsuario = 'AUDITORIA',@CodigoFormulario = 'CS005 frmcsCopiarPerfil',@CodigoControle = null,@IndiceControle = 99

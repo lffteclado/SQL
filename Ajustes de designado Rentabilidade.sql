@@ -1,4 +1,4 @@
-select * from usuario where id = 26
+select * from usuario where nome_usuario like '%Cristiano%'
 select * from usuario where dataCadastroSenha < '2017-01-01 00:00:00.000'
 select * from empresa
 select * from tipo_usuario
@@ -23,9 +23,13 @@ select * from usuario where nome_usuario = 'João Alexandre' --id 62  id_tipo_usu
 
 --BA6F5319E1A220B1C3F9C3CD16FA2308
 
---update usuario set senha = 'F169D2F349791496310BDD7676180A08' where id_empresa = 1 and id = 26 and nome_usuario = 'Adairson'
+-- senha Natalia AE14F0B5EB78F595A254065DDB36383F usuario 89A4F485D121483912276D2F464EE010
 
---update usuario set login = '6B84F40F8F956A76DA0D4C973D56AFDC' where id_empresa = 4 and id = 38 and nome_usuario = 'Kássia Mara'
+-- login teste 698DC19D489C4E4DB73E28A713EAB07B
+
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where id_empresa = 5 and id = 99 and nome_usuario = 'Cristiano Tadeu'
+
+--update usuario set login = '89A4F485D121483912276D2F464EE010' where id_empresa = 1 and id = 23 and nome_usuario = 'Natalia Linhares'
 
 --update usuario set id_empresa = 1 where id_empresa = 3 and id = 100 and nome_usuario = 'Fabíola Almeirda'
 

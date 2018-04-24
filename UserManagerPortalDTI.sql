@@ -71,15 +71,20 @@ select * from SYSUserProfile
 select * from SYSUserRole
 
 /*Inserindo Usuário*/
---INSERT INTO SYSUser (LoginName, PasswordEncryptedText, RowCreatedSYSUserID, RowModifiedSYSUserID)
---VALUES ('efigenia@cardiesel.com.br', '***', 1, 1)
+--DECLARE @LoginName nvarchar(100) = 'caixa1@cardiesel.com.br'
+
+--IF NOT EXISTS(SELECT 1 FROM SYSUser WHERE LoginName = (@LoginName))
+--BEGIN
+--	INSERT INTO SYSUser (LoginName, PasswordEncryptedText, RowCreatedSYSUserID, RowModifiedSYSUserID)
+--	VALUES (@LoginName, '***', 1, 1)
+--END
 
 --INSERT INTO SYSUserProfile (SYSUserID,FirstName,LastName,Gender,RowCreatedSYSUserID,RowModifiedSYSUserID)
---VALUES (6,'Shirlei','Financeiro','F',1,1)
+--VALUES (11,'Monica Ribeiro','Financeiro','F',1,1)
 
 --INSERT INTO SYSUserRole (SYSUserID,LOOKUPRoleID,IsActive,RowCreatedSYSUserID,
 --RowModifiedSYSUserID)
---VALUES (6,2,1,1,1)
+--VALUES (11,3,1,1,1)
 
 /* Cadastrar Perfis */
 

@@ -19,7 +19,10 @@ CREATE TABLE tempProdutoImportados (
 )
 */
 
+
 BEGIN TRANSACTION
+
+SELECT CodigoEmpresa FROM tbEmpresa
 
 UPDATE P
 SET

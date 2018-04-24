@@ -92,7 +92,7 @@ sp_help tbPlanoPagtoVDL
 
 alter table tbOROSCIT disable trigger tnu_DSPa_StatusOSCIT
 
-update tbOROSCIT set StatusOSCIT = 'A' where CodigoEmpresa = 2630 and CodigoLocal = 1 and NumeroOROS = 11350 and CodigoCIT = 'C1N'
+update tbOROSCIT set StatusOSCIT = 'A' where CodigoEmpresa = 2620 and CodigoLocal = 0 and NumeroOROS = 147328 and CodigoCIT = 'CN'
 
 alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
@@ -102,7 +102,7 @@ alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
 alter table tbOROSCIT disable trigger tnu_DSPa_StatusOSCIT
 
-update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 2630 and CodigoLocal = 1 and NumeroOROS = 11350 and CodigoCIT = 'C1N'
+update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 2620 and CodigoLocal = 0 and NumeroOROS = 147328 and CodigoCIT = 'CN'
 
 alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
