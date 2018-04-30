@@ -1,0 +1,33 @@
+Relacao de OS por situcao
+*****************************************************************
+
+
+SELECT distinct [NumeroOROS] 
+	 ,[CodigoCIT]
+	 ,[StatusOSCIT]
+FROM [dbGoias].[dbo].[rtRelOSSituacao] 
+
+where ValorPecas is not null and ValorCombLub is not null and ValorMaoObra is not null
+
+SELECT *
+FROM [dbCalisto].[dbo].[rtRelOSSituacao] ValorPecas 
+
+
+*******************************************************************************************
+
+sOLUÇÃO PARA COM MAIS COLUNAS
+
+SELECT distinct[NumeroOROS] 
+	  ,[CodigoCIT]
+   	  ,[StatusOSCIT]
+      ,[NomeCliFor]
+      ,[ValorTotalOS]
+  FROM [dbVadiesel].[dbo].[rtRelOSSituacao] 
+  where ValorPecas is not null and ValorCombLub is not null and ValorMaoObra is not null order by NomeCliFor,NumeroOROS
+
+SELECT distinct[NumeroOROS] 
+	  ,[CodigoCIT]
+   	  ,[StatusOSCIT]
+      ,[NomeCliFor]
+      ,[ValorTotalOS]
+  FROM [dbVadiesel].[dbo].[rtRelOSSituacao] order by NomeCliFor,NumeroOROS

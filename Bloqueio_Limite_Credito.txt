@@ -1,0 +1,6 @@
+select * from sysobjects where name like '%tbCli%'
+
+
+select * from tbClienteCredito where CodigoCliFor = '23338197000179'
+
+update tbClienteCredito set SituacaoCreditoCliente = 'B' where 

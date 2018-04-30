@@ -1,0 +1,8 @@
+select distinct CI.NumeroOROS,CI.CodigoCIT,CF.NomeCliFor, CI.StatusOSCIT, RP.NomeRepresentante, VO.PlacaVeiculoOS
+from tbOROSCIT as CI
+inner join tbOROS as OS on CI.NumeroOROS = OS.NumeroOROS
+inner join tbCliFor as CF ON CI.CodigoCliFor = CF.CodigoCliFor
+inner join tbRepresentanteComplementar as RP on CI.CodigoRepresentante = RP.CodigoRepresentante
+inner join tbVeiculoOS as VO on OS.ChassiVeiculoOS = VO.ChassiVeiculoOS
+WHERE CI.StatusOSCIT = 'A' AND CI.timestamp between '2014-10-19') and ('2015-01-19') AND CI.FlagOROS = 'S' AND CI.CodigoCIT != 'P1'
+order by CI.NumeroOROS,CI.CodigoCIT,CF.NomeCliFor,CI.StatusOSCIT, RP.NomeRepresentante, VO.PlacaVeiculoOS

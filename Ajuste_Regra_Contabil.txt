@@ -1,0 +1,7 @@
+select * from tbRegraContabilCNO where CodigoNaturezaOperacao = 591200 and CentroCusto = 21410
+
+update tbRegraContabilCNO set
+ContaDescontoCNO = 1109010201,
+HistoricoDescontoCNO = 16,
+CodigoSistemaDesctoCNO = 'CG'
+where CodigoNaturezaOperacao = 591200 and CentroCusto = 21410

@@ -1,0 +1,3 @@
+Desbloquer pastas ocultas via Registro:
+
+Acessar o registro/HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/WINDOWS/FOLDER/HIDDEN/SHOWALL

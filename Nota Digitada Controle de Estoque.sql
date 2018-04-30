@@ -18,4 +18,4 @@ select * from tbRateioNotaDigitada
 
 -- Documento já captado e encerrado se já estiver no livro excluir pelo livro.
 -- Senão excluir via banco
-select * from tbItemDocumentoContaContabil where NumeroDocumento = 310810 and CodigoLocal = 0 and EntradaSaidaDocumento = 'E'
+select * from tbItemDocumentoContaContabil where NumeroDocumento = 151583 and CodigoLocal = 0 and EntradaSaidaDocumento = 'S'

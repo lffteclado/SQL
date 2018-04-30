@@ -1,0 +1,4 @@
+Script relacao de OS  - QUALITATIVO
+
+select C.NumeroOROS,O.StatusOSCIT,C.StatusOS  from tbOS as C inner join tbOROSCIT as O on C.NumeroOROS  = O.NumeroOROS 
+where  C.StatusOS = 'N' AND C.timestamp between '2014-01-01' and '2014-04-26'

@@ -1,0 +1,12 @@
+select CodigoCliFor, TipoCliFor,NomeCliFor, NomeUsualCliFor,MunicipioCliFor,DDDTelefoneCliFor,TelefoneCliFor,CelularCliFor 
+from tbCliFor 
+where InscrEstadualProdutorRural is not null and ClienteAtivo = 'V' and InscrEstadualProdutorRural != 'ISENTO' and TipoCliFor = 'F'
+
+
+select C.CodigoCliFor,I.CodigoCliFor,C.TipoCliFor,NomeCliFor,C.MunicipioCliFor,C.UFCliFor,
+C.DDDTelefoneCliFor,C.TelefoneCliFor,C.CelularCliFor,I.EntradaSaidaDocumento,I.NumeroDocumento,I.DataDocumento,
+I.TipoRegistroItemDocto,I.NumeroVeiculoCV
+from tbCliFor as C,tbItemDocumento as I 
+where InscrEstadualProdutorRural is not null and ClienteAtivo = 'V' and InscrEstadualProdutorRural != 'ISENTO' and 
+TipoCliFor = 'F'and EntradaSaidaDocumento = 'S' and DataDocumento between '2000-01-01' and '2004-12-31' 
+and TipoRegistroItemDocto = 'VEC' and C.CodigoCliFor = I.CodigoCliFor

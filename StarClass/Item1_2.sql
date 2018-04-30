@@ -1,0 +1,1 @@
+whVendasItem1_2 <CodigoEmpresa>, <CodigoLocal>, <'Periodo aaaamm'>, <1°CentroCustoFT>, <2°CentroCustoFT>, <3°CentroCustoFT>, <1ºCentroCustoTK>, <2ºCentroCustoTK>, <3ºCentroCustoTK>

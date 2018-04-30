@@ -1,0 +1,3 @@
+select * from tbMunicipioGoiania where Municipio = 44202
+
+UPDATE tbMunicipioGoiania set NomeMunicipio  = 'PARAISO DAS AGUAS'  where Municipio = 44202

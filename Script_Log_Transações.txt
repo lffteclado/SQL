@@ -1,0 +1,1 @@
+select * from tbLogRequestItemDelete where NumeroPedido = 259794  

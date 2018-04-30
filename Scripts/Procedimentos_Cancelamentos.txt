@@ -1,0 +1,9 @@
+Segue tabelas que gravam os procedimentos de cancelamento
+ 
+ 
+
+pedidos excluidos             = tbLogOrderDelete
+
+itens excluidos do pedido     = tbLogRequestItemDelete
+
+itens inseridos no pedido     = tbLogRequestItemInsert

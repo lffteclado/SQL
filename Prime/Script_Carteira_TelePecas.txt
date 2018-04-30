@@ -1,0 +1,49 @@
+select distinct PC.CodigoCliFor,R.NomeRepresentante from tbRepresentantePedido AS RP INNER JOIN tbPedidoComplementar as PC ON RP.NumeroPedido = PC.NumeroPedido
+inner join tbPedidoTK as PT on RP.NumeroPedido = PT.NumeroPedido inner join tbPedido as P on RP.NumeroPedido = P.NumeroPedido
+inner join tbRepresentanteComplementar as R on RP.CodigoRepresentante = R.CodigoRepresentante 
+WHERE P.DataEmissaoFaturaPed between '2012-08-13 00:00:00.000' and '2014-08-13 00:00:00.000'and P.CentroCusto = 21320
+order by R.NomeRepresentante
+
+
+****************************************
+
+Maior data, ainda trazendo repetições
+
+select distinct(max (P.DataEmissaoNotaFiscalPed)),PC.CodigoCliFor,R.NomeRepresentante,R.CodigoRepresentante from 
+tbPedidoComplementar AS PC INNER JOIN  tbRepresentantePedido as RP ON PC.NumeroPedido = RP.NumeroPedido 
+inner join tbPedidoTK as PT on PC.NumeroPedido = PT.NumeroPedido inner join tbPedido as P on PC.NumeroPedido = P.NumeroPedido
+inner join tbRepresentanteComplementar as R on RP.CodigoRepresentante = R.CodigoRepresentante
+WHERE P.DataEmissaoNotaFiscalPed between '2012-01-01 00:00:00.000' and '2015-01-01 00:00:00.000'and P.CentroCusto = 21320
+group by R.CodigoRepresentante,R.NomeRepresentante,PC.CodigoCliFor,P.DataEmissaoNotaFiscalPed
+
+
+******************************************************
+Novo script gerado dia 19/08/2014
+
+********************************************************************************************************************************
+
+Novo script DPMAXPRIME
+
+
+select distinct(max (P.DataEmissaoNotaFiscalPed)),
+	   
+       case WHEN LEN(CONVERT(varchar(14),PC.CodigoCliFor)) <= 11 THEN 
+       REPLICATE('0', 11 - LEN(CONVERT(varchar(11), PC.CodigoCliFor))) + CONVERT(varchar(11), PC.CodigoCliFor)
+       WHEN LEN(CONVERT(varchar(14), PC.CodigoCliFor)) > 11 AND LEN(CONVERT(varchar(14), PC.CodigoCliFor)) <= 14 THEN 
+       REPLICATE ('0', 14 - LEN(CONVERT(varchar(14), PC.CodigoCliFor))) + CONVERT(varchar(14), PC.CodigoCliFor) 
+       end as Cliente,
+
+R.NomeRepresentante,R.CodigoRepresentante as codigo_externo,CC.DescricaoCentroCusto as Canal ,CF.NomeCliFor as nome,
+CF.RuaCliFor as Logradouro, CF.NumeroEndCliFor as numero,CF.ComplementoEndCliFor as complemento, CF.CEPCliFor as CEP,
+CF.MunicipioCliFor as cidade, CF.DDDTelefoneCliFor as DDD, CF.TelefoneCliFor as Telefone_Principal,CF.FaxCliFor as Fax,
+CF.EmailCliFor as email
+
+from 
+tbPedidoComplementar AS PC INNER JOIN  tbRepresentantePedido as RP ON PC.NumeroPedido = RP.NumeroPedido 
+inner join tbPedidoTK as PT on PC.NumeroPedido = PT.NumeroPedido inner join tbPedido as P on PC.NumeroPedido = P.NumeroPedido
+inner join tbRepresentanteComplementar as R on RP.CodigoRepresentante = R.CodigoRepresentante inner join tbCentroCusto as CC 
+on PC.CentroCusto = CC.CentroCusto inner join tbCliFor as CF on PC.CodigoCliFor = CF.CodigoCliFor
+WHERE P.DataEmissaoNotaFiscalPed between '2012-01-01 00:00:00.000' and '2015-01-01 00:00:00.000'
+group by R.CodigoRepresentante,R.NomeRepresentante,PC.CodigoCliFor,P.DataEmissaoNotaFiscalPed,CC.DescricaoCentroCusto,CF.NomeCliFor,
+CF.RuaCliFor,CF.NumeroEndCliFor,CF.NumeroEndCliFor,CF.ComplementoEndCliFor,CF.CEPCliFor,CF.MunicipioCliFor,CF.DDDTelefoneCliFor,
+CF.TelefoneCliFor,CF.FaxCliFor,CF.EmailCliFor

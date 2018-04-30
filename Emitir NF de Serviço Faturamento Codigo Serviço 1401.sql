@@ -26,7 +26,7 @@ select * from tbDocumentoFT where NumeroDocumento = 5068
 -----------------------------------------------------------------------------------------------
 FIM_CABEC_PROC*/
 
-WITH ENCRYPTION
+--WITH ENCRYPTION
 AS 
 
 DECLARE @CodigoServico varchar(5)

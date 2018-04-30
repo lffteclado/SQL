@@ -1,0 +1,24 @@
+select * From tbFormaPagamentoCV
+
+CodigoEmpresa                           CodigoFormaPagamentoCV TipoFormaPagamento DescricaoFormaPagamentoCV      CodigoAgenteFinanceiro
+--------------------------------------- ---------------------- ------------------ ------------------------------ ---------------------------------------
+930                                     1                      CX                 DINHEIRO                       NULL
+930                                     10                     RA                 ENTRADA                        NULL
+930                                     11                     CH                 CHEQUE PRE-DATADO              NULL
+930                                     12                     DP                 FINAME                         NULL
+930                                     13                     CC                 CARTA DE CREDITO               NULL
+930                                     14                     VN                 A VISTA                        NULL
+930                                     15                     VD                 DESCONTO                       NULL
+930                                     16                     DN                 C/ APRESENTACAO                NULL
+930                                     17                     DP                 30 DIAS                        NULL
+930                                     2                      CH                 A PRAZO                        NULL
+930                                     3                      VN                 CDC                            NULL
+930                                     4                      FI                 FINANCEIRAS                    NULL
+930                                     5                      CH                 CHEQUE                         NULL
+930                                     6                      DP                 DUPLICATA                      NULL
+930                                     7                      CC                 CARTAO DE CREDITO              NULL
+930                                     8                      LE                 LEASING                        NULL
+930                                     9                      DN                 CONSORCIO                      NULL
+
+(17 row(s) affected)
+

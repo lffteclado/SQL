@@ -1,0 +1,3 @@
+select * from tbPermissaoAcesso where CodigoUsuario ='VENDASVEIC' and CodigoFormulario ='frmcrConsultasDoctosReceber'
+
+Update tbPermissaoAcesso  set IndiceControle ='99' where CodigoUsuario ='VENDASVEIC' and CodigoFormulario ='frmcrConsultasDoctosReceber'

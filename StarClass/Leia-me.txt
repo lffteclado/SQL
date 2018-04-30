@@ -1,0 +1,19 @@
+Antes de executar é preciso substituir os parâmetros entre <> pelos dados da empresa.
+
+Caso o cliente use somente um centro de custo para Balcão e outro para Telepeças substituir o 2° e o 3° CC da procedure por NULL, como por exemplo:
+
+ 
+
+whVendasItem1_1_TelepBalcao 1608, 0, '2012-01-01', '2012-12-31', 11310, NULL, NULL, 11410, NULL, NULL
+
+ 
+
+Depois de executada a linha de comando basta copiar o resultado e colar em uma planilha do excel.
+
+ 
+
+A disposição,
+
+ 
+
+Jader

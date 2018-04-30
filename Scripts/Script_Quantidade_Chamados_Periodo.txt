@@ -1,0 +1,2 @@
+SELECT count(designado_id)
+  FROM [helpdesk].[dbo].[CHAMADOS]where data_abertura between '2011-01-01' and '2011-01-31' and designado_id = 1686

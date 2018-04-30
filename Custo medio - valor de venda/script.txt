@@ -1,0 +1,21 @@
+select vwCustoMedioProdutoAtual.CodigoProduto,
+
+  vwCustoMedioProdutoAtual.CustoMedioUnitario,
+
+  vwCustoMedioProdutoAtual.CustoUnitarioUltimaCompra,
+
+  vwMaxPrecoTabelas.ValorTabelaPreco,
+
+  vwMaxPrecoTabelas.DataValidadeTabelaPreco
+
+from vwMaxPrecoTabelas
+
+inner join vwCustoMedioProdutoAtual on
+
+  vwMaxPrecoTabelas.CodigoEmpresa = vwCustoMedioProdutoAtual.CodigoEmpresa
+
+and  vwMaxPrecoTabelas.CodigoProduto = vwCustoMedioProdutoAtual.CodigoProduto
+
+ 
+
+where vwMaxPrecoTabelas.CodigoTipoTabelaPreco = 1

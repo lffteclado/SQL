@@ -1,0 +1,5 @@
+select  CodigoNaturezaOperacao,DescricaoNaturezaOperacao,
+CodigoTributacaoNaturezaOper,CondicaoIPINaturezaOperacao,CondicaoICMSNaturezaOperacao
+CondicaoReducaoICMSNatOper,CFONaturezaOperacao,ICMSRetidoFonteNaturezaOper 
+CondicaoReducaoIPINatOper,CFONaturezaOperacaoForaEstado,CodigoSituacaoTributaria 
+ from tbNaturezaOperacao where CNOBloqueado = 'F' and CodigoTributacaoNaturezaOper != 'NULL'

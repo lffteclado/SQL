@@ -1,0 +1,23 @@
+########## Atualização Timer e I ntegrador de Pedidos###########
+
+DISABLE TRIGGER tnd_DSPa_ConnectionControl on tbControleConexao
+GO
+DELETE tbControleConexao
+GO
+ENABLE TRIGGER tnd_DSPa_ConnectionControl on tbControleConexao
+
+########## Atualização Status Ordem de Serviço###########
+
+DISABLE TRIGGER tnu_DSPa_StatusOSCIT on tbOROSCIT
+GO
+update tbOROSCIT set StatusOSCIT = 'A' where NumeroOROS = 149588
+GO
+ENABLE TRIGGER tnu_DSPa_StatusOSCIT on tbOROSCIT
+
+########## Atualização Captação de XML###########
+DISABLE TRIGGER tnu_DSPa_Parametro on tbParametro
+GO
+UPDATE tbParametro set Valor = 'E:\Import\import_valadares\XML' 
+where CNPJ = '20628376000152' and Parametro = 'NFETXTENT'
+GO
+ENABLE TRIGGER tnu_DSPa_Parametro on tbParametro

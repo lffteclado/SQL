@@ -1,0 +1,21 @@
+******************Pessoa Fisica**************************************
+
+select CodigoCliFor,TipoCliFor,DataCadastroCliFor from dbCardiesel_I.dbo.tbCliFor AS C
+INNER JOIN "dealer-prime".DBO.GOV_CLIENTE AS D on LEFT('00000000000', 11-LEN(C.CodigoCliFor))+ 
+convert (varchar(18),C.CodigoCliFor )= Replace(Replace(Replace((D.CPF_CNPJ),'.',''),'/',''),'-','')
+WHERE C.ClienteAtivo = 'V' and D.ID_EMPRESA = 3 AND LEN(C.CodigoCliFor) <= 11
+
+*******************Pessoa Juridica*********************************
+select CodigoCliFor,TipoCliFor,DataCadastroCliFor from dbCardiesel_I.dbo.tbCliFor AS C
+INNER JOIN "dealer-prime".DBO.GOV_CLIENTE AS D on LEFT('00000000000', 14-LEN(C.CodigoCliFor))+ 
+convert (varchar(18),C.CodigoCliFor )= Replace(Replace(Replace((D.CPF_CNPJ),'.',''),'/',''),'-','')
+WHERE C.ClienteAtivo = 'V' and D.ID_EMPRESA = 3
+
+
+
+
+
+select C.CodigoCliFor,TipoCliFor,DataCadastroCliFor from dbCardiesel_I.dbo.tbCliFor AS C
+INNER JOIN "dealer-prime".DBO.GOV_CLIENTE AS D on convert (varchar(18),C.CodigoCliFor )= 
+Replace(Replace(Replace((D.CPF_CNPJ),'.',''),'/',''),'-','') INNER JOIN dbCardiesel_I.dbo.tbCliForJuridica as J on 
+convert(char(14),C.CodigoCliFor) = J.CGCJuridica WHERE C.ClienteAtivo = 'V' and D.ID_EMPRESA = 3

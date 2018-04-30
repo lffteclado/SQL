@@ -1,0 +1,2 @@
+--- Altera permissao de desconto Faturamento - TK  / Vendedor-Representante
+update tbRepresentanteComplementar set PercDescontoPec = 0,PercDescontoClo = 0 ,PercDescontoMob = 0 where CodigoRepresentante = 10
