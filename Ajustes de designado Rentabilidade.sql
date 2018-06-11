@@ -6,10 +6,27 @@ select * from Designados_por_empresa where id_empresa = 1 and id_usuario = 101 a
 select * from Designados_por_empresa where id_empresa = 5 and id_usuario = 104 and id_tipo_usuario = 1
 select * from Designados_por_empresa order by id desc
 select * from modelo_tipo
+select * from modelo_seguimento
+
+select * from usuario where id_tipo_usuario = 6
+select * from usuario where id = 21
+union all
+select * from usuario where id = 23
+union all
+select * from usuario where id = 98
+union all
+select * from usuario where id = 32
+union all
+select * from usuario where id = 101
+union all
+select * from usuario where id = 106
 
 --delete from usuario where id = 110
 
---update Designados_por_empresa set id_usuario = 62 where id = 60 and id_empresa = 12
+--update usuario set email = 'luisfelipe@grupovdl.com.br'
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where login <> 'USERDESAT'
+
+--update Designados_por_empresa set id_tipo_usuario = 1 where id = 18 and id_empresa = 1 and id_usuario = 32
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 74 and id_empresa = 1 and id_usuario = 106
 --update usuario set email = 'antonio@goiascaminhoes.com.br' where nome_usuario = 'Antonio Lima' 
 --update usuario set id_empresa = 12 where nome_usuario = 'João Alexandre' and id = 62
@@ -17,9 +34,15 @@ select * from modelo_tipo
 --Apos criar o usuario colocar essas informações na tabela Designados_por_empresa
 --insert into Designados_por_empresa (id_empresa, id_usuario, id_tipo_usuario) values (1, 106, 2)
 
-select * from usuario where nome_usuario like 'HECTORY FERNANDO BERNNARDINI' --id 84 id_tipo_usuario 5 id_empresa 12
+select nome_usuario, id_tipo_usuario, * from usuario where nome_usuario like 'Antonio Lima' --id 84 id_tipo_usuario 5 id_empresa 12
 union all
-select * from usuario where nome_usuario = 'João Alexandre' --id 62  id_tipo_usuario  4 id_empresa 5
+select nome_usuario, id_tipo_usuario from usuario where nome_usuario = 'FERNANDO CYRINO' --id 62  id_tipo_usuario  4 id_empresa 5
+union all
+select nome_usuario, id_tipo_usuario from usuario where nome_usuario = 'HECTORY FERNANDO BERNNARDINI'
+
+--update usuario set id_tipo_usuario = 2 where id = 113 and nome_usuario = 'HECTORY FERNANDO BERNNARDINI'
+
+--AB2C642FF80DC76372E337EA09601920      hbernnardini
 
 --BA6F5319E1A220B1C3F9C3CD16FA2308
 
@@ -27,7 +50,7 @@ select * from usuario where nome_usuario = 'João Alexandre' --id 62  id_tipo_usu
 
 -- login teste 698DC19D489C4E4DB73E28A713EAB07B
 
---update usuario set senha = 'F169D2F349791496310BDD7676180A08' where id_empresa = 5 and id = 99 and nome_usuario = 'Cristiano Tadeu'
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where id_empresa = 5 and id = 28 and nome_usuario = 'Antonio Lima'
 
 --update usuario set login = '89A4F485D121483912276D2F464EE010' where id_empresa = 1 and id = 23 and nome_usuario = 'Natalia Linhares'
 
@@ -38,7 +61,7 @@ select * from usuario where nome_usuario = 'João Alexandre' --id 62  id_tipo_usu
 6B84F40F8F956A76DA0D4C973D56AFDC
 
 --update usuario set senha = 'F169D2F349791496310BDD7676180A08' where id_empresa = 1 and id = 102 and nome_usuario = 'Luis Felipe Ferreira'
---update usuario set senha = 'USERDESAT', login = 'USERDESAT' where id_empresa = 3 and id = 71 and nome_usuario = 'Assis Dantas'
+--update usuario set senha = 'USERDESAT', login = 'USERDESAT' where id_empresa = 1 and id = 32 and nome_usuario = 'Carlos Alberto'
 
 --SELECT statusTransferencia, * FROM base
 --inner join usuario
@@ -96,4 +119,9 @@ insert into potica_mes (politica_mes) values ('setembro-18')
 insert into potica_mes (politica_mes) values ('outubro-18')
 insert into potica_mes (politica_mes) values ('novembro-18')
 insert into potica_mes (politica_mes) values ('dezembro-18')
+
+select * from Designados_por_empresa where id_empresa = 1
+
+--update Designados_por_empresa set id_tipo_usuario = 2 where id_empresa = 1 and id_usuario = 113
+
 */

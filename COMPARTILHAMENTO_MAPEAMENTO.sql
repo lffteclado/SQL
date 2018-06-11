@@ -1,46 +1,54 @@
-xp_cmdshell 'net use /delete W:' 
-GO
-xp_cmdshell 'net use W: \\192.168.1.28\IMPORT_CARDIESEL /user:192.168.1.28\ADMINISTRATOR $$VDL0707@ /PERSISTENT:YES' 
+--import_autosete (\\192.168.0.58)
+--import_calisto (\\192.168.0.58)
+--import_montesclaros (\\192.168.0.58)
+--import_cardiesel (\\192.168.0.58)
+--temp_calisto (\\192.168.0.58)
+--import_montesclaros
+--192.168.0.58\import_valadares
+
 
 xp_cmdshell 'net use /delete X:' 
 GO 
-xp_cmdshell 'net use X: \\192.168.1.3\IMPORT /user:192.168.1.3\ADMINISTRATOR $$VDL0707@ /PERSISTENT:YES'  
+xp_cmdshell 'net use X: \\192.168.0.58\import_calisto /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
 
-xp_cmdshell 'net use /delete G:' 
+xp_cmdshell 'net use /delete Z:' 
 GO 
-xp_cmdshell 'net use G: \\192.168.1.30\IMPORT /user:192.168.1.30\ADMINISTRATOR $$VDL0707@ /PERSISTENT:YES'  
+xp_cmdshell 'net use Z: \\192.168.0.58\temp_calisto /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
 
-xp_cmdshell 'net use /delete U:' 
+xp_cmdshell 'net use /delete X:' 
 GO 
-xp_cmdshell 'net use U: \\192.168.1.27\IMPORT /user:192.168.1.27\ADMINISTRATOR $$VDL0707@ /PERSISTENT:YES' 
+xp_cmdshell 'net use X: \\192.168.0.58\import_autosete /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
 
-xp_cmdshell 'net use /delete M:' 
+xp_cmdshell 'net use /delete X:' 
 GO 
-xp_cmdshell 'net use M: \\192.168.1.17\IMPORT_AUTOSETE /user:192.168.1.17\ADMINISTRATOR $$VDL0707@ /PERSISTENT:YES' 
+xp_cmdshell 'net use X: \\192.168.0.58\import_imperial /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
+
+xp_cmdshell 'net use /delete X:' 
+GO 
+xp_cmdshell 'net use X: \\192.168.0.58\import_montesclaros /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
+
+xp_cmdshell 'net use /delete X:' 
+GO 
+xp_cmdshell 'net use X: \\192.168.0.58\import_cardiesel /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
+
+xp_cmdshell 'net use /delete X:' 
+GO 
+xp_cmdshell 'net use X: \\192.168.0.58\import_montesclaros /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
 
 xp_cmdshell 'net use /delete X:' 
 GO 
 xp_cmdshell 'net use X: \\192.168.0.58\import_valadares /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
 
-xp_cmdshell 'net use /delete I:' 
-GO 
-xp_cmdshell 'net use X: \\192.168.0.58\import_imperial /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
 
 
-xp_cmdshell 'dir \\192.168.0.58\import_valadares*.*'
+xp_cmdshell 'dir \\192.168.0.58\import_calisto\*.*'
 
-xp_cmdshell 'dir \\192.168.1.30\IMPORT\*.*'
+xp_cmdshell 'dir \\192.168.0.58\temp_calisto\*.*'
 
 xp_cmdshell 'dir \\192.168.0.58\import_imperial\*.*'
 
-xp_cmdshell 'dir \\192.168.1.167\IMPORT\*.*'
+xp_cmdshell 'dir \\192.168.0.58\import_montesclaros\*.*'
 
-xp_cmdshell 'dir \\192.168.1.28\IMPORT_CARDIESEL\*.*'
+xp_cmdshell 'dir \\192.168.0.58\import_valadares\*.*'
 
-xp_cmdshell 'dir \\192.168.1.30\IMPORT\*.*'
-
-xp_cmdshell 'dir \\192.168.1.27\IMPORT\*.*'
-
-xp_cmdshell 'dir \\192.168.1.17\IMPORT\*.*'   
-
-xp_cmdshell 'dir \\192.168.0.58\import_imperial\*.*'              
+         

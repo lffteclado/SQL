@@ -19,7 +19,7 @@ DECLARE @CFOSaida8      numeric(5)
 --->>>>> Informar os parametros abaixo antes de executar    <<<<<<--------------------
 SELECT @CodigoEmpresa = (select CodigoEmpresa from tbEmpresa)
 SELECT @CodigoLocal   = 0
-SELECT @Periodo       = '201611'
+SELECT @Periodo       = '201401'
 SELECT @CFOEntrada    = 2403
 SELECT @CFOEntrada1    = 2652
 SELECT @CFOEntrada2    = 1652
@@ -343,20 +343,21 @@ DECLARE @staE char(5)
 select @staE = 'ERROR'
 
 
-select #tmp.NumeroDocumentoSaida,
-	   #tmp.DataSaida as DataSaida_Venda,
-	   #tmp.CodigoProduto,
-	   #tmp.DescricaoProduto,
-	   #tmp.QtdeSaida as QtdeSaida_Venda,
-	   #tmp.ValorContabilItemDocto as ValorContabilItemDocto_Venda,
-	   tbCli.UFCliFor,
-	   tbIDoc.CodigoCFO as CodigoCFO_VENDA,
-	   #tmp.NumeroDocumento as NumeroDocumento_Entrada,
+select #tmp.CodigoProduto, 
+		#tmp.DescricaoProduto,
+		#tmp.NumeroDocumento as NumeroDocumento_Entrada,
+		--tbCli.CodigoCliFor,
 		#tmp.DataDocumento as DataDocumento_Entrada,
-	   cast(#tmp.QtdeLancamentoItemDocto as NUMERIC(14,2)) as QtdeLancamentoItemDocto_Entrada,
-	   (#tmp.ValorProdutoItemDocto + #tmp.ValorIPIItemDocto + #tmp.ValorICMSRetidoItemDocto ) as ValorContabilItemDocto_Entrada,
-  		#tmp.ValorIPIItemDocto,
+		cast(#tmp.QtdeLancamentoItemDocto as NUMERIC(14,2)) as QtdeLancamentoItemDocto_Entrada,
 		#tmp.BaseICMSSubstTribItemDocto,
+		#tmp.ValorIPIItemDocto,
+	    #tmp.NumeroDocumentoSaida,	  
+	    #tmp.DataSaida as DataSaida_Venda,	   
+	    #tmp.QtdeSaida as QtdeSaida_Venda,
+	    #tmp.ValorContabilItemDocto as ValorContabilItemDocto_Venda,
+	    tbCli.UFCliFor,
+	    tbIDoc.CodigoCFO as CodigoCFO_VENDA,	  
+	   (#tmp.ValorProdutoItemDocto + #tmp.ValorIPIItemDocto + #tmp.ValorICMSRetidoItemDocto ) as ValorContabilItemDocto_Entrada,		
 		#tmp.ValorICMSRetidoItemDocto,
 		case when #tmp.QtdeLancamentoItemDocto >= #tmp.QtdeSaida then
 		@sta
@@ -384,6 +385,7 @@ select #tmp.NumeroDocumentoSaida,
 
 DROP TABLE #tmp
 DROP TABLE #tmpEntradas
+DROP TABLE #tmpU
 
 
 SET NOCOUNT OFF

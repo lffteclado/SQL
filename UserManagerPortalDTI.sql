@@ -71,7 +71,7 @@ select * from SYSUserProfile
 select * from SYSUserRole
 
 /*Inserindo Usuário*/
---DECLARE @LoginName nvarchar(100) = 'caixa1@cardiesel.com.br'
+--DECLARE @LoginName nvarchar(100) = 'cadastro@matogrossocaminhoes.com.br'
 
 --IF NOT EXISTS(SELECT 1 FROM SYSUser WHERE LoginName = (@LoginName))
 --BEGIN
@@ -80,11 +80,11 @@ select * from SYSUserRole
 --END
 
 --INSERT INTO SYSUserProfile (SYSUserID,FirstName,LastName,Gender,RowCreatedSYSUserID,RowModifiedSYSUserID)
---VALUES (11,'Monica Ribeiro','Financeiro','F',1,1)
+--VALUES (13,'Elisangela Martins','Financeiro','F',1,1)
 
 --INSERT INTO SYSUserRole (SYSUserID,LOOKUPRoleID,IsActive,RowCreatedSYSUserID,
 --RowModifiedSYSUserID)
---VALUES (11,3,1,1,1)
+--VALUES (14,5,1,1,1)
 
 /* Cadastrar Perfis */
 
@@ -92,7 +92,7 @@ select * from SYSUserRole
 --VALUES ('Dti','Can Edit, Update',1,1)
 
 --INSERT INTO LOOKUPRole (RoleName,RoleDescription,RowCreatedSYSUserID,RowModifiedSYSUserID)
---VALUES ('Finan','Read only',1,1)
+--VALUES ('FinanGoias','Read only',1,1)
 
 --UPDATE SYSUserProfile SET SYSUserID = 4 WHERE SYSUserProfileID = 4
 
