@@ -16,7 +16,7 @@ select * from dbVDL.dbo.tbAux
 
 --drop table tbAux
 
---update dbVDL.dbo.tbAux set CodigoEmpresa = 2630
+--update dbVDL.dbo.tbAux set CodigoEmpresa = 262
 
 --delete from tbLayOutCobrancaEscritural where CodigoEmpresa = 3610 CodigoBanco = 1025 and TipoArquivoOcorDoctoRecPag = 2
 

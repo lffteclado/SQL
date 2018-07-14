@@ -1,0 +1,1 @@
+select CodigoUsuario, NomeUsuario, CodigoGrupo, UsuarioAtivo from tbUsuarios where UsuarioAtivo = 'V'

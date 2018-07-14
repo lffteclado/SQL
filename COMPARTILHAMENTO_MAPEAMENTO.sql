@@ -39,6 +39,10 @@ xp_cmdshell 'net use /delete X:'
 GO 
 xp_cmdshell 'net use X: \\192.168.0.58\import_valadares /user:192.168.0.58\admin !matrix16 /PERSISTENT:YES' 
 
+xp_cmdshell 'net use /delete X:' 
+GO 
+xp_cmdshell 'net use X: \\srvvala\Import /user:vdldc\administrator $$VDL0707@ /PERSISTENT:YES' 
+
 
 
 xp_cmdshell 'dir \\192.168.0.58\import_calisto\*.*'
@@ -50,5 +54,7 @@ xp_cmdshell 'dir \\192.168.0.58\import_imperial\*.*'
 xp_cmdshell 'dir \\192.168.0.58\import_montesclaros\*.*'
 
 xp_cmdshell 'dir \\192.168.0.58\import_valadares\*.*'
+
+xp_cmdshell 'dir \\srvvala\Import\*.*'
 
          

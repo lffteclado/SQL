@@ -39,8 +39,8 @@ select BloqueioVendaVeiculoFloorPlan, * from tbClienteCredito where BloqueioVend
 -- update tbClienteCredito set BloqueioVendaVeiculo = 'F' where CodigoCliFor = '13290620000154' and CodigoEmpresa = 930
 
 --Desconto Invisivel
--- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'F' where CodigoPlanoPagamento = '614'
-select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '614'
+-- update tbPlanoPagamento set DescontoInvisivelPlanoPagto = 'F' where CodigoPlanoPagamento = '511'
+select DescontoInvisivelPlanoPagto from tbPlanoPagamento where CodigoPlanoPagamento = '511'
 
 /* Alterar Preço Unitátio Pedido */
 

@@ -5,8 +5,8 @@ DECLARE @CodigoFormulario varchar(5)
 DECLARE @Formulario       varchar(40)
 DECLARE @CodigoEmpresa    numeric(4)
 --- Informar a Empresa e o Form
-SELECT @CodigoEmpresa = 2620
-SELECT @CodigoFormulario    = 'CR077'
+SELECT @CodigoEmpresa = 930
+SELECT @CodigoFormulario    = 'CG079'
 SELECT @Formulario = CodigoFormulario FROM tbFormulariosSistema WHERE CodigoIdentificadorFormulario = @CodigoFormulario
 select * from tbUsuarios where CodigoUsuario not in (SELECT CodigoUsuario from tbPermissaoAcesso where CodigoFormulario = @Formulario) and UsuarioAtivo = 'V'
 /* fim verificar acesso */
@@ -18,8 +18,8 @@ DECLARE @Formulario       varchar(40)
 DECLARE @CodigoEmpresa    numeric(4)
 
 --- Informar a Empresa e o Form
-SELECT @CodigoEmpresa = 2620
-SELECT @CodigoFormulario    = 'CR077'
+SELECT @CodigoEmpresa = 3610
+SELECT @CodigoFormulario    = 'CG079'
 ---
 
 SELECT @Formulario = CodigoFormulario
@@ -30,8 +30,8 @@ CodigoIdentificadorFormulario = @CodigoFormulario
 DELETE tbPermissaoAcesso
 WHERE
 CodigoEmpresa = @CodigoEmpresa AND
-CodigoFormulario = @Formulario AND
-CodigoUsuario not in ('CJUNIOR', 'LFORTES', 'MMORAES', 'WBHAFN125', 'FMARTINS', 'VLOPES', 'MROCHA', 'MRIBEIRO', 'EFRANCA')
+CodigoFormulario = @Formulario --AND
+--CodigoUsuario not in ('CJUNIOR', 'LFORTES', 'ROLIVEIRA', 'LFRERREIRA','ACLAUDIA', 'WBHADM27')
 
 INSERT tbPermissaoAcesso
 SELECT 

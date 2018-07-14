@@ -1,4 +1,4 @@
-select * from usuario where nome_usuario like '%Cristiano%'
+select * from usuario where nome_usuario like '%Jessica%'
 select * from usuario where dataCadastroSenha < '2017-01-01 00:00:00.000'
 select * from empresa
 select * from tipo_usuario
@@ -8,10 +8,16 @@ select * from Designados_por_empresa order by id desc
 select * from modelo_tipo
 select * from modelo_seguimento
 
-select * from usuario where id_tipo_usuario = 6
-select * from usuario where id = 21
+select * from usuario where nome_usuario = 'Wanda Maria'
 union all
-select * from usuario where id = 23
+select * from usuario where nome_usuario = 'teste'
+
+select * from usuario where id_tipo_usuario = 6
+select * from usuario where id = 21 -- Renata Lucas 
+select * from usuario where id = 23 -- Natalia Linhares
+
+union all
+select * from usuario where id = 47
 union all
 select * from usuario where id = 98
 union all
@@ -21,10 +27,14 @@ select * from usuario where id = 101
 union all
 select * from usuario where id = 106
 
+select * from vendedor WHERE vendedor = 'HENDRIKUS FERREIRA'
+
+--insert into vendedor (vendedor) values ('HENDRIKUS FERREIRA')
+
 --delete from usuario where id = 110
 
 --update usuario set email = 'luisfelipe@grupovdl.com.br'
---update usuario set senha = 'F169D2F349791496310BDD7676180A08' where login <> 'USERDESAT'
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Fabíola Almeirda'
 
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 18 and id_empresa = 1 and id_usuario = 32
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 74 and id_empresa = 1 and id_usuario = 106
@@ -125,3 +135,11 @@ select * from Designados_por_empresa where id_empresa = 1
 --update Designados_por_empresa set id_tipo_usuario = 2 where id_empresa = 1 and id_usuario = 113
 
 */
+
+select * from base where nome like '%JUVERCINO GUIMARAES ALVES%'
+
+select assinaturaGerencia, assinaturaGerenciaNova, * from base where assinaturaGerenciaNova = 'cristianot.jpg'
+
+--update base set assinaturaGerenciaNova = 'cristianot.jpg' where assinaturaGerenciaNova = 'CristianoT.png'
+
+select id, nome_usuario, email, cargo from usuario where arquivoassinatura = 'cristianot.jpg'

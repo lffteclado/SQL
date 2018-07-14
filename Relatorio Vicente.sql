@@ -19,16 +19,16 @@ DECLARE @CFOSaida8      numeric(5)
 --->>>>> Informar os parametros abaixo antes de executar    <<<<<<--------------------
 SELECT @CodigoEmpresa = (select CodigoEmpresa from tbEmpresa)
 SELECT @CodigoLocal   = 0
-SELECT @Periodo       = '201401'
+SELECT @Periodo       = '201312'
 SELECT @CFOEntrada    = 2403
 SELECT @CFOEntrada1    = 2652
-SELECT @CFOEntrada2    = 1652
-SELECT @CFOEntrada3    = 1403
+--SELECT @CFOEntrada2    = 1652
+--SELECT @CFOEntrada3    = 1403
 
-SELECT @CFOSaida      = 5102
-SELECT @CFOSaida1      = 5403
-SELECT @CFOSaida2      = 5405
-SELECT @CFOSaida3      = 5652
+--SELECT @CFOSaida      = 5102
+--SELECT @CFOSaida1      = 5403
+--SELECT @CFOSaida2      = 5405
+--SELECT @CFOSaida3      = 5652
 SELECT @CFOSaida4      = 6102
 SELECT @CFOSaida5      = 6108
 SELECT @CFOSaida6      = 6403

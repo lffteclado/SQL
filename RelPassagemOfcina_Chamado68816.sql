@@ -34,7 +34,7 @@ SELECT distinct Chassi,
 	   END AS Periodo,
 	   CONVERT(VARCHAR,DataAbertura,3) AS 'Data Abertura',
 	   CONVERT(VARCHAR,DataEncerramento,3) AS 'Data Encerramento'
- FROM tmpAnaliticoRel ana
+ FROM tmpAnaliticoRelOut2017 ana
  INNER JOIN tbVeiculoOS veic
  ON ana.Chassi collate Latin1_General_CS_AS = veic.ChassiVeiculoOS
  INNER JOIN tbCategoriaVeiculoOS cat
@@ -42,6 +42,8 @@ SELECT distinct Chassi,
  INNER JOIN tbOROSCIT cit
  ON ana.NumeroOS = cit.NumeroOROS WHERE substring(cit.CodigoCIT,1,2) = 'C1'
 
+
+ --sp_helptext whRelOSNrPassagensAgend
 
 /*
 select * from sysobjects where name like 'tb%CategoriaVeiculo%'
