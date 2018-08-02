@@ -1,6 +1,8 @@
-select * from 
-update tbEDIATProcesso set HorarioProcessoAT = 13.54 
+select * from tbEDIATProcesso
 where CodigoProcessoEDI = 19 and CodigoEmpresa = 930 and CodigoLocal = 0
+
+--update tbEDIATProcesso set HorarioProcessoAT = 13.54 
+--where CodigoProcessoEDI = 19 and CodigoEmpresa = 930 and CodigoLocal = 0
 
  
 select * from tbEDIATProcesso where CodigoProcessoEDI = 19 and CodigoEmpresa = 930 and CodigoLocal = 0
@@ -32,3 +34,5 @@ select * from tbEDIProcessoGrupoMeios where CodigoMeioEDI = 4 CodigoProcessoEDI 
 
 
 EXECUTE whLIntegracaoTOTVS @CodigoEmpresa = 930,@CodigoLocal = 0
+
+sp_helptext whLIntegracaoTOTVS

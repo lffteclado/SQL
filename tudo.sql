@@ -274,7 +274,7 @@ where Descricao like '%BANDA%' - XZU2%
 --Localizar o codigo de uma tela
 
 --select * from tbFormulariosSistema where CodigoSistema = 'FP'
---select * from tbFormulariosSistema where DescricaoFormulario  like '%ontabil%'
+--select * from tbFormulariosSistema where DescricaoFormulario  like '%eiculo%'
 
 
 

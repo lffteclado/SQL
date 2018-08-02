@@ -4,13 +4,18 @@ select * from  tbPermissaoAcesso where CodigoUsuario = 'DPEREIRA' and CodigoForm
 
 select * from tbFormulariosSistema where CodigoSistema = '' and DescricaoFormulario like '%Capt%'
 
+frmosVeicOficina
+
 select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'CG079'
+
+select * from tbFormulariosSistema where CodigoFormulario = 'frmosListaOROS'
+
 
 select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario like '%frmosMaoObra%'
 
 select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Inventário%'
 
---DELETE tbPermissaoAcesso where CodigoUsuario = 'LFERREIRA' and CodigoFormulario = 'frmcgParametros'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHAFN31' and CodigoFormulario = 'frmcgParametros'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario = 'frmceAlmoxarifadoCCusto'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpConsumoServico'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpDocumentosPrevistos'
@@ -42,7 +47,7 @@ SELECT * from tbPermissaoAcesso (NOLOCK)
 Where CodigoEmpresa = 2630 And CodigoFormulario = 'frmcbLanctosTransferencia' And CodigoUsuario = 'WMIRANDA'
 
 
---DELETE tbPermissaoAcesso where CodigoUsuario = 'DPEREIRA' and CodigoFormulario = 'frmcgParametros'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'DPEREIRA' and CodigoFormulario = 'frmftCancelNFiscal'
 --GO
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'ACLAUDIA' and CodigoFormulario = 'frmcgParametros'
 --GO
