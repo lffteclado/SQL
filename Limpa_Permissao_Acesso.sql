@@ -1,4 +1,4 @@
---- Limpar tabela quando via CS não consegue retirar ou dar permissao
+--- Limpar tabela quando via CS nï¿½o consegue retirar ou dar permissao
 
 select * from  tbPermissaoAcesso where CodigoUsuario = 'DPEREIRA' and CodigoFormulario like 'frmcgParametros'
 
@@ -11,12 +11,12 @@ select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'CG079'
 select * from tbFormulariosSistema where CodigoFormulario = 'frmosListaOROS'
 
 
-select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario like '%frmosMaoObra%'
+select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHADM27' and CodigoFormulario like '%frmcgParametros%'
 
-select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Inventário%'
+select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Inventï¿½rio%'
 
---DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHAFN31' and CodigoFormulario = 'frmcgParametros'
---DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario = 'frmceAlmoxarifadoCCusto'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'ACLAUDIA' and CodigoFormulario = 'frmcgParametros'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM27' and CodigoFormulario = 'frmcgParametros'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpConsumoServico'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpDocumentosPrevistos'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'LUIS6' and CodigoFormulario = 'frmceReajusteTabela'
@@ -40,7 +40,7 @@ select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormu
 
 --execute whPermissaoManutencaoI @CodigoEmpresa = 1200,@CodigoUsuario = 'AUDITORIA',@CodigoFormulario = 'CS005 frmcsCopiarPerfil',@CodigoControle = null,@IndiceControle = 99,@Permissao = 'IAE'
 
---Liberando Permissão
+--Liberando Permissï¿½o
 --execute whPermissaoManutencaoE @CodigoEmpresa = 1200,@CodigoUsuario = 'AUDITORIA',@CodigoFormulario = 'CS005 frmcsCopiarPerfil',@CodigoControle = null,@IndiceControle = 99
 
 SELECT * from tbPermissaoAcesso (NOLOCK)
