@@ -6,16 +6,16 @@ select * from tbFormulariosSistema where CodigoSistema = '' and DescricaoFormula
 
 frmosVeicOficina
 
-select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'CG079'
+select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'FT073'
 
 select * from tbFormulariosSistema where CodigoFormulario = 'frmosListaOROS'
 
 
-select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHADM27' and CodigoFormulario like '%frmcgParametros%'
+select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario like '%frmftEmpresa%'
 
 select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Invent�rio%'
 
---DELETE tbPermissaoAcesso where CodigoUsuario = 'ACLAUDIA' and CodigoFormulario = 'frmcgParametros'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario = 'frmftLocal'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM27' and CodigoFormulario = 'frmcgParametros'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpConsumoServico'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpDocumentosPrevistos'
