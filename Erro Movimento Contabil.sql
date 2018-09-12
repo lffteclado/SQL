@@ -13,7 +13,7 @@ select * from sysobjects where name like 'tnu_DSPa_A%'
 
 select * from sysobjects where name like '%tb%Integracao%'
 
-select * from tbIntegracaoSistemaContabil
+select * from tbIntegracaoSistemaContabil where OrigemIntegracaoContabil = 'CP' 101851
 
 /*
 alter table tbIntegracaoSistemaContabil disable trigger tnu_DSPa_AcSyIn

@@ -1,4 +1,4 @@
-select * from usuario where nome_usuario like '%Jessica%'
+select * from usuario where nome_usuario like '%Lenildo%'
 select * from usuario where dataCadastroSenha < '2017-01-01 00:00:00.000'
 select * from empresa
 select * from tipo_usuario
@@ -10,7 +10,7 @@ select * from modelo_seguimento
 
 select * from usuario where nome_usuario = 'Wanda Maria'
 union all
-select * from usuario where nome_usuario = 'teste'
+select * from usuario where nome_usuario like 'Josimar%'
 
 select * from usuario where id_tipo_usuario = 6
 select * from usuario where id = 21 -- Renata Lucas 
@@ -33,9 +33,10 @@ select * from vendedor WHERE vendedor = 'HENDRIKUS FERREIRA'
 
 --delete from usuario where id = 110
 
---update usuario set email = 'luisfelipe@grupovdl.com.br'
---update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Fabíola Almeirda'
 
+
+--update usuario set email = 'luisfelipe@grupovdl.com.br'
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Lenildo Bartole' and id = 72 and id_empresa = 11
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 18 and id_empresa = 1 and id_usuario = 32
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 74 and id_empresa = 1 and id_usuario = 106
 --update usuario set email = 'antonio@goiascaminhoes.com.br' where nome_usuario = 'Antonio Lima' 

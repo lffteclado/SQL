@@ -1,0 +1,1 @@
+Lista todas as informações, Código, Descrição, NCM, Tributação Estadual e Federal, ultima compra, ultima venda, etc... referentes aos produtos cadastrados no Estoque das Con

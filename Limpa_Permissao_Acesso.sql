@@ -11,9 +11,9 @@ select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'FT073'
 select * from tbFormulariosSistema where CodigoFormulario = 'frmosListaOROS'
 
 
-select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario like '%frmftEmpresa%'
+select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHAFN31' and CodigoFormulario like '%frmcgHistoricoLancto%'
 
-select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Invent�rio%'
+select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Seleção%'
 
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario = 'frmftLocal'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM27' and CodigoFormulario = 'frmcgParametros'
@@ -24,9 +24,11 @@ select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormu
 
 --sp_helptext whPermissaoManutencaoE
 
---select * from update tbPermissaoManutencao set IndiceControle where CodigoUsuario = 'AUDITORIA' and CodigoFormulario = 'frmceRelCEObsolescencia'
+SELECT * FROM tbUsuarios
 
---select * from tbPermissaoManutencao  where CodigoUsuario = 'AUDITORIA' and CodigoFormulario = 'frmceRelCEObsolescencia'
+--select * from tbPermissaoManutencao set IndiceControle where CodigoUsuario = 'AUDITORIA' and CodigoFormulario = 'frmceSelInvMovto'
+
+--select * from tbPermissaoManutencao  where CodigoUsuario = 'AUDITORIA' and CodigoFormulario = 'frmceSelInvMovto'
 --select * from tbPermissaoManutencao  where CodigoUsuario = 'AUDITORIA' and CodigoFormulario = 'frmceAcessoInventario'
 
 

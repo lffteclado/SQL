@@ -1,8 +1,5 @@
-IF EXISTS(SELECT 1 FROM sysobjects WHERE id = object_id('sp_AcertoPrecoRecompraVDL'))
-BEGIN
-	DROP PROCEDURE dbo.sp_AcertoPrecoRecompraVDL
-END
-GO
+Text
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE dbo.sp_AcertoPrecoRecompraVDL
 /*
 * Data: 04/10/2017
@@ -36,3 +33,4 @@ CREATE PROCEDURE dbo.sp_AcertoPrecoRecompraVDL
 			WHERE tbP.StatusPedidoPed = 1
 COMMIT TRANSACTION
 DELETE FROM [dbVDL].[dbo].tbPedidoAutorizado
+
