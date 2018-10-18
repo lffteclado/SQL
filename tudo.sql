@@ -34,8 +34,8 @@ select * from tbDMSTransitoNFe where DataDocumento between '2016-11-30 00:00:00.
 select top (2) XmlNFE, NumeroDocumento from tbDMSTransitoNFe
 
 --Cliente com Crédito Bloqueado no Modulo Veículos
-select BloqueioVendaVeiculoFloorPlan, * from tbClienteCredito where BloqueioVendaVeiculoFloorPlan = 'F' and CodigoCliFor = '13290620000154' and CodigoEmpresa = 930
--- update tbClienteCredito set BloqueioVendaVeiculoFloorPlan = 'F' where CodigoCliFor = '13290620000154' and CodigoEmpresa = 930
+select BloqueioVendaVeiculoFloorPlan, BloqueioVendaVeiculo, * from tbClienteCredito where BloqueioVendaVeiculoFloorPlan = 'F' and CodigoCliFor = '20097717000100' and CodigoEmpresa = 930
+-- update tbClienteCredito set BloqueioVendaVeiculoFloorPlan = 'F' where CodigoCliFor = '20097717000100' and CodigoEmpresa = 930
 -- update tbClienteCredito set BloqueioVendaVeiculo = 'F' where CodigoCliFor = '13290620000154' and CodigoEmpresa = 930
 
 --Desconto Invisivel

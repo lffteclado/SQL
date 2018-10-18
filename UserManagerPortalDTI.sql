@@ -98,8 +98,7 @@ select * from SYSUserRole
 
 --UPDATE SYSUser SET LoginName = 'shirleyc@cardiesel.com.br' WHERE SYSUserID = 6
 
---UPDATE SYSUserRole SET LOOKUPRoleID = 4 WHERE SYSUserRoleID = 5 AND SYSUserID = 5
-
+--UPDATE SYSUserRole SET LOOKUPRoleID = 4 WHERE SYSUserRoleID = 2 AND SYSUserID = 2
 
 
 

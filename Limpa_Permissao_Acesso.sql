@@ -1,12 +1,16 @@
 --- Limpar tabela quando via CS n�o consegue retirar ou dar permissao
 
-select * from  tbPermissaoAcesso where CodigoUsuario = 'DPEREIRA' and CodigoFormulario like 'frmcgParametros'
+select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHADM47' and CodigoFormulario like 'frmcvCancelNFiscal'
+UNION ALL
+select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHADM47' and CodigoFormulario like 'frmftCancelNFiscal'
 
 select * from tbFormulariosSistema where CodigoSistema = '' and DescricaoFormulario like '%Capt%'
 
 frmosVeicOficina
 
-select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'FT073'
+select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'CV022' -- frmcvCancelNFiscal
+
+select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'FT009' -- frmftCancelNFiscal
 
 select * from tbFormulariosSistema where CodigoFormulario = 'frmosListaOROS'
 
@@ -15,8 +19,8 @@ select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHAFN31' and CodigoForm
 
 select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Seleção%'
 
---DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario = 'frmftLocal'
---DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM27' and CodigoFormulario = 'frmcgParametros'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM47' and CodigoFormulario = 'frmcvCancelNFiscal'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'CMORAES' and CodigoFormulario = 'frmcgParametros'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpConsumoServico'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpDocumentosPrevistos'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'LUIS6' and CodigoFormulario = 'frmceReajusteTabela'
@@ -54,3 +58,16 @@ Where CodigoEmpresa = 2630 And CodigoFormulario = 'frmcbLanctosTransferencia' An
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'ACLAUDIA' and CodigoFormulario = 'frmcgParametros'
 --GO
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM27' and CodigoFormulario = 'frmcgParametros'
+
+
+select * from sysobjects where name like 'tb%Usu%'
+
+select * from tbUsuarioFT where CodigoUsuario = 'LFERREIRA'
+
+--update tbUsuarioFT set CancelaNotaFiscalOS = 'F' --where CodigoUsuario = 'LFERREIRA'
+--update tbUsuarioFT set CancelaNFOutraData  = 'F'
+--update tbUsuarioFT set CancelaOrdemServicoOS  = 'F'
+--update tbUsuarioFT set CancelaOSEncerradaSemNF  = 'F'
+--update tbUsuarioFT set PermiteEncerrarOSsNF  = 'F'
+--update tbUsuarioFT set CancelaNFPerEncerrado  = 'F'
+--update tbUsuarioFT set PermiteCancelarCupomFiscal  = 'F'

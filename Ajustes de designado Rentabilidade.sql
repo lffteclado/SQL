@@ -8,9 +8,9 @@ select * from Designados_por_empresa order by id desc
 select * from modelo_tipo
 select * from modelo_seguimento
 
-select * from usuario where nome_usuario = 'Wanda Maria'
+select * from usuario where nome_usuario = 'Luis Felipe Ferreira'
 union all
-select * from usuario where nome_usuario like 'Josimar%'
+select * from usuario where nome_usuario like '%Flavio%'
 
 select * from usuario where id_tipo_usuario = 6
 select * from usuario where id = 21 -- Renata Lucas 
@@ -27,19 +27,19 @@ select * from usuario where id = 101
 union all
 select * from usuario where id = 106
 
-select * from vendedor WHERE vendedor = 'HENDRIKUS FERREIRA'
+select * from vendedor WHERE vendedor = 'CLAUDIA APARECIDA'
 
---insert into vendedor (vendedor) values ('HENDRIKUS FERREIRA')
+--insert into vendedor (vendedor) values ('CLAUDIA APARECIDA')
 
 --delete from usuario where id = 110
 
 
 
 --update usuario set email = 'luisfelipe@grupovdl.com.br'
---update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Lenildo Bartole' and id = 72 and id_empresa = 11
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Prorival Boaventura' and id = 56 and id_empresa = 7
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 18 and id_empresa = 1 and id_usuario = 32
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 74 and id_empresa = 1 and id_usuario = 106
---update usuario set email = 'antonio@goiascaminhoes.com.br' where nome_usuario = 'Antonio Lima' 
+--update usuario set email = 'lidyal@valadaresdiesel.com.br' where nome_usuario = 'Lidya Lopes' 
 --update usuario set id_empresa = 12 where nome_usuario = 'João Alexandre' and id = 62
 --update usuario set id_tipo_usuario = 1 where nome_usuario = 'HECTORY FERNANDO BERNNARDINI' and id = 106
 --Apos criar o usuario colocar essas informações na tabela Designados_por_empresa

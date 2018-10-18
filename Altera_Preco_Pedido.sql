@@ -2,8 +2,6 @@ select * from sysobjects where name like 'tb%Autorizado%'
 
 --exec sp_AcertoPrecoRecompraVDL
 
-select * from tbPedidoAutoizado
-
 select * from tbPedidoAutorizado
 
 153980000596

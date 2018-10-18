@@ -1,12 +1,12 @@
 --Verificar Status OS, NF emitidas e outras informa��es refrentes a OS.
-select * from tbOROSCIT where NumeroOROS = 11429 and CodigoCIT = 'I5UE' and CodigoLocal = 1
+select * from tbOROSCIT where NumeroOROS = 148564 and CodigoCIT = 'CNVI' and CodigoLocal = 0
 union all
 select * from tbOROSCIT where NumeroOROS = 185335 
 
 --update tbOROSCIT set DataEmissaoNotaFiscalOS = DataEncerramentoOSCIT where NumeroOROS = 11429 and CodigoCIT = 'I5UE' and CodigoLocal = 1
 
-select * from tbPedidoOS where CodigoOrdemServicoPedidoOS = 96073
-select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (80767) and SequenciaPedido in (1,2) and CentroCusto = 21330
+select * from tbPedidoOS where CodigoOrdemServicoPedidoOS = 148564
+select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (644650) and SequenciaPedido in (1,2) and CentroCusto = 21330
 select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (517987) and SequenciaPedido = 1 and CentroCusto = 22330
 select * from tbDocumento where NumeroDocumento in (936910) and NumeroPedidoDocumento in(170302, 170303)
 
