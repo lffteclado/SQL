@@ -8,9 +8,9 @@ select * from Designados_por_empresa order by id desc
 select * from modelo_tipo
 select * from modelo_seguimento
 
-select * from usuario where nome_usuario = 'Luis Felipe Ferreira'
+select * from usuario where nome_usuario = 'Hectory'
 union all
-select * from usuario where nome_usuario like '%Flavio%'
+select * from usuario where nome_usuario like '%Hectory%'
 
 select * from usuario where id_tipo_usuario = 6
 select * from usuario where id = 21 -- Renata Lucas 
@@ -36,7 +36,7 @@ select * from vendedor WHERE vendedor = 'CLAUDIA APARECIDA'
 
 
 --update usuario set email = 'luisfelipe@grupovdl.com.br'
---update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Prorival Boaventura' and id = 56 and id_empresa = 7
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'HECTORY FERNANDO BERNNARDINI' and id = 106 and id_empresa = 1
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 18 and id_empresa = 1 and id_usuario = 32
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 74 and id_empresa = 1 and id_usuario = 106
 --update usuario set email = 'lidyal@valadaresdiesel.com.br' where nome_usuario = 'Lidya Lopes' 

@@ -124,6 +124,7 @@
 	insert into tbMsgRetornoNFe values(299	, 'Rejeição: XML da área de cabeçalho com codificação diferente de UTF-8	 ' )
 	insert into tbMsgRetornoNFe values(301	, 'Uso Denegado : Irregularidade fiscal do emitente	 ' )
 	insert into tbMsgRetornoNFe values(302	, 'Uso Denegado : Irregularidade fiscal do destinatário	 ' )
+	insert into tbMsgRetornoNFe values(303	, 'Uso Denegado: Destinatario nao habilitado a operar na UF' )
 	insert into tbMsgRetornoNFe values(305	, 'Rejeição: Destinatario bloqueado na UF  ' )
 	insert into tbMsgRetornoNFe values(306	, 'Rejeição: IE do destinatario não está ativa na UF' )
 	insert into tbMsgRetornoNFe values(321	, 'Rejeição: NF-e de devolução não possui conhecimento fiscal referenciado' )
@@ -335,6 +336,7 @@
 	insert into tbMsgRetornoNFe values(806 , 'Rejeição: Operação com ICMS-ST sem informação do CEST.')
 	insert into tbMsgRetornoNFe values(807 , 'Rejeição: NFC-e com grupo de ICMS para a UF do destinatário')
 	insert into tbMsgRetornoNFe values(868 , 'Rejeicao: Grupos Transportador, Veiculo Transporte e Reboque nao devem ser informados')
+	insert into tbMsgRetornoNFe values(882 , 'Rejeicao: GTIN (cEAN) com prefixo invalido - [nItem: 1]')
 	insert into tbMsgRetornoNFe values(999,  'Rejeição: Erro não catalogado (informar a mensagem de erro capturado no tratamento da exceção)' )
 	GO	
 IF EXISTS (SELECT 1 FROM sysobjects WHERE id = object_id('whPesquisarMsgRetornoNFe'))
@@ -368,7 +370,7 @@ AND	@CodigoRetorno in (103, 104, 105,106,107,108,109,110,111,112,114,135,136,151
 					   246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,
 					   261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,
 					   276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,
-					   291,292,293,294,295,296,297,298,299,301,302,305,306,321,326,327,328,
+					   291,292,293,294,295,296,297,298,299,301,302,303,305,306,321,326,327,328,
 					   330,347,352, 355,356,362,387,388,401,402,403,404,405,406,407,
 					   409,410,411,450,451,471,478,489,490,491,492,493,494,501,503,
 					   504,505,506,507,508,509,510,511,512,513,514,515,516,
@@ -381,7 +383,7 @@ AND	@CodigoRetorno in (103, 104, 105,106,107,108,109,110,111,112,114,135,136,151
 					   628,629,630,635,656,660,661,662,663,678,679,680,681,682,683,
 					   684,685,686,687,688,689,690,693,694, 695,697,698,703,710,711,
 					   713,719,720,721,722,723,724,726,727,728,731,732,733,745,761,
-					   768,771,772,773,777,778,784,790,791,793,794,798,799,800,805,806,807,868,999)	
+					   768,771,772,773,777,778,784,790,791,793,794,798,799,800,805,806,807,868,882,999)	
 GO
 GRANT EXECUTE ON dbo.whPesquisarMsgRetornoNFe TO SQLUsers
 GO

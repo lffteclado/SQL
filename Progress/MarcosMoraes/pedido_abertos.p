@@ -1,0 +1,143 @@
+OUTPUT TO "c:\temp\pedidos_abertos.txt".
+def var i as int.
+FOR EACH PED-VENDA where PED-VENDA.nr-pedido = 690942
+                     OR PED-VENDA.nr-pedido = 690863 
+			OR PED-VENDA.nr-pedido = 691032
+			OR PED-VENDA.nr-pedido = 690937
+			OR PED-VENDA.nr-pedido = 691048
+			OR PED-VENDA.nr-pedido = 691040
+			OR PED-VENDA.nr-pedido = 691015
+			OR PED-VENDA.nr-pedido = 691030
+			OR PED-VENDA.nr-pedido = 690949
+			OR PED-VENDA.nr-pedido = 690935
+			OR PED-VENDA.nr-pedido = 691011
+			OR PED-VENDA.nr-pedido = 691033
+			OR PED-VENDA.nr-pedido = 690910
+			OR PED-VENDA.nr-pedido = 690911
+			OR PED-VENDA.nr-pedido = 690895
+			OR PED-VENDA.nr-pedido = 690930
+			OR PED-VENDA.nr-pedido = 690945
+			OR PED-VENDA.nr-pedido = 691044
+			OR PED-VENDA.nr-pedido = 691043
+			OR PED-VENDA.nr-pedido = 690908
+			OR PED-VENDA.nr-pedido = 690908
+			OR PED-VENDA.nr-pedido = 690567
+			OR PED-VENDA.nr-pedido = 691047
+			OR PED-VENDA.nr-pedido = 690944
+			OR PED-VENDA.nr-pedido = 690568
+			OR PED-VENDA.nr-pedido = 690909
+			OR PED-VENDA.nr-pedido = 691039
+			OR PED-VENDA.nr-pedido = 691052
+			OR PED-VENDA.nr-pedido = 690788
+			OR PED-VENDA.nr-pedido = 690933
+			OR PED-VENDA.nr-pedido = 691046
+			OR PED-VENDA.nr-pedido = 691054
+			OR PED-VENDA.nr-pedido = 690962
+			OR PED-VENDA.nr-pedido = 691000
+			OR PED-VENDA.nr-pedido = 691034
+			OR PED-VENDA.nr-pedido = 691036
+			OR PED-VENDA.nr-pedido = 691037
+			OR PED-VENDA.nr-pedido = 691035
+			OR PED-VENDA.nr-pedido = 691049
+			OR PED-VENDA.nr-pedido = 691027
+			OR PED-VENDA.nr-pedido = 691021
+			OR PED-VENDA.nr-pedido = 690831
+			OR PED-VENDA.nr-pedido = 690824
+			OR PED-VENDA.nr-pedido = 690981
+			OR PED-VENDA.nr-pedido = 690906
+			OR PED-VENDA.nr-pedido = 690876
+			OR PED-VENDA.nr-pedido = 690869
+			OR PED-VENDA.nr-pedido = 690995
+			OR PED-VENDA.nr-pedido = 690996
+			OR PED-VENDA.nr-pedido = 691025
+			OR PED-VENDA.nr-pedido = 691020
+			OR PED-VENDA.nr-pedido = 690975
+			OR PED-VENDA.nr-pedido = 690979
+			OR PED-VENDA.nr-pedido = 690973
+			OR PED-VENDA.nr-pedido = 690977
+			OR PED-VENDA.nr-pedido = 690976
+			OR PED-VENDA.nr-pedido = 690978
+			OR PED-VENDA.nr-pedido = 690967
+			OR PED-VENDA.nr-pedido = 691026
+			OR PED-VENDA.nr-pedido = 690890
+			OR PED-VENDA.nr-pedido = 690892
+			OR PED-VENDA.nr-pedido = 690891
+			OR PED-VENDA.nr-pedido = 690893
+			OR PED-VENDA.nr-pedido = 690690
+			OR PED-VENDA.nr-pedido = 690951
+			OR PED-VENDA.nr-pedido = 691008
+			OR PED-VENDA.nr-pedido = 691004
+			OR PED-VENDA.nr-pedido = 690959
+			OR PED-VENDA.nr-pedido = 690770
+			OR PED-VENDA.nr-pedido = 690839
+			OR PED-VENDA.nr-pedido = 690924
+			OR PED-VENDA.nr-pedido = 690830
+			OR PED-VENDA.nr-pedido = 690805
+			OR PED-VENDA.nr-pedido = 690882
+			OR PED-VENDA.nr-pedido = 690804
+			OR PED-VENDA.nr-pedido = 691012
+			OR PED-VENDA.nr-pedido = 691023
+			OR PED-VENDA.nr-pedido = 690828
+			OR PED-VENDA.nr-pedido = 691022
+			OR PED-VENDA.nr-pedido = 690829
+			OR PED-VENDA.nr-pedido = 690827
+			OR PED-VENDA.nr-pedido = 690854
+			OR PED-VENDA.nr-pedido = 690861
+			OR PED-VENDA.nr-pedido = 690862
+			OR PED-VENDA.nr-pedido = 690860
+			OR PED-VENDA.nr-pedido = 690953
+			OR PED-VENDA.nr-pedido = 691010
+			OR PED-VENDA.nr-pedido = 691009
+			OR PED-VENDA.nr-pedido = 690997
+			OR PED-VENDA.nr-pedido = 690955
+			OR PED-VENDA.nr-pedido = 691024
+			OR PED-VENDA.nr-pedido = 691006
+			OR PED-VENDA.nr-pedido = 690992
+			OR PED-VENDA.nr-pedido = 690991
+			OR PED-VENDA.nr-pedido = 690980
+			OR PED-VENDA.nr-pedido = 691029
+			OR PED-VENDA.nr-pedido = 690873
+			OR PED-VENDA.nr-pedido = 690755
+			OR PED-VENDA.nr-pedido = 690826
+			OR PED-VENDA.nr-pedido = 691007
+			OR PED-VENDA.nr-pedido = 690768
+			OR PED-VENDA.nr-pedido = 690988
+			OR PED-VENDA.nr-pedido = 690516
+			OR PED-VENDA.nr-pedido = 690515
+			OR PED-VENDA.nr-pedido = 690874
+			OR PED-VENDA.nr-pedido = 690360
+			OR PED-VENDA.nr-pedido = 690946
+			OR PED-VENDA.nr-pedido = 691028
+			OR PED-VENDA.nr-pedido = 690756
+			OR PED-VENDA.nr-pedido = 690754
+			OR PED-VENDA.nr-pedido = 690752
+			OR PED-VENDA.nr-pedido = 690880
+			OR PED-VENDA.nr-pedido = 691017
+			OR PED-VENDA.nr-pedido = 690886
+			OR PED-VENDA.nr-pedido = 690885
+			OR PED-VENDA.nr-pedido = 690917
+			OR PED-VENDA.nr-pedido = 690952
+			OR PED-VENDA.nr-pedido = 690918
+			OR PED-VENDA.nr-pedido = 690994
+			OR PED-VENDA.nr-pedido = 691055
+			OR PED-VENDA.nr-pedido = 691050
+			OR PED-VENDA.nr-pedido = 690820
+			OR PED-VENDA.nr-pedido = 690941
+			OR PED-VENDA.nr-pedido = 691041
+			OR PED-VENDA.nr-pedido = 691031
+			OR PED-VENDA.nr-pedido = 690984
+			OR PED-VENDA.nr-pedido = 691038
+			OR PED-VENDA.nr-pedido = 690633:
+
+/* ASSIGN ped-venda.cod-estabel = "3".          */
+ASSIGN i = i + 1.
+        disp i
+        ped-venda.cod-estabel
+         ped-venda.nome-abrev
+         ped-venda.nr-pedido
+         string(ped-venda.nr-pedcli)
+         string(ped-venda.cod-sit-ped).
+
+  
+END.
+output close.

@@ -1,12 +1,12 @@
 --Verificar Status OS, NF emitidas e outras informa��es refrentes a OS.
-select * from tbOROSCIT where NumeroOROS = 148564 and CodigoCIT = 'CNVI' and CodigoLocal = 0
+select * from tbOROSCIT where NumeroOROS = 165613 and CodigoCIT = 'C1N' and CodigoLocal = 0
 union all
 select * from tbOROSCIT where NumeroOROS = 185335 
 
 --update tbOROSCIT set DataEmissaoNotaFiscalOS = DataEncerramentoOSCIT where NumeroOROS = 11429 and CodigoCIT = 'I5UE' and CodigoLocal = 1
 
-select * from tbPedidoOS where CodigoOrdemServicoPedidoOS = 148564
-select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (644650) and SequenciaPedido in (1,2) and CentroCusto = 21330
+select * from tbPedidoOS where CodigoOrdemServicoPedidoOS = 165613
+select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (16359) and SequenciaPedido in (1,2) and CentroCusto = 21330
 select NumeroPedido,SequenciaPedido,EspecieNotaFiscalPed,DataEmissaoNotaFiscalPed,NumeroNotaFiscalPed from tbPedido where NumeroPedido in (517987) and SequenciaPedido = 1 and CentroCusto = 22330
 select * from tbDocumento where NumeroDocumento in (936910) and NumeroPedidoDocumento in(170302, 170303)
 
@@ -20,10 +20,10 @@ SELECT * FROM tbOS WHERE CodigoEmpresa = 930 and CodigoLocal = 0 and NumeroOROS 
 
 SELECT * FROM tbOROSCIT WHERE CodigoEmpresa = 2890 and CodigoLocal = 0 and NumeroOROS = 96073
 
---update tbOROSCIT set DataEmissaoNotaFiscalOS = '2018-05-02 16:15:00.000' WHERE CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 186395 and CodigoCIT = 'C1N'
+--update tbOROSCIT set DataEmissaoNotaFiscalOS = '2018-10-15 08:41:00.000' WHERE CodigoEmpresa = 3140 and CodigoLocal = 0 and NumeroOROS = 165613 and CodigoCIT = 'C1N'
 --update tbOROSCIT set DataEncerramentoOSCIT = '2018-05-02 16:15:00.000' WHERE CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 186395 and CodigoCIT = 'C1N'
 
---update tbOS set StatusOS = 'N' WHERE CodigoEmpresa = 930 and CodigoLocal = 0 and NumeroOROS = 304137
+--update tbOS set StatusOS = 'N' WHERE CodigoEmpresa = 3140 and CodigoLocal = 0 and NumeroOROS = 165607
 
 /* Liberar OS encerrada para transferencia entre itens
 
@@ -39,7 +39,7 @@ alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 
 alter table tbOROSCIT disable trigger tnu_DSPa_StatusOSCIT
 
-update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 2630 and CodigoLocal = 0 and NumeroOROS = 186443 and CodigoCIT = 'C1N'
+update tbOROSCIT set StatusOSCIT = 'N' where CodigoEmpresa = 3140 and CodigoLocal = 0 and NumeroOROS = 165613 and CodigoCIT = 'C1N'
 
 alter table tbOROSCIT enable trigger tnu_DSPa_StatusOSCIT
 

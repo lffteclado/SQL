@@ -1,12 +1,12 @@
 select ContaConcessao, * from tbLocal--25174000--1
 select * from tbMQConta where CodigoMQConta = '25174000'
 select * from tbEDIATProcesso where CodigoProcessoEDI = 753 and CodigoMQGrupo = 10--20.50
-update tbEDIATProcesso set HorarioProcessoAT = 14.56 where CodigoProcessoEDI = 753 and CodigoMQGrupo = 10
+--update tbEDIATProcesso set HorarioProcessoAT = 14.56 where CodigoProcessoEDI = 753 and CodigoMQGrupo = 10
 
 select ContaConcessao, * from tbLocal--21069000--1
 select * from tbMQConta where CodigoMQConta = '21069000'
-select * from tbEDIATProcesso where CodigoProcessoEDI = 753 and CodigoMQGrupo = 9--20.30
-update tbEDIATProcesso set HorarioProcessoAT = 15.06 where CodigoProcessoEDI = 753 and CodigoMQGrupo = 9
+select * from tbEDIATProcesso where CodigoProcessoEDI = 936 and CodigoMQGrupo = 9--20.30
+--update tbEDIATProcesso set HorarioProcessoAT = 0.30 where CodigoProcessoEDI = 936 and CodigoMQGrupo = 9 0.30
 
 
 select * from tbParametroDIMS

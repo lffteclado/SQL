@@ -3,14 +3,15 @@ SELECT DISTINCT(Chassi),
 		ModeloVeiculoOS,
 		Cliente,
 		NumeroOS
-FROM tmpAnaliticoRelOut2017 ana
+FROM tmpAnaliticoRel2016_2017 ana
 LEFT JOIN tbVeiculoOS veic
 ON ana.Chassi collate Latin1_General_CS_AS = veic.ChassiVeiculoOS
 LEFT JOIN tbCategoriaVeiculoOS cat
 ON veic.CodigoCategoriaVeiculoOS = cat.CodigoCategoriaVeiculoOS
 LEFT JOIN tbOROSCIT cit
 ON ana.NumeroOS = cit.NumeroOROS
-where substring(cit.CodigoCIT,1,1) = 'C' and Chassi not in (SELECT distinct Chassi from tmpAnaliticoRelJun2018)
+where substring(cit.CodigoCIT,1,1) = 'I' and Chassi not in (SELECT distinct Chassi from tmpAnaliticoRel2018)
+--where substring(cit.CodigoCIT,1,1) in ('C','I') and Chassi not in (SELECT distinct Chassi from tmpAnaliticoRel2018)
 
 
 

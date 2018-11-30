@@ -34,7 +34,7 @@ SELECT distinct Chassi,
 	   END AS Periodo,
 	   CONVERT(VARCHAR,DataAbertura,3) AS 'Data Abertura',
 	   CONVERT(VARCHAR,DataEncerramento,3) AS 'Data Encerramento'
- FROM tmpAnaliticoRelOut2017 ana
+ FROM tmpAnaliticoRel2016_2017 ana
  INNER JOIN tbVeiculoOS veic
  ON ana.Chassi collate Latin1_General_CS_AS = veic.ChassiVeiculoOS
  INNER JOIN tbCategoriaVeiculoOS cat
