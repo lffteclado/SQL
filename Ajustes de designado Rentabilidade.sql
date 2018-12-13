@@ -2,18 +2,24 @@ select * from usuario where nome_usuario like '%Lenildo%'
 select * from usuario where dataCadastroSenha < '2017-01-01 00:00:00.000'
 select * from empresa
 select * from tipo_usuario
-select * from Designados_por_empresa where id_empresa = 1 and id_usuario = 101 and id_tipo_usuario
+select * from Designados_por_empresa where id_empresa = 3 and id_usuario = 101 and id_tipo_usuario
 select * from Designados_por_empresa where id_empresa = 5 and id_usuario = 104 and id_tipo_usuario = 1
 select * from Designados_por_empresa order by id desc
 select * from modelo_tipo
 select * from modelo_seguimento
 
-select * from usuario where nome_usuario = 'Hectory'
-union all
-select * from usuario where nome_usuario like '%Hectory%'
+--delete from Designados_por_empresa where id = 40
 
-select * from usuario where id_tipo_usuario = 6
-select * from usuario where id = 21 -- Renata Lucas 
+select * from usuario where nome_usuario = 'Edilene Neves' --51	3
+union all
+select * from usuario where nome_usuario like 'Izaura Teixeira' -- 108	3
+
+select * from usuario where dataCadastroSenha < '20181001'
+
+select id, * from usuario where id_empresa = 1
+
+select * from usuario where id_tipo_usuario = 2 and id_empresa = 1
+select * from usuario where id = 106 -- Renata Lucas 
 select * from usuario where id = 23 -- Natalia Linhares
 
 union all
@@ -31,12 +37,13 @@ select * from vendedor WHERE vendedor = 'CLAUDIA APARECIDA'
 
 --insert into vendedor (vendedor) values ('CLAUDIA APARECIDA')
 
---delete from usuario where id = 110
-
-
+--delete from usuario where id = 110 
 
 --update usuario set email = 'luisfelipe@grupovdl.com.br'
---update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'HECTORY FERNANDO BERNNARDINI' and id = 106 and id_empresa = 1
+--update usuario set email = 'natalia.dvn@cardiesel.com.br'
+--update usuario set email = 'suportedti@cardiesel.com.br'
+--update usuario set email = 'vitor.vieira@grupovdl.com.br'
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Kássia Mara' and id = 38 and id_empresa = 4
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 18 and id_empresa = 1 and id_usuario = 32
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 74 and id_empresa = 1 and id_usuario = 106
 --update usuario set email = 'lidyal@valadaresdiesel.com.br' where nome_usuario = 'Lidya Lopes' 
@@ -44,7 +51,7 @@ select * from vendedor WHERE vendedor = 'CLAUDIA APARECIDA'
 --update usuario set id_tipo_usuario = 1 where nome_usuario = 'HECTORY FERNANDO BERNNARDINI' and id = 106
 --Apos criar o usuario colocar essas informações na tabela Designados_por_empresa
 --insert into Designados_por_empresa (id_empresa, id_usuario, id_tipo_usuario) values (1, 106, 2)
-
+--update usuario set arquivoassinatura = 'iteixeira.jpg' where id = 51 and id_empresa = 3 and nome_usuario = 'Edilene Neves'
 select nome_usuario, id_tipo_usuario, * from usuario where nome_usuario like 'Antonio Lima' --id 84 id_tipo_usuario 5 id_empresa 12
 union all
 select nome_usuario, id_tipo_usuario from usuario where nome_usuario = 'FERNANDO CYRINO' --id 62  id_tipo_usuario  4 id_empresa 5
@@ -72,7 +79,7 @@ select nome_usuario, id_tipo_usuario from usuario where nome_usuario = 'HECTORY 
 6B84F40F8F956A76DA0D4C973D56AFDC
 
 --update usuario set senha = 'F169D2F349791496310BDD7676180A08' where id_empresa = 1 and id = 102 and nome_usuario = 'Luis Felipe Ferreira'
---update usuario set senha = 'USERDESAT', login = 'USERDESAT' where id_empresa = 1 and id = 32 and nome_usuario = 'Carlos Alberto'
+--update usuario set senha = 'USERDESAT', login = 'USERDESAT' where id_empresa =  and id = 82 and nome_usuario = 'Leticia Teixeira Domingos'
 
 --SELECT statusTransferencia, * FROM base
 --inner join usuario
@@ -103,33 +110,55 @@ select * from base order by id desc
 /*
 select * from venda_mes order by id desc
 
-insert into venda_mes (venda_mes) values ('janeiro-18')
-insert into venda_mes (venda_mes) values ('fevereiro-18')
-insert into venda_mes (venda_mes) values ('março-18')
-insert into venda_mes (venda_mes) values ('abril-18')
-insert into venda_mes (venda_mes) values ('maio-18')
-insert into venda_mes (venda_mes) values ('junho-18')
-insert into venda_mes (venda_mes) values ('julho-18')
-insert into venda_mes (venda_mes) values ('agosto-18')
-insert into venda_mes (venda_mes) values ('setembro-18')
-insert into venda_mes (venda_mes) values ('outubro-18')
-insert into venda_mes (venda_mes) values ('novembro-18')
-insert into venda_mes (venda_mes) values ('dezembro-18')
+insert into venda_mes (venda_mes) values ('janeiro-19')
+GO
+insert into venda_mes (venda_mes) values ('fevereiro-19')
+GO
+insert into venda_mes (venda_mes) values ('março-19')
+GO
+insert into venda_mes (venda_mes) values ('abril-19')
+GO
+insert into venda_mes (venda_mes) values ('maio-19')
+GO
+insert into venda_mes (venda_mes) values ('junho-19')
+GO
+insert into venda_mes (venda_mes) values ('julho-19')
+GO
+insert into venda_mes (venda_mes) values ('agosto-19')
+GO
+insert into venda_mes (venda_mes) values ('setembro-19')
+GO
+insert into venda_mes (venda_mes) values ('outubro-19')
+GO
+insert into venda_mes (venda_mes) values ('novembro-19')
+GO
+insert into venda_mes (venda_mes) values ('dezembro-19')
 
 select * from potica_mes order by id desc
 
-insert into potica_mes (politica_mes) values ('janeiro-18')
-insert into potica_mes (politica_mes) values ('fevereiro-18')
-insert into potica_mes (politica_mes) values ('março-18')
-insert into potica_mes (politica_mes) values ('abril-18')
-insert into potica_mes (politica_mes) values ('maio-18')
-insert into potica_mes (politica_mes) values ('junho-18')
-insert into potica_mes (politica_mes) values ('julho-18')
-insert into potica_mes (politica_mes) values ('agosto-18')
-insert into potica_mes (politica_mes) values ('setembro-18')
-insert into potica_mes (politica_mes) values ('outubro-18')
-insert into potica_mes (politica_mes) values ('novembro-18')
-insert into potica_mes (politica_mes) values ('dezembro-18')
+insert into potica_mes (politica_mes) values ('janeiro-19')
+GO
+insert into potica_mes (politica_mes) values ('fevereiro-19')
+GO
+insert into potica_mes (politica_mes) values ('março-19')
+GO
+insert into potica_mes (politica_mes) values ('abril-19')
+GO
+insert into potica_mes (politica_mes) values ('maio-19')
+GO
+insert into potica_mes (politica_mes) values ('junho-19')
+GO
+insert into potica_mes (politica_mes) values ('julho-19')
+GO
+insert into potica_mes (politica_mes) values ('agosto-19')
+GO
+insert into potica_mes (politica_mes) values ('setembro-19')
+GO
+insert into potica_mes (politica_mes) values ('outubro-19')
+GO
+insert into potica_mes (politica_mes) values ('novembro-19')
+GO
+insert into potica_mes (politica_mes) values ('dezembro-19')
 
 select * from Designados_por_empresa where id_empresa = 1
 
@@ -144,3 +173,28 @@ select assinaturaGerencia, assinaturaGerenciaNova, * from base where assinaturaG
 --update base set assinaturaGerenciaNova = 'cristianot.jpg' where assinaturaGerenciaNova = 'CristianoT.png'
 
 select id, nome_usuario, email, cargo from usuario where arquivoassinatura = 'cristianot.jpg'
+
+
+select * from ano_modelo
+/*
+insert into ano_modelo (ano) values ('2020/2021')
+GO
+insert into ano_modelo (ano) values ('2021/2021')
+GO
+insert into ano_modelo (ano) values ('2021/2022')
+GO
+insert into ano_modelo (ano) values ('2022/2022')
+GO
+insert into ano_modelo (ano) values ('2022/2023')
+GO
+insert into ano_modelo (ano) values ('2023/2023')
+GO
+insert into ano_modelo (ano) values ('2023/2024')
+GO
+insert into ano_modelo (ano) values ('2024/2024')
+GO
+insert into ano_modelo (ano) values ('2024/2025')
+GO
+insert into ano_modelo (ano) values ('2025/2025')
+
+*/

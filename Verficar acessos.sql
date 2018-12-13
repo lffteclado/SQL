@@ -3,9 +3,9 @@ DECLARE @Formulario       varchar(40)
 DECLARE @CodigoEmpresa    numeric(4)
 --- Informar a Empresa e o Form
 SELECT @CodigoEmpresa = CodigoEmpresa from tbEmpresa
-SELECT @CodigoFormulario    = 'OS149'
+SELECT @CodigoFormulario    = 'AF036'
 SELECT @Formulario = CodigoFormulario FROM tbFormulariosSistema WHERE CodigoIdentificadorFormulario = @CodigoFormulario
-select * from tbUsuarios where CodigoUsuario not in (SELECT CodigoUsuario from tbPermissaoAcesso where CodigoFormulario = @Formulario) and UsuarioAtivo = 'V'
+select CodigoUsuario, NomeUsuario, UsuarioAtivo from tbUsuarios where CodigoUsuario not in (SELECT CodigoUsuario from tbPermissaoAcesso where CodigoFormulario = @Formulario) and UsuarioAtivo = 'V'
 /* fim verificar acesso */
 
 select * from tbUsuarioFT
