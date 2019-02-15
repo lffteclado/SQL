@@ -8,22 +8,22 @@ select * from Designados_por_empresa order by id desc
 select * from modelo_tipo
 select * from modelo_seguimento
 
---delete from Designados_por_empresa where id = 40
+--delete from Designados_por_empresa where id = 35
 
-select * from usuario where nome_usuario = 'Edilene Neves' --51	3
+select * from usuario where nome_usuario = 'Jonathan Oliveira Freire' --51	3
 union all
-select * from usuario where nome_usuario like 'Izaura Teixeira' -- 108	3
+select * from usuario where nome_usuario like '%Antonio%' -- 108	3
 
 select * from usuario where dataCadastroSenha < '20181001'
 
-select id, * from usuario where id_empresa = 1
+select * from usuario where id_empresa = 5
 
 select * from usuario where id_tipo_usuario = 2 and id_empresa = 1
-select * from usuario where id = 106 -- Renata Lucas 
+select * from usuario where id = 45 -- Renata Lucas 
 select * from usuario where id = 23 -- Natalia Linhares
 
 union all
-select * from usuario where id = 47
+select * from usuario where id_empresa = 11
 union all
 select * from usuario where id = 98
 union all
@@ -33,9 +33,9 @@ select * from usuario where id = 101
 union all
 select * from usuario where id = 106
 
-select * from vendedor WHERE vendedor = 'CLAUDIA APARECIDA'
+select * from vendedor WHERE vendedor like 'LIDYA LOPES'
 
---insert into vendedor (vendedor) values ('CLAUDIA APARECIDA')
+--insert into vendedor (vendedor) values ('MARIO L. SALAZAR')
 
 --delete from usuario where id = 110 
 
@@ -43,7 +43,9 @@ select * from vendedor WHERE vendedor = 'CLAUDIA APARECIDA'
 --update usuario set email = 'natalia.dvn@cardiesel.com.br'
 --update usuario set email = 'suportedti@cardiesel.com.br'
 --update usuario set email = 'vitor.vieira@grupovdl.com.br'
---update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Kássia Mara' and id = 38 and id_empresa = 4
+---2515B47E8BFDB89206C4CE4B4B2A5037-
+
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Antonio Lima' and id = 28 and id_empresa = 5
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 18 and id_empresa = 1 and id_usuario = 32
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 74 and id_empresa = 1 and id_usuario = 106
 --update usuario set email = 'lidyal@valadaresdiesel.com.br' where nome_usuario = 'Lidya Lopes' 
@@ -198,3 +200,7 @@ GO
 insert into ano_modelo (ano) values ('2025/2025')
 
 */
+
+select * from Banco
+
+--insert into banco (nome_Banco) values ('CONSORCIO - BAMAQ')

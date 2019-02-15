@@ -25,3 +25,7 @@ select tbCli.CodigoCliFor,
 from tbClienteComplementar tbCom
 inner join tbCliFor tbCli on tbCom.CodigoCliFor = tbCli.CodigoCliFor
 where (tbCli.ClienteAtivo = 'V' or tbCli.FornecedorAtivo = 'V') and tbCom.CodigoPlanoPagamento is not null
+
+
+/**/
+select CodigoPlanoPagamento, DescricaoPlanoPagamento, * from tbPlanoPagamento where BloqueadoPlanoPagto = 'F'

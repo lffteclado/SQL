@@ -8,18 +8,18 @@ select * from tbFormulariosSistema where CodigoSistema = '' and DescricaoFormula
 
 frmosVeicOficina
 
-select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'FT012' -- frmcvCancelNFiscal
+select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'CG115' -- frmcvCancelNFiscal
 
 select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'OS009' -- frmftCancelNFiscal
 
 select * from tbFormulariosSistema where CodigoFormulario = 'frmosListaOROS'
 
 
-select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHAFN31' and CodigoFormulario like '%frmcgHistoricoLancto%'
+select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario like '%frmtgNaturezaOperacao%'
 
 select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Seleção%'
 
---DELETE tbPermissaoAcesso where CodigoUsuario = 'IBARBOSA' and CodigoFormulario = 'frmftCargaEPCConsulta'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario = 'frmtgNaturezaOperacao'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'CMORAES' and CodigoFormulario = 'frmcgParametros'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpConsumoServico'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpDocumentosPrevistos'

@@ -4,8 +4,8 @@ DECLARE @Formulario       varchar(40)
 DECLARE @CodigoEmpresa    numeric(4)
 
 --- Informar a Empresa e o Form
-SELECT @CodigoEmpresa = 2630
-SELECT @CodigoFormulario    = 'FT009'
+SELECT @CodigoEmpresa = 930
+SELECT @CodigoFormulario    = 'AF036'
 ---
 
 SELECT @Formulario = CodigoFormulario
@@ -30,6 +30,5 @@ WHERE
 CodigoFormulario = @Formulario AND
 CodigoEmpresaDefaultUsuario = @CodigoEmpresa
 GROUP BY tbUsuarios.CodigoUsuario
-
 
 

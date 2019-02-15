@@ -1,0 +1,26 @@
+
+Descri‡Æo--------------------------------              UPC------------------------------------------------
+
+Envio XML da NF-e Layout 2.00             axsep017     epc/vdl_epc_axsep017.r
+BO Efetiva‡Æo Pedido                      bodi159c     Upc\upc-bodi159com-aux.r
+BO de Efetiva‡Æo do C lculo da Nota       bodi317e     Upc\upc-bodi317ef-aux.r
+BO de C lculo de Impostos Brasil - FT     bodi317i     Upc\upc-bodi317im1br-aux.r
+BO de Processos para C lculo de Nota      bodi317p     Upc\upc-bodi317pr-aux.r
+BO p/ setar Defaults p/ Cal de NF         bodi317s     Upc\upc-bodi317sd-aux.r
+Manuten‡Æo Fornecedores                   cd0401       epc/vdl_epc_cd0401.p
+Atualiza‡Æo Obriga‡äes Fiscais            ft0604rp     upc\ft0604-upc.r
+Demonstrativo Cont bil                    ft0708a      upc\upc-ft0708a.r
+Consulta Notas Fiscais                    ft0904       upc\upc-ft0904-aux.r
+Consulta contabiliza‡Æo Nota Fiscal       ft0904o      UPC\ft0904o-upc.r
+C lculo de Notas Fiscais                  ft4003       Upc\upc-ft4003-aux.r
+Implanta‡Æo Pedidos                       pd4000       epc\vdl_epc_pd4000.p
+Manuten‡Æo de Documentos                  re1001       epc/vdl_epc_re1001.p
+
+
+
+
+output to "c:\temp\upc_siderurgica.txt".
+for each prog_dtsul where nom_prog_upc <> "":
+        disp des_prog_dtsul
+            string(cod_prog_dtsul)
+             nom_prog_upc with width 300.
