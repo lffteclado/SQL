@@ -1,0 +1,56 @@
+ADD TABLE "es_de_para_edifact"
+  AREA "Schema Area"
+  DUMP-NAME "es_de_para_edifact"
+
+ADD FIELD "tp_de_para" OF "es_de_para_edifact" AS character 
+  FORMAT "x(20)"
+  INITIAL ""
+  LABEL "Tipo De x Para"
+  POSITION 2
+  MAX-WIDTH 40
+  COLUMN-LABEL "Tipo De x Para"
+  ORDER 10
+
+ADD FIELD "desc_de" OF "es_de_para_edifact" AS character 
+  FORMAT "x(16)"
+  INITIAL ""
+  LABEL "De"
+  POSITION 3
+  MAX-WIDTH 32
+  COLUMN-LABEL "De"
+  ORDER 20
+
+ADD FIELD "desc_para" OF "es_de_para_edifact" AS character 
+  FORMAT "x(16)"
+  INITIAL ""
+  LABEL "Para"
+  POSITION 4
+  MAX-WIDTH 32
+  COLUMN-LABEL "Para"
+  ORDER 30
+
+ADD FIELD "cod_empresa" OF "es_de_para_edifact" AS character 
+  DESCRIPTION "Codigo da empresa de origem do cliente"
+  FORMAT "x(5)"
+  INITIAL ""
+  LABEL "Empresa Origem"
+  POSITION 5
+  MAX-WIDTH 10
+  COLUMN-LABEL "Empresa Origem"
+  HELP "Informe a empresa de origem do cliente"
+  ORDER 40
+  MANDATORY
+
+ADD INDEX "idx-unico" ON "es_de_para_edifact" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "tp_de_para" ASCENDING 
+  INDEX-FIELD "cod_empresa" ASCENDING 
+  INDEX-FIELD "desc_de" ASCENDING 
+
+.
+PSC
+cpstream=iso8859-1
+.
+0000001159

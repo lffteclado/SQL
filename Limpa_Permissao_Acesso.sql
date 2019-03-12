@@ -1,14 +1,14 @@
 --- Limpar tabela quando via CS n�o consegue retirar ou dar permissao
 
-select * from  tbPermissaoAcesso where CodigoUsuario = 'CMORAES' and CodigoFormulario like 'frmafCIAPModC'
+select * from  tbPermissaoAcesso where CodigoUsuario = '' and CodigoFormulario like 'frmafCIAPModC'
 UNION ALL
-select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHADM47' and CodigoFormulario like 'frmftCancelNFiscal'
+select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHGADM77' and CodigoFormulario like 'frmftCancelNFiscal'
 
 select * from tbFormulariosSistema where CodigoSistema = '' and DescricaoFormulario like '%Capt%'
 
 frmosVeicOficina
 
-select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'CG115' -- frmcvCancelNFiscal
+select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'FT096' -- frmcvCancelNFiscal
 
 select * from tbFormulariosSistema where CodigoIdentificadorFormulario = 'OS009' -- frmftCancelNFiscal
 
@@ -19,7 +19,7 @@ select * from  tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoForm
 
 select * from tbFormulariosSistema where CodigoSistema = 'CE' and DescricaoFormulario like '%Seleção%'
 
---DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHLFI23' and CodigoFormulario = 'frmtgNaturezaOperacao'
+--DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHGADM77' and CodigoFormulario = 'frmftPlanoPagamento'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'CMORAES' and CodigoFormulario = 'frmcgParametros'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpConsumoServico'
 --DELETE tbPermissaoAcesso where CodigoUsuario = 'WBHADM46' and CodigoFormulario = 'frmcpDocumentosPrevistos'

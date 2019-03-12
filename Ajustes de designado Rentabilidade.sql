@@ -10,13 +10,13 @@ select * from modelo_seguimento
 
 --delete from Designados_por_empresa where id = 35
 
-select * from usuario where nome_usuario = 'Jonathan Oliveira Freire' --51	3
+select * from update usuario set cargo = 'Supervisora de Vendas' where nome_usuario = 'Flavia Sales' --51	3
 union all
 select * from usuario where nome_usuario like '%Antonio%' -- 108	3
 
 select * from usuario where dataCadastroSenha < '20181001'
 
-select * from usuario where id_empresa = 5
+select * from usuario where id_empresa = 2
 
 select * from usuario where id_tipo_usuario = 2 and id_empresa = 1
 select * from usuario where id = 45 -- Renata Lucas 
@@ -45,7 +45,7 @@ select * from vendedor WHERE vendedor like 'LIDYA LOPES'
 --update usuario set email = 'vitor.vieira@grupovdl.com.br'
 ---2515B47E8BFDB89206C4CE4B4B2A5037-
 
---update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Antonio Lima' and id = 28 and id_empresa = 5
+--update usuario set senha = 'F169D2F349791496310BDD7676180A08' where nome_usuario = 'Luis Felipe Ferreira' and id = 102 and id_empresa = 1
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 18 and id_empresa = 1 and id_usuario = 32
 --update Designados_por_empresa set id_tipo_usuario = 1 where id = 74 and id_empresa = 1 and id_usuario = 106
 --update usuario set email = 'lidyal@valadaresdiesel.com.br' where nome_usuario = 'Lidya Lopes' 
@@ -81,7 +81,7 @@ select nome_usuario, id_tipo_usuario from usuario where nome_usuario = 'HECTORY 
 6B84F40F8F956A76DA0D4C973D56AFDC
 
 --update usuario set senha = 'F169D2F349791496310BDD7676180A08' where id_empresa = 1 and id = 102 and nome_usuario = 'Luis Felipe Ferreira'
---update usuario set senha = 'USERDESAT', login = 'USERDESAT' where id_empresa =  and id = 82 and nome_usuario = 'Leticia Teixeira Domingos'
+--update usuario set senha = 'USERDESAT', login = 'USERDESAT' where id_empresa = 11  and id = 90 and nome_usuario = 'Juliana do Couto'
 
 --SELECT statusTransferencia, * FROM base
 --inner join usuario

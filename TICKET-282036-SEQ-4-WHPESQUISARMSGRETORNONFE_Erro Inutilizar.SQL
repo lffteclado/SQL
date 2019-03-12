@@ -124,6 +124,7 @@ IF NOT EXISTS (SELECT 1 FROM sysobjects WHERE id = object_id('tbMsgRetornoNFe'))
 	insert into tbMsgRetornoNFe values(299	, 'Rejeição: XML da área de cabeçalho com codificação diferente de UTF-8	 ' )
 	insert into tbMsgRetornoNFe values(301	, 'Uso Denegado : Irregularidade fiscal do emitente	 ' )
 	insert into tbMsgRetornoNFe values(302	, 'Uso Denegado : Irregularidade fiscal do destinatário	 ' )
+	insert into tbMsgRetornoNFe values(305	, 'Rejeicao: Destinatario bloqueado na UF	 ' )
 	insert into tbMsgRetornoNFe values(306	, 'Rejeição: IE do destinatario não está ativa na UF' )
 	insert into tbMsgRetornoNFe values(321	, 'Rejeição: NF-e de devolução não possui conhecimento fiscal referenciado' )
 	insert into tbMsgRetornoNFe values(326	, 'Rejeição: CPF do destinatário já autorizado para download')
@@ -365,7 +366,7 @@ AND	@CodigoRetorno in (103, 104, 105,106,107,108,109,110,111,112,114,135,136,151
 					   246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,
 					   261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,
 					   276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,
-					   291,292,293,294,295,296,297,298,299,301,302,306,321,326,327,328,
+					   291,292,293,294,295,296,297,298,299,301,302,305,306,321,326,327,328,
 					   330,347,352, 355,356,362,387,388,401,402,403,404,405,406,407,
 					   409,410,411,450,451,471,478,489,490,491,492,493,494,501,503,
 					   504,505,506,507,508,509,510,511,512,513,514,515,516,
