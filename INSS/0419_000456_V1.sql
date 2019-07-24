@@ -1,0 +1,32 @@
+/**
+* EXCLUSÃO INSS BANCO SASF_Pessoa (Sasc antigo).
+* Cooperado: CRM/RS 24729 - Andre Luis Rosenhaim Monte	 -- 26258
+* empresa: UNIMED PORTO ALEGRE	
+* CNPJ: 87096616000196	
+* Período: 05/2019 a 12/2019 
+* 
+*/
+
+SELECT * FROM AD_Recolhimento_INSS WHERE codsascjava IN (
+8123090,
+8123091,
+8123092,
+8123093,
+8123094,
+8123095,
+8123096,
+8123097
+) AND codidesis=9
+
+GO
+
+DELETE FROM AD_Recolhimento_INSS WHERE codsascjava IN (
+8123090,
+8123091,
+8123092,
+8123093,
+8123094,
+8123095,
+8123096,
+8123097
+) AND codidesis=9

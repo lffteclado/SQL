@@ -1,0 +1,31 @@
+/**
+* PROPOSITO: EXCLUSÃO INSS BANCO SASF_Pessoa (Sasc antigo).
+* COOPERADO:  Pedro Augusto Teixeira Jorge
+* COOPERATIVA: COPIMEF
+* EMPRESA: Prefeitura de BH	
+* CNPJ: 11728239000107	
+* PERÍODO: Junho/2019 a Dezembro/2019
+* 
+**/
+
+SELECT * FROM AD_Recolhimento_INSS WHERE codsascjava IN (
+8116296,
+8116297,
+8116298,
+8116299,
+8116300,
+8116301,
+8116302
+) AND codidesis=9
+
+GO
+
+DELETE FROM AD_Recolhimento_INSS WHERE codsascjava IN (
+8116296,
+8116297,
+8116298,
+8116299,
+8116300,
+8116301,
+8116302
+) AND codidesis=9

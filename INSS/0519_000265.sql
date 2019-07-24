@@ -1,0 +1,32 @@
+/**
+* PROPOSITO: EXCLUSÃO INSS BANCO SASF_Pessoa (Sasc antigo).
+* COOPERADO: Paulo Victor de Barros Lima Santos
+* EMPRESA: 	SESAU	
+* CNPJ: 12200259000165		
+* PERÍODO: MAIO/2019 a DEZ/2019 
+* 
+**/
+
+SELECT * FROM AD_Recolhimento_INSS WHERE codsascjava IN (
+8142933,
+8142934,
+8142935,
+8142936,
+8142937,
+8142938,
+8142939,
+8142940
+) AND codidesis=9
+
+GO
+
+DELETE FROM AD_Recolhimento_INSS WHERE codsascjava IN (
+8142933,
+8142934,
+8142935,
+8142936,
+8142937,
+8142938,
+8142939,
+8142940
+) AND codidesis=9

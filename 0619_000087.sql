@@ -1,0 +1,1 @@
+update rl_entidade_usuario set registro_ativo = 1, fk_entidade = null, sql_update = ISNULL(sql_update,'')+'#0619-000087' where fk_usuario = 10257 and fk_entidade = 43

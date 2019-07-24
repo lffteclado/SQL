@@ -1,0 +1,1 @@
+update tb_pagamento_fatura set data_pagamento = '2019-05-15', sql_update = ISNULL(sql_update,'')+'#0619-000147' where id = 90519
