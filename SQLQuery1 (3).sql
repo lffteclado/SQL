@@ -1,0 +1,1 @@
+select *from CB_Especialidade where DesEsp='Médico pediatra'
