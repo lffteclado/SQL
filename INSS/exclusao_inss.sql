@@ -1,7 +1,7 @@
 -- 1º Passo verificar se a declaração foi feita no sasc.
 
 select nome, numero_conselho, * from tb_cooperado
- where nome like '%Bruna Salgado Rabelo%' and numero_conselho = '66659'  --29330
+ where nome like '%Priscilla Aryele Nascimento Campos%' and numero_conselho = '70506'  --30369
 
 select sigla, * from tb_entidade where sigla like 'ONCOOP%' --7
 
