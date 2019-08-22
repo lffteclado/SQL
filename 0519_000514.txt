@@ -1,0 +1,74 @@
+#0519-000514
+
+wallaceinacio
+Adriana Costa
+
+adileiasilva
+
+dilzasouza
+
+cellenalvim 123
+
+Adriana Costa
+
+
+Entidade Usuario 11238
+
+enumDiaDaSemana = 1
+
+enumLiberarBloquear = 0
+
+data = 2019-07-30T00:00:00.000-0300
+
+
+hql.append("select diaSemana from DiasDaSemanaHorarioTrabalho diaSemana ");
+    hql.append("where :dataCorrente between diaSemana.horarioTrabalho.inicio  and diaSemana.horarioTrabalho.fim ");
+    hql.append("and diaSemana.horarioTrabalho in (select usuarioHorarioTrabalho.horarioTrabalho from UsuarioHorarioTrabalhoUsuario usuarioHorarioTrabalho where usuarioHorarioTrabalho.entidadeUsuario = :entidadeUsuario) ");
+    hql.append("and diaSemana.diaDaSemana = :diaDaSemana ");
+    hql.append("and horarioTrabalho.liberarBloquear = :liberarBloquear ");
+    hql.append("order by diaSemana.diaDaSemana");
+    Query q = getEntityManager().createQuery(hql.toString());
+    q.setParameter("dataCorrente", dataCorrente, TemporalType.DATE);
+    q.setParameter("entidadeUsuario", entidadeUsuario);
+    q.setParameter("diaDaSemana", enumDiaDaSemana);
+    q.setParameter("liberarBloquear", enumLiberarBloquear);
+
+
+Item de Menu*: Segurança >> Bloquear/Liberar Horário Trabalho Usuário 
+
+Função*: Liberar acesso de usuários a entidade 
+
+Descrição*: 
+MÓDULO SEGURANÇA: 
+
+Bloquear/Liberar Horário Trabalho Usuário 
+
+- Esse link deverá estar habilitado somente para usuário Fencom e Gestor. Criar um perfil de Gestor e atribui quais funcionalidades ele terá acesso.
+- Regras: Verificar horário de bloqueio e liberação ao logar. 
+1) Se o horário atual estiver dentro do horário liberado, liberar o acesso. OK
+2) Se o horário atual estiver fora do horário liberado, bloquear o acesso. OK
+3) Se o horário atual estiver dentro do horário bloqueado, bloquear o acesso. OK
+4) Se o horário atual estiver fora do horário bloqueado, liberar o acesso. OK
+5) Esse horário tem prioridade em cima do cadastro de horário de trabalho da entidade. Ex. Se a COOPANA trabalha de segunda a sexta de 8:00 às 18:00, e a usuária Ana tem liberação para trabalhar até às 19:00, é para liberar o acesso dessa usuária até às 19:00 e, pros demais (que não tiverem liberação), validar pelo horário da entidade. OK
+6) Este horário deverá ser validado independente de ser feriado. 
+7) OBS: Os horários a serem validados devem considerar o horário exato cadastro. Exemplo: Se cadastro de 8:00 às 18:00 o usuário poderá logar às 8:00. Hoje está permitindo somente após 08:01. OK
+
+Resultado Esperado*: O gestor poder liberar acesso do usuário da sua entidade. 
+
+Resultado Obtido (para erros*): Somente a fencom libera acesso 
+
+Regra específica de Cooperativa (informar caso exista): N/A 
+
+Banco onde foi testado (para erros*): PRODUÇÃO 
+
+Exemplo para simulação do cenário* (para erro e melhoria): conforme acima 
+
+Descrição do Cálculo (quanto existir*): N/A 
+
+Existe impacto em outra tela (Informar tela e impacto): ACESSO AO SISTEMA 
+
+Ação Paliativa (para erro - informar quando existir): N/A 
+
+Print da Tela* (ou de protótipo): N/A 
+
+Existe alguma outra tela/função de referência (para nova regra): N/A

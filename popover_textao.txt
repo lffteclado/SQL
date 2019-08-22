@@ -1,0 +1,11 @@
+<span class="help-button" data-rel="popoverHtml" data-trigger="hover" data-placement="bottom" title="" data-original-title="">
+                    ? </span>
+                              $(function () {
+                                  $("[data-rel='popoverHtml']").popover(
+                                      {
+                                        html: true,
+                                        content: '<b>CNPJ nas duas tags:</b> Envia o CNPJ da Entidade na Origem e no contratado Executante.<br /><br /><b>Origem CNPJ e contratado Código:</b> Envia o CNPJ da Entidade na Origem e o código prestador no contratado Executante.<br /><br /><b>Código Prestador nas duas tags:</b> Envia o código do prestador na Origem e no contratado executante.<br /><br /><b>CNPJ e Código Prestador Diferenciado:</b> Quando for guia de Consulta e SADT envia CNPJ nas Origem e no contratado executante, quando for guia de Internação envia o CNPJ da Entidade na Origem e o código prestador no contratado Executante'
+                                      }
+                                   );
+                              });
+                      
