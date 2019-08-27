@@ -15,7 +15,8 @@ select hospital.cnpj,
 		atendimento.hora_internacao as horaInternacao,
 		atendimento.hora_alta as horaAlta,
 		tipoGuia.descricao as tipo_guia,
-		especialidade.descricao
+		especialidade.descricao,
+		grauParticipacao.descricao
 from tb_atendimento as atendimento
       inner join tb_procedimento as procedimento on (atendimento.id = procedimento.fk_atendimento and procedimento.registro_ativo = 1)
       left join tb_tabela_tiss_tipo_guia_temp tipoGuia on procedimento.fk_tipo_guia = tipoGuia.id
@@ -35,4 +36,4 @@ from tb_atendimento as atendimento
       left join tb_tabela_tiss as grauParticipacao on (grauParticipacao.id = entidadeGrauParticipacao.fk_grau_participacao and grauParticipacao.registro_ativo = 1)
       left join tb_de_para_tuss_convenio deParaTussConvenio on (deParaTussConvenio.fk_tabela_tiss = entidadeGrauParticipacao.fk_grau_participacao and deParaTussConvenio.registro_ativo = 1 and deParaTussConvenio.fk_convenio = convenio.id)
 	  LEFT JOIN tb_pagamento_procedimento as pagamento on (pagamento.fk_procedimento = procedimento.id and pagamento.registro_ativo = 1)
-where atendimento.fk_entidade = 2 and atendimento.id = 19132459
+where atendimento.fk_entidade = 2 and atendimento.id = 19122283
