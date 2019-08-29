@@ -1,0 +1,1 @@
+select sql_update, * from tb_fatura where fk_entidade in (select id from tb_entidade where sigla like '%GINECOOP%') AND numero_fatura = 24305
