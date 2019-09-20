@@ -1,6 +1,38 @@
 select * from sysobjects where name like '%rl_integracao%'
 
-select * from rl_integracao_sus_valores where fk_entidade = 23 and registro_ativo = 1 order by id desc
+tb_linha_importacao_base
+
+select * from rl_integracao_sus_valores where fk_entidade = 23 order by id desc
+
+select top 10 * from tb_integracao_sus order by id desc --180
+
+select percentual_atual_importacao, * from tb_integracao_sus where id = 182 --verificar percentual de importação SUS 
+
+select top 10 * from tb_linha_importacao_base order by id desc
+
+select * from tb_linha_importacao_base where fk_importacao_base = 78985 order by id desc
+
+select top 1000 * from tb_importacao_base order by id desc where id = 78985
+
+select top 10 * from tb_importacao_base order by id desc --76585 --verificar Status Importação 0 - Não importado 1 - Importado 2-Em andamento
+
+
+select * from rl_integracao_sus_valores
+ where fk_entidade = 23
+       and registro_ativo = 1
+	   and competencia = '201907'
+	   --and gerou_atendimento = 1
+	   and data_inicio = '2019-08-23'
+	   and data_fim = '2019-08-23'
+	   and nome_hospital like '%MADRE TERESA%' order by id desc
+
+select sum(valor_aih) as valor from rl_integracao_sus_valores
+ where fk_entidade = 23
+       and registro_ativo = 1
+	   and competencia = '201907'
+	   --and gerou_atendimento is null
+	   and data_inicio = '2019-08-23'
+	   and data_fim = '2019-08-23'
 
 select sigla, * from tb_entidade where sigla like '%COOPANEST%'
 

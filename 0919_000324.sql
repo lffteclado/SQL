@@ -1,0 +1,1 @@
+update tb_integracao_sus set registro_ativo = 0, sql_update=ISNULL(sql_update,'')+'0919-000324' where id = 184
