@@ -1,7 +1,23 @@
-select repasse.numero_repasse, itemdespesa.codigo, cooperadoPJ.nome as nomePJ, cooperadoPF.nome as nomePF, procedimento.data_realizacao,
-    atendimento.numero_atendimento_automatico, atendimento.paciente, convenio.sigla as convenio, hospital.sigla as hospital,
-    procedimento.desconto_hospitalar, fatura.numero_fatura, sum(lancamento.valor_lancamento) as valor_lancamento , cooperadoPF.numero_conselho as crm, repasse.data_criacao as dataRepasse, procedimento.quantidade as quantidade,
-      complementoHospital.sigla AS siglaComplemento, acomodacao.descricao, cooperadoPJ.id
+select itemdespesa.codigo, -- 0
+       cooperadoPJ.nome as nomePJ, -- 1
+	   cooperadoPF.nome as nomePF, -- 2
+	   procedimento.data_realizacao, -- 3
+	   atendimento.numero_atendimento_automatico, -- 4
+	   atendimento.paciente, -- 5
+	   convenio.sigla as convenio, -- 6
+	   hospital.sigla as hospital, -- 7
+       procedimento.desconto_hospitalar, -- 8
+	   fatura.numero_fatura, -- 9
+	   sum(lancamento.valor_lancamento) as valor_lancamento, -- 10
+	   cooperadoPF.numero_conselho as crm, -- 11
+	   procedimento.quantidade as quantidade, -- 12
+       complementoHospital.sigla as siglaComplemento, -- 13
+	   acomodacao.descricao, -- 14
+	   cooperadoPJ.id, --15
+	   repasse.data_criacao as dataRepasse,
+	   MONTH(repasse.data_criacao) as mesRepasse,
+	   dadosComplementares.numero_atendimento_hospital
+	   --CONVERT(VARCHAR(02),MONTH(repasse.data_criacao)) +'/'+ CONVERT(VARCHAR(4),YEAR(repasse.data_criacao))
     from tb_repasse repasse  with(nolock) 
     inner join rl_repasse_lancamento lancamento with(nolock)  on (lancamento.fk_repasse = repasse.id and lancamento.registro_ativo = 1 and repasse.fk_entidade=lancamento.fk_entidade)
     inner join tb_pagamento_fatura pagto_fatura with(nolock)  on (pagto_fatura.id = lancamento.fk_pagamento_fatura and pagto_fatura.registro_ativo = 1)
@@ -18,21 +34,20 @@ select repasse.numero_repasse, itemdespesa.codigo, cooperadoPJ.nome as nomePJ, c
     inner join tb_cooperado cooperadoPJ with(nolock)  on (cooperadoPJ.id = procedimento.fk_cooperado_recebedor_cobranca and cooperadoPJ.registro_ativo = 1)
     inner join tb_item_despesa itemdespesa with(nolock)  on (itemdespesa.id = procedimento.fk_item_despesa and itemdespesa.registro_ativo = 1)
     inner join tb_tabela_tiss acomodacao with(nolock) on (acomodacao.id = procedimento.fk_acomodacao AND acomodacao.registro_ativo = 1)
+	inner join tb_dados_complementares dadosComplementares with(nolock) on (dadosComplementares.fk_atendimento = atendimento.id and dadosComplementares.registro_ativo = 1)
 
     where repasse.registro_ativo = 1 and repasse.fk_entidade = 23 and procedimento.fk_cooperado_executante_complemento <> procedimento.fk_cooperado_recebedor_cobranca
-      and (convert(date,repasse.data_criacao) <= '2019-08-27')
-      and (convert(date,repasse.data_criacao) >= '2019-08-27')
-	  --and cooperadoPF.nome = 'Vinicius Almeida Soares Maia'
-
-    group by repasse.numero_repasse, itemdespesa.codigo, cooperadoPJ.nome, cooperadoPF.nome, procedimento.data_realizacao,
+      and (convert(date,repasse.data_criacao) <= '2019-09-30')
+      and (convert(date,repasse.data_criacao) >= '2019-08-01')
+	and (cooperadoPF.id = 18699 or cooperadoPJ.id = 18699) 
+    group by itemdespesa.codigo, cooperadoPJ.nome, cooperadoPF.nome, procedimento.data_realizacao,
     atendimento.numero_atendimento_automatico, atendimento.paciente, convenio.sigla, hospital.sigla,
-    procedimento.desconto_hospitalar, fatura.numero_fatura, cooperadoPF.numero_conselho, repasse.data_criacao, procedimento.quantidade,
-      complementoHospital.sigla,acomodacao.descricao, cooperadoPJ.id
+    procedimento.desconto_hospitalar, fatura.numero_fatura, cooperadoPF.numero_conselho, procedimento.quantidade,
+      complementoHospital.sigla,acomodacao.descricao, cooperadoPJ.id, repasse.data_criacao, dadosComplementares.numero_atendimento_hospital
 
     UNION ALL
 
-    select repasse1.numero_repasse,
-	 'Não Informado' as codigo,
+    select 'Não Informado' as codigo,
     cooperadoLancamentoEventualPJ.nome as nomePJ,
     cooperadoLancamentoEventualPF.nome as nomePF,
     lancamentoRepasseEventual.data_lancamento as data_realizacao,
@@ -43,12 +58,15 @@ select repasse.numero_repasse, itemdespesa.codigo, cooperadoPJ.nome as nomePJ, c
     null  as desconto_hospitalar,
     null  as numero_fatura, 
      case when lancamentoRepasse.natureza_contabil<>1 then lancamentoRepasseEventual.valor_lancamento else -1*(lancamentoRepasseEventual.valor_lancamento) end AS valor_lancamento,
-     null as crm, 
-     repasse1.data_criacao as dataRepasse, 
-     1  as quantidade, 
+     null as crm,
+     1 as quantidade, 
      'Não Informado' AS siglaComplemento, 
      'Não Informado' AS descricao, 
-     cooperadoLancamentoEventualPJ.id  
+     cooperadoLancamentoEventualPJ.id,
+	 repasse1.data_criacao as dataRepasse,
+	 MONTH(repasse1.data_criacao) as mesRepasse,
+	 null
+	-- CONVERT(VARCHAR(02),MONTH(repasse1.data_criacao)) +'/'+ CONVERT(VARCHAR(4),YEAR(repasse1.data_criacao))
       from tb_repasse repasse1  with(nolock) 
      inner join rl_repasse_lancamento lancamento with(nolock)  on (lancamento.fk_repasse = repasse1.id and lancamento.registro_ativo = 1 and repasse1.fk_entidade=lancamento.fk_entidade) 
      inner join tb_lancamento_repasse_eventual lancamentoRepasseEventual with(nolock) on (lancamentoRepasseEventual.fk_repasse = repasse1.id and lancamentoRepasseEventual.registro_ativo = 1) 
@@ -57,17 +75,17 @@ select repasse.numero_repasse, itemdespesa.codigo, cooperadoPJ.nome as nomePJ, c
      inner join tb_lancamento_repasse lancamentoRepasse  with(nolock)  on (lancamentoRepasse.id = lancamentoRepasseEventual.fk_lancamento_repasse and lancamentoRepasse.registro_ativo =1) 
 
      where repasse1.registro_ativo = 1 and repasse1.fk_entidade = 23  and cooperadoLancamentoEventualPF.id <> cooperadoLancamentoEventualPJ.id 
-      and (convert(date,repasse1.data_criacao) <= '2019-08-27')
-      and (convert(date,repasse1.data_criacao) >= '2019-08-27')
-	  --and cooperadoLancamentoEventualPF.nome = 'Vinicius Almeida Soares Maia'
+      and (convert(date,repasse1.data_criacao) <= '2019-09-30')
+      and (convert(date,repasse1.data_criacao) >= '2019-08-01')
+	 and ( cooperadoLancamentoEventualPF.id = 18699 or cooperadoLancamentoEventualPJ.id = 18699)
 
-         group by repasse1.numero_repasse, cooperadoLancamentoEventualPJ.nome, 
+     group by cooperadoLancamentoEventualPJ.nome, 
        cooperadoLancamentoEventualPF.nome, 
        cooperadoLancamentoEventualPJ.id,
        lancamentoRepasse.natureza_contabil,
        lancamentoRepasseEventual.valor_lancamento,
-       repasse1.data_criacao,
 	   lancamentoRepasseEventual.descricao,
 	   lancamentoRepasseEventual.data_lancamento,
-	   lancamentoRepasseEventual.numero_lancamento
-     order by cooperadoPJ.nome, cooperadoPF.nome 
+	   lancamentoRepasseEventual.numero_lancamento,
+	   repasse1.data_criacao
+     order by dataRepasse, cooperadoPJ.nome, cooperadoPF.nome 

@@ -25,8 +25,8 @@ select hospital.id,
 	   and atendimento.registro_ativo = 1
 	   and atendimento.autorizado_unimed = 1
 	   and isnull(atendimento.rateio,0) != 1
-	   and convenio.id in (186)
+	   --and convenio.id in (186)
 	   and atendimento.situacaoAtendimento != 6
-	   and hospital.id in (480)
+	   --and hospital.id in (480)
 	   and espelho.data_emissao between '2019-06-01' and '2019-06-30'-- and espelho.numero_espelho = 8938-- and procedimento.id = 26165617
 	   group by hospital.id, hospital.nome, entidade.id, year(espelho.data_emissao), month(espelho.data_emissao) order by 2 asc
