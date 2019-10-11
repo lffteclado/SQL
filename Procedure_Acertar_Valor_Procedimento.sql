@@ -1,6 +1,6 @@
 DECLARE @RC int
-DECLARE @idEspelho bigint
-DECLARE @idAtendimento bigint = 18973792
+DECLARE @idEspelho bigint = 772967
+DECLARE @idAtendimento bigint
 DECLARE @idCartaDeGlosa bigint
 DECLARE @usuario bigint = 1
 
