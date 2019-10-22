@@ -1,0 +1,16 @@
+
+SELECT * FROM AD_Recolhimento_INSS WHERE codsascjava IN (
+8017563
+,8017564
+,8017565
+,8287622
+) AND codidesis=9
+
+GO
+
+DELETE FROM AD_Recolhimento_INSS WHERE codsascjava IN (
+8017563
+,8017564
+,8017565
+,8287622
+) AND codidesis=9

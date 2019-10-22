@@ -1,0 +1,18 @@
+ @SuppressWarnings("unchecked")
+  public List<EntidadeConvenioDespesaEspecialidade> obterPorEntidadeConvenioNative(EntidadeConvenio entidadeConvenio) {
+    StringBuilder hql = new StringBuilder();
+
+    hql.append("select * from tb_despesa obj ");
+    hql.append("where obj.fk_entidade_convenio = :entidadeConvenio ");
+    hql.append("and obj.discriminator = :discriminator ");
+    hql.append("and obj.registro_ativo = 1 ");
+
+    Query q = getEntityManager().createNativeQuery(hql.toString(),
+        EntidadeConvenioDespesaEspecialidade.class);
+
+    q.setParameter("entidadeConvenio", entidadeConvenio.getId());
+    q.setParameter("discriminator", EntidadeConvenioDespesaEspecialidade.class
+        .getAnnotation(DiscriminatorValue.class).value());
+
+    return q.getResultList();
+  }
