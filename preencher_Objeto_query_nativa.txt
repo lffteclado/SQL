@@ -15,4 +15,9 @@
         .getAnnotation(DiscriminatorValue.class).value());
 
     return q.getResultList();
+    
+
   }
+  
+  
+  select top 1 * from tb_item_despesa where tipo_item_despesa = 0 and codigo = 10101012 and registro_ativo = 1 order by id desc
