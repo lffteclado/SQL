@@ -9,7 +9,9 @@ select * from tb_espelho where id = 771984
 select * from tb_arquivo_retorno_glosa where registro_ativo = 1 and fk_retorno_glosa = 21
 select * from tb_retorno_glosa order by id desc
 select * from rl_situacao_procedimento where fk_procedimento = 29167899
+select * from tb_pagamento_procedimento where fk_procedimento = 29167899
 
+select valor_total, * from tb_procedimento where id = 29167899
 
 select * from tb_atendimento where id in (
 	select fk_atendimento, id from tb_procedimento where id in (

@@ -112,9 +112,9 @@ INSERT INTO [dbo].[tb_procedimento]
            ,null as resolveu_dependencia
            ,getdate() as data_ultima_alteracao
            ,1 as registro_ativo
-           ,planilha.data_reali_ini_ter as data_fim
-           ,planilha.data_reali_ini_ter as data_inicio
-           ,planilha.data_reali_ini_ter as data_realizacao
+           ,planilha.data_atend as data_fim
+           ,planilha.data_atend as data_inicio
+           ,planilha.data_atend as data_realizacao
            ,0 as desconto_hospitalar
            ,null as faturar
            ,1 as forcar_atendimento
@@ -137,19 +137,19 @@ INSERT INTO [dbo].[tb_procedimento]
            ,100.00 as valor_percentual
            ,planilha.valor as valor_total
            ,12 as fk_usuario_ultima_alteracao
-           ,110635 as fk_acomodacao
+           ,110635 as fk_acomodacao -- Enfermaria
            ,atendimento.id as fk_atendimento
            ,null as fk_complexidade
            ,cooperado.id as fk_cooperado_executante_complemento
            ,cooperado.id as fk_cooperado_recebedor_cobranca
            ,null as fk_cooperado_recebedor_cobranca_anterior
            ,especialidade.id as fk_entidade_cooperado_especialidade
-           ,449 as fk_grau_participacao
+           ,449 as fk_grau_participacao -- Anestesista
            ,itemDespesa.id as fk_item_despesa
            ,null as fk_procedimento_detalhar_unimed
            ,null as fk_procedimento_tuss
            ,null as fk_tecnica
-           ,110681 as fk_tipo_guia
+           ,110681 as fk_tipo_guia -- Internação
            ,null as fk_unidade_medida
            ,110778 as fk_via_acesso
            ,null as descricao_acomodacao_temp
@@ -190,7 +190,7 @@ INSERT INTO [dbo].[tb_procedimento]
            ,null as procedimentoConvertidoCooperadoRepassado
            ,0.00 as valor_acrescimo_convenio
            ,null as pk_importacao_fk_fatura
-           ,'0919-000432' as sql_update
+           ,'1019-000444' as sql_update
            ,null as cbo
            ,null as cbo_temp
            ,null as pk_importacao_fk_unidade_medida
@@ -216,8 +216,8 @@ INSERT INTO [dbo].[tb_procedimento]
            ,null as fk_entidade_cooperado_conversao_desconvertida
            ,null as foi_convertido
            ,null as fk_item_despesa_anterior_conversao
-from dbo.[0919_000432] planilha
-inner join tb_cooperado cooperado with(nolock) on (cooperado.cpf_cnpj = planilha.cpf_executante and cooperado.registro_ativo = 1)
+from dbo.[1019_000444] planilha
+inner join tb_cooperado cooperado with(nolock) on (cooperado.cpf_cnpj = planilha.cpf_cooperado and cooperado.registro_ativo = 1)
 inner join rl_entidade_cooperado entidadeCooperado with(nolock) on (entidadeCooperado.fk_cooperado = cooperado.id and entidadeCooperado.fk_entidade = 23 and entidadeCooperado.registro_ativo = 1)
 inner join rl_entidadecooperado_especialidade especialidade with(nolock) on (especialidade.fk_entidade_cooperado = entidadeCooperado.id and especialidade.registro_ativo = 1)
 inner join tb_hospital hospital with(nolock) on (hospital.cnpj = case len(planilha.cnpj_hospital) when 13 then convert(varchar(255),'0'+planilha.cnpj_hospital) else planilha.cnpj_hospital end and hospital.registro_ativo = 1 /*and hospital.id <> 91 and hospital.id <> 49*/)-- Hospital de Olhos de Minas Gerais e Hospital Madre Tereza
@@ -226,32 +226,22 @@ cross apply(
 select top 1 codigo, id, descricao from tb_item_despesa where codigo = planilha.procedimento and registro_ativo = 1
 )as itemDespesa
 cross apply(
-select top 1 id,senha, pk_importacao from tb_atendimento
- where sql_update = '0919-000432'
+select top 1 id,numero_guia, pk_importacao from tb_atendimento
+ where sql_update = '1019-000444'
   and tb_atendimento.registro_ativo = 1
-  and tb_atendimento.senha = planilha.senha
+  and tb_atendimento.numero_guia = planilha.num_guia
   and tb_atendimento.paciente = planilha.paciente
   and tb_atendimento.valor_total_atendimento = planilha.valor
   and tb_atendimento.pk_importacao = planilha.pk_importacao
 ) as atendimento
 where entidadeHospital.fk_entidade = 23
  and itemDespesa.codigo = planilha.procedimento
- and cooperado.cpf_cnpj = planilha.cpf_executante
- and atendimento.senha = planilha.senha
+ and cooperado.cpf_cnpj = planilha.cpf_cooperado
+ and atendimento.numero_guia = planilha.num_guia
  and atendimento.pk_importacao = planilha.pk_importacao
 
- GO
-
- update tb_atendimento set pk_importacao = null where registro_ativo = 1 and sql_update = '0919-000432'
-
- GO
-
- drop table dbo.[0919_000432]
-
- GO
-
 DECLARE @RC int
-DECLARE @idEspelho bigint = 772967
+DECLARE @idEspelho bigint = 785158
 DECLARE @idAtendimento bigint
 DECLARE @idCartaDeGlosa bigint
 DECLARE @usuario bigint = 1
@@ -264,9 +254,4 @@ EXECUTE @RC = [dbo].[gerarPagamentoProcedimentoPorEspelho]
   ,@idCartaDeGlosa
   ,@usuario
 
-GO
-
-
-
-
-
+drop table dbo.[1019_000444]
