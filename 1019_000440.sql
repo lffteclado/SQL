@@ -1,6 +1,35 @@
-select * from tb_arquivo_retorno_glosa where registro_ativo = 1 and fk_retorno_glosa = 36
+select top 100 * from tb_glosa where situacao in (3,7) order by id desc
+
+select * from tb_retorno_convenio order by id desc
+
+select * from tb_glosa where fk_carta_glosa = 216027
+
+select fk_entidade, * from tb_carta_glosa where id = 240714
+
+select * from tb_carta_glosa where numero_carta = 11593 and fk_entidade = 17
+
+select * from tb_glosa where fk_carta_glosa = 149086
+
+select top 100 valor_recebido, * from tb_glosa where valor_recebido <> 0 order by id desc
+
+--update tb_glosa set valor_recebido = 8.75 where  fk_carta_glosa = 149086 and situacao = 4
+
+select sigla, * from tb_entidade where id = 24
+
+select * from tb_arquivo_retorno_glosa where registro_ativo = 1 and fk_retorno_glosa = 17
 
 select top 100 * from tb_retorno_glosa  order by id desc
+
+--update tb_retorno_glosa set registro_ativo = 0 where id = 17
+
+select * from tb_espelho where numero_espelho = 128582 and fk_entidade = 24
+
+select * from tb_usuario where nome like '%Admi%'
+
+EXEC [dbo].[calcularAtendimento] 941085,null,null,null,12,43,null,null,null,null
+
+--update tb_retorno_glosa set em_processamento = 0, processado = 1 where id = 1
+--update tb_retorno_glosa set registro_ativo = 0 where id = 1
 
 select * from rl_entidade_convenio where fk_convenio = 451 and fk_entidade = 46
 
@@ -12,14 +41,16 @@ select sigla, * from tb_entidade where id = 6
 
 select * from sysobjects where name like '%glosa%'
 
+select * from tb_atendimento where senha = 'EPYJGS8'
+
 sp_helptext processarRetornoConvenio
 
 select top 10 * from tb_glosa where fk_procedimento = 27368052 order by id desc
 
-select top 100 * from tb_glosa where situacao in (3,7) order by id desc
+select * from tb_glosa where fk_carta_glosa = 216142
 
 select fk_atendimento, fk_item_despesa, * from tb_procedimento where id in (27556512,27556511)
-select * from rl_situacao_procedimento where fk_procedimento in (27556512,27556511)
+select * from rl_situacao_procedimento where fk_procedimento in (33493756)
 
 select * from tb_item_despesa where id in (11566, 11566)
 
@@ -50,6 +81,8 @@ select * from tb_arquivo_retorno_glosa where id = 151
 select * from tb_atendimento where id = 14389238
 
 
+select * from tb_atendimento where senha = '41205348' and fk_entidade = 6
+
 
 select * from tb_espelho where id = 624688
 
@@ -74,3 +107,75 @@ select top 10 * from tb_situacao_glosa order by id desc
 select top 10 * from tb_arquivo_retorno_glosa order by id desc
 select top 10 * from tb_retorno_glosa order by id desc
 select top 10 * from rl_entidade_motivo_glosa order by id desc
+
+select * from tb_atendimento where id in (
+	select fk_atendimento from tb_procedimento where id in (
+		select fk_procedimento from tb_glosa where fk_carta_glosa = 216027
+	)
+)
+
+select top 100 * from tb_glosa where situacao in (3,7) order by id desc
+
+/*Buscar Procedimentos Glosados*/
+--Informe o numero da carta de glosa
+declare @fk_carta_glosa bigint = 241090
+select atendimento.numero_atendimento_automatico,
+       atendimento.numero_guia,
+	   atendimento.guia_principal,
+	   atendimento.senha,
+       procedimento.data_realizacao,
+	   item.codigo,
+	   situacao.valorGlosado,
+	   espelho.numero_espelho,
+	   entidade.sigla,
+	   convenio.sigla
+from tb_atendimento atendimento
+inner join tb_procedimento procedimento on (procedimento.fk_atendimento = atendimento.id)
+inner join tb_glosa glosa on (glosa.fk_procedimento = procedimento.id and glosa.fk_carta_glosa = @fk_carta_glosa)
+inner join rl_situacao_procedimento situacao on (situacao.fk_procedimento = procedimento.id)
+inner join tb_item_despesa item on (procedimento.fk_item_despesa = item.id)
+inner join tb_espelho espelho on (espelho.id = atendimento.fk_espelho)
+inner join tb_entidade entidade on (entidade.id = atendimento.fk_entidade)
+inner join rl_entidade_convenio entidadeConvenio on (entidadeConvenio.fk_entidade = entidade.id and atendimento.fk_convenio = entidadeConvenio.id)
+inner join tb_convenio convenio on (convenio.id = entidadeConvenio.fk_convenio)
+where situacao.valorGlosado <> 0.00
+
+
+--exec [dbo].[sp_retorno_glosa] 41, 12
+
+--sp_helptext sp_retorno_glosa
+
+select TOP 1 carta.id from tb_carta_glosa carta
+inner join tb_glosa glosa on (glosa.fk_carta_glosa = carta.id and glosa.fk_procedimento = 27791657)
+
+
+select * from tb_procedimento where fk_atendimento = 20492491
+
+
+
+select * from tb_item_despesa where id in (
+select fk_item_despesa from tb_procedimento where id in (
+		select fk_procedimento from tb_glosa where fk_carta_glosa = 216027
+))
+
+select fk_item_despesa from tb_procedimento where id in (
+		select fk_procedimento from tb_glosa where fk_carta_glosa = 216027
+)
+
+select * from rl_situacao_procedimento where fk_procedimento in (
+
+select fk_procedimento from tb_glosa where fk_carta_glosa = 216027
+
+)
+
+select * from tb_pagamento_procedimento where fk_procedimento in (
+select fk_procedimento from tb_glosa where fk_carta_glosa = 216027
+
+)
+
+select * from tb_procedimento where id = 27791657
+
+select * from tb_entidade where id = 14 -- Copimef COPASSSAUDE
+
+select * from tb_glosa where fk_carta_glosa = 216142
+select * from tb_carta_glosa where id = 216142

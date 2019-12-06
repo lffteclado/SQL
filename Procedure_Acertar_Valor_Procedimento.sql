@@ -1,7 +1,7 @@
 DECLARE @RC int
-DECLARE @idEspelho bigint = 772967
+DECLARE @idEspelho bigint
 DECLARE @idAtendimento bigint
-DECLARE @idCartaDeGlosa bigint
+DECLARE @idCartaDeGlosa bigint = 241082
 DECLARE @usuario bigint = 1
 
 -- TODO: Defina valores de parâmetros aqui.
