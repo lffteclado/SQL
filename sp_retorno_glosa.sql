@@ -100,8 +100,8 @@
 		   linha.fk_retorno_glosa 
 		   INTO #tempProcedimentoProcessado
 	FROM #tempProcedimento tmpProcedimento
-	INNER JOIN tb_arquivo_retorno_glosa linha ON(linha.id = tmpProcedimento.id_linha)
-	INNER JOIN tb_retorno_glosa arquivo ON(arquivo.id = linha.fk_retorno_glosa)
+	INNER JOIN tb_arquivo_retorno_glosa linha ON(linha.id = tmpProcedimento.id_linha and linha.registro_ativo = 1)
+	INNER JOIN tb_retorno_glosa arquivo ON(arquivo.id = linha.fk_retorno_glosa and arquivo.registro_ativo = 1)
 	WHERE linha.valor_pago_recurso between (tmpProcedimento.valor_glosado - arquivo.diferenca)
 	       and (tmpProcedimento.valor_glosado + arquivo.diferenca)
 
@@ -112,8 +112,8 @@
 			linha.fk_glosa = glosa.id
 	FROM tb_arquivo_retorno_glosa linha 
 	INNER JOIN #tempProcedimentoProcessado tmpProcedimento ON(tmpProcedimento.id_linha = linha.id)
-	INNER JOIN tb_procedimento procedimento ON(procedimento.id = tmpProcedimento.id_procedimento)
-	INNER JOIN tb_glosa glosa ON(procedimento.id = glosa.fk_procedimento)
+	INNER JOIN tb_procedimento procedimento ON(procedimento.id = tmpProcedimento.id_procedimento and procedimento.registro_ativo = 1)
+	INNER JOIN tb_glosa glosa ON(procedimento.id = glosa.fk_procedimento and glosa.registro_ativo = 1)
 
 	--Faz o update no final dos procedimentos encontrados porém não processados
 	UPDATE linha
@@ -121,19 +121,21 @@
 			linha.status_processamento = 3 --Encontrado e não processado
 	FROM tb_arquivo_retorno_glosa linha
 	INNER JOIN #tempProcedimento tmpProcedimento ON(tmpProcedimento.id_linha = linha.id)
-	INNER JOIN tb_procedimento procedimento ON(tmpProcedimento.id_procedimento = procedimento.id)
+	INNER JOIN tb_procedimento procedimento ON(tmpProcedimento.id_procedimento = procedimento.id and procedimento.registro_ativo = 1)
 	WHERE tmpProcedimento.ordem = 1	AND linha.status_processamento = 1	
 
 	--Atualiza as glosas dos procedimentos processados RECEBIDA("Recebida", "4"):
 	UPDATE glosa
 		SET glosa.situacao = 4, -- Recebida
-		glosa.valor_recebido = (glosa.valor_recebido + procedimentoProcessado.valor_pago_recurso),
+		glosa.valor_recebido = COALESCE(procedimentoProcessado.valor_pago_recurso,0),
 		glosa.fk_usuario_ultima_alteracao = @idUsuarioProcessamento,
 		glosa.sql_update = ISNULL(glosa.sql_update,'')+'Processado Via Retorno de Glosa',
-		glosa.data_ultima_alteracao = GETDATE()
+		glosa.data_ultima_alteracao = GETDATE(),
+		glosa.data_recebimento = CONVERT(DATE, GETDATE())
 	FROM #tempProcedimentoProcessado procedimentoProcessado
-	INNER JOIN tb_glosa glosa ON(glosa.fk_procedimento = procedimentoProcessado.id_procedimento)
-	INNER JOIN tb_carta_glosa carta ON(carta.id = glosa.fk_carta_glosa)
+	INNER JOIN tb_glosa glosa ON(glosa.fk_procedimento = procedimentoProcessado.id_procedimento and glosa.registro_ativo = 1)
+	INNER JOIN tb_carta_glosa carta ON(carta.id = glosa.fk_carta_glosa and carta.registro_ativo = 1)
+	WHERE glosa.situacao in (3,7)
 
 	--Atualiza as carta de glosas dos procedimentos processados:
 	UPDATE carta
@@ -141,21 +143,27 @@
 		carta.fk_usuario_ultima_alteracao = @idUsuarioProcessamento,
 		carta.sql_update = ISNULL(carta.sql_update,'')+'Processado Via Retorno de Glosa'
 	FROM #tempProcedimentoProcessado procedimentoProcessado
-	INNER JOIN tb_glosa glosa ON(glosa.fk_procedimento = procedimentoProcessado.id_procedimento)
-	INNER JOIN tb_carta_glosa carta ON(carta.id = glosa.fk_carta_glosa)
+	INNER JOIN tb_glosa glosa ON(glosa.fk_procedimento = procedimentoProcessado.id_procedimento and glosa.registro_ativo = 1)
+	INNER JOIN tb_carta_glosa carta ON(carta.id = glosa.fk_carta_glosa and carta.registro_ativo = 1)
 
 	--Atualizando os Procedimentos Processados para Faturar
 	UPDATE procedimento
-	   SET procedimento.faturar = 1
+	   SET procedimento.faturar = 1,
+	       procedimento.data_ultima_alteracao = GETDATE(),
+		   procedimento.fk_usuario_ultima_alteracao = @idUsuarioProcessamento,
+		   procedimento.sql_update = ISNULL(procedimento.sql_update,'')+'Processado Via Retorno de Glosa'
 	FROM tb_procedimento procedimento
-	INNER JOIN #tempProcedimentoProcessado procedimentoProcessado ON(procedimentoProcessado.id_procedimento = procedimento.id)
+	INNER JOIN #tempProcedimentoProcessado procedimentoProcessado ON(procedimentoProcessado.id_procedimento = procedimento.id and procedimento.registro_ativo = 1)
 
 	--Atualizando os Atendimentos Processados para Faturar
-	UPDATE atendimentos
-		SET atendimentos.faturar = 1
-	FROM tb_atendimento atendimentos
-	INNER JOIN tb_procedimento procedimentos ON(procedimentos.fk_atendimento = atendimentos.id)
-	INNER JOIN #tempProcedimentoProcessado procedimentoProcessado ON(procedimentoProcessado.id_procedimento = procedimentos.id)
+	UPDATE atendimento
+		SET atendimento.faturar = 1,
+		    atendimento.data_ultima_alteracao = GETDATE(),
+			atendimento.fk_usuario_ultima_alteracao = @idUsuarioProcessamento,
+			atendimento.sql_update = ISNULL(atendimento.sql_update,'')+'Processado Via Retorno de Glosa'
+	FROM tb_atendimento atendimento
+	INNER JOIN tb_procedimento procedimentos ON(procedimentos.fk_atendimento = atendimento.id and atendimento.registro_ativo = 1)
+	INNER JOIN #tempProcedimentoProcessado procedimentoProcessado ON(procedimentoProcessado.id_procedimento = procedimentos.id and procedimentos.registro_ativo = 1)
 
 	--Fazer update de linhas com procedimentos não encontrados
 	UPDATE linha 
@@ -170,8 +178,8 @@
        0 AS 'finalizado'
 	INTO #tempCartasGlosa
 	FROM tb_carta_glosa carta
-	INNER JOIN tb_glosa glosa on (glosa.fk_carta_glosa = carta.id)
-	INNER JOIN #tempProcedimentoProcessado processado on (processado.id_procedimento = glosa.fk_procedimento)
+	INNER JOIN tb_glosa glosa on (glosa.fk_carta_glosa = carta.id and carta.registro_ativo = 1)
+	INNER JOIN #tempProcedimentoProcessado processado on (processado.id_procedimento = glosa.fk_procedimento and glosa.registro_ativo = 1)
 
 	BEGIN
 		WHILE EXISTS(SELECT 1 FROM #tempCartasGlosa WHERE finalizado = 0)
@@ -209,7 +217,7 @@
 			arquivo.quantidade_processados = tabelaProcessado.quantidade,
 			arquivo.valor_processado=tabelaProcessado.valor,
 			arquivo.fk_usuario_processamento = @idUsuarioProcessamento,
-			arquivo.data_processamento = getdate()
+			arquivo.data_processamento = GETDATE()
 	FROM tb_retorno_glosa arquivo
 	OUTER APPLY( 
 		SELECT COUNT(*) AS quantidade, SUM(valor_glosado) AS valor

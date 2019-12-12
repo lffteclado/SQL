@@ -20,7 +20,7 @@ inner join tb_procedimento procedimento on(procedimento.fk_atendimento = atendim
 inner join tb_item_despesa item on (item.id = procedimento.fk_item_despesa and item.codigo = arquivoRetornoGlosa.codigo_item_despesa)
 inner join tb_espelho espelho on (espelho.id = atendimento.fk_espelho and espelho.registro_ativo = 1)
 inner join rl_situacao_procedimento situacao on (situacao.fk_procedimento = procedimento.id)
-where retornoGlosa.id = 7
+where retornoGlosa.id = 8
       and arquivoRetornoGlosa.status_processamento=1
       and situacao.glosado = 1
 	  and situacao.valorGlosado = arquivoRetornoGlosa.valor_recursado

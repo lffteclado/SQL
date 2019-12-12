@@ -6,7 +6,7 @@ select * from tb_glosa where fk_carta_glosa = 216027
 
 select fk_entidade, * from tb_carta_glosa where id = 240714
 
-select * from tb_carta_glosa where numero_carta = 11593 and fk_entidade = 17
+select * from tb_carta_glosa where numero_carta = 2351 and fk_entidade = 46
 
 select * from tb_glosa where fk_carta_glosa = 149086
 
@@ -16,17 +16,27 @@ select top 100 valor_recebido, * from tb_glosa where valor_recebido <> 0 order b
 
 select sigla, * from tb_entidade where id = 24
 
-select * from tb_arquivo_retorno_glosa where registro_ativo = 1 and fk_retorno_glosa = 17
+select * from tb_arquivo_retorno_glosa where registro_ativo = 1 and fk_retorno_glosa = 34
 
-select top 100 * from tb_retorno_glosa  order by id desc
+select * from tb_glosa where fk_procedimento in (
+33462783
+,33462824
+,33462856
+,33462911
+,33462944
+,33463071
+,33463114
+)
 
---update tb_retorno_glosa set registro_ativo = 0 where id = 17
+select * from tb_procedimento where id = 23946931
+
+select top 100 * from tb_retorno_glosa where registro_ativo = 1  order by id desc
+
+--update tb_retorno_glosa set registro_ativo = 0 where id = 25
 
 select * from tb_espelho where numero_espelho = 128582 and fk_entidade = 24
 
 select * from tb_usuario where nome like '%Admi%'
-
-EXEC [dbo].[calcularAtendimento] 941085,null,null,null,12,43,null,null,null,null
 
 --update tb_retorno_glosa set em_processamento = 0, processado = 1 where id = 1
 --update tb_retorno_glosa set registro_ativo = 0 where id = 1
@@ -45,11 +55,11 @@ select * from tb_atendimento where senha = 'EPYJGS8'
 
 sp_helptext processarRetornoConvenio
 
-select top 10 * from tb_glosa where fk_procedimento = 27368052 order by id desc
+select top 10 * from tb_glosa where fk_procedimento = 27520215 order by id desc
 
 select * from tb_glosa where fk_carta_glosa = 216142
 
-select fk_atendimento, fk_item_despesa, * from tb_procedimento where id in (27556512,27556511)
+select fk_atendimento, fk_item_despesa, * from tb_procedimento where id in (23946931)
 select * from rl_situacao_procedimento where fk_procedimento in (33493756)
 
 select * from tb_item_despesa where id in (11566, 11566)
@@ -73,6 +83,14 @@ select top 10 * from tb_carta_glosa order by id desc
 select * from tb_atendimento where id = 14389238
 
 select * from tb_atendimento where numero_guia =  '57722019'
+
+select * from tb_carta_glosa where numero_carta = 2505 and fk_entidade in (select id from tb_entidade where sigla = 'SANTACOOPMACEIO')
+
+select * from tb_glosa where fk_carta_glosa = 215992
+
+select * from tb_procedimento where id = 29237989
+
+select * from rl_situacao_procedimento where fk_procedimento = 29237989
 
 --14389238	151
 

@@ -13,13 +13,13 @@ SELECT procedimento.id AS id_procedimento
 		SELECT item.id, item.codigo FROM tb_item_despesa item
 		WHERE procedimento.fk_item_despesa = item.id
 	) AS itemDespesa
-	WHERE linha.fk_retorno_glosa = 7
+	WHERE linha.fk_retorno_glosa = 8
       AND procedimento.data_realizacao = linha.data_realizacao
 	  AND itemDespesa.codigo = linha.codigo_item_despesa
 	  AND glosa.situacao in (3,7)
 	  AND arquivo.tipo_comparacao = 1 --guia
 	  AND entidadeConvenio.fk_entidade = arquivo.fk_entidade
 	  AND linha.valor_recursado = situacaoProcedimento.valorGlosado
-	  AND situacaoProcedimento.valorGlosado BETWEEN (linha.valor_pago_recurso - arquivo.diferenca)
-	       AND (linha.valor_pago_recurso + arquivo.diferenca)
+	  --AND situacaoProcedimento.valorGlosado BETWEEN (linha.valor_pago_recurso - arquivo.diferenca)
+	    --   AND (linha.valor_pago_recurso + arquivo.diferenca)
 	GROUP BY procedimento.id, linha.id
