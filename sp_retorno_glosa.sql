@@ -127,7 +127,7 @@
 	--Atualiza as glosas dos procedimentos processados RECEBIDA("Recebida", "4"):
 	UPDATE glosa
 		SET glosa.situacao = 4, -- Recebida
-		glosa.valor_recebido = COALESCE(procedimentoProcessado.valor_pago_recurso,0),
+		glosa.valor_recebido = COALESCE(procedimentoProcessado.valor_glosado,0),
 		glosa.fk_usuario_ultima_alteracao = @idUsuarioProcessamento,
 		glosa.sql_update = ISNULL(glosa.sql_update,'')+'Processado Via Retorno de Glosa',
 		glosa.data_ultima_alteracao = GETDATE(),
