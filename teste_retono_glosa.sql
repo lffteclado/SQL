@@ -4,7 +4,7 @@
 
 /*Buscar Procedimentos Glosados*/
 --Informe o numero da carta de glosa
-declare @fk_carta_glosa bigint = 215992
+declare @fk_carta_glosa bigint = 138431
 select atendimento.numero_atendimento_automatico,
        atendimento.numero_guia,
 	   atendimento.guia_principal,

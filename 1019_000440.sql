@@ -2,7 +2,7 @@ select top 100 * from tb_glosa where situacao in (3,7) order by id desc
 
 select * from tb_retorno_convenio order by id desc
 
-select * from tb_glosa where fk_carta_glosa = 216027
+select * from tb_glosa where fk_carta_glosa = 138431 order by data_ultima_alteracao desc
 
 select fk_entidade, * from tb_carta_glosa where id = 240714
 
