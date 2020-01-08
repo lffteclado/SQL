@@ -63,7 +63,7 @@ SELECT
                pagamento.valor_filme) AS valor_total_pagamento
 	 FROM tb_pagamento_procedimento pagamento WHERE fk_procedimento = procedimento.id
 	) AS pagamentoProcedimento
-    WHERE procedimento.id= 31868369
+    WHERE procedimento.id= 29112721
     AND ((procedimento.valor_honorario +  
        procedimento.valor_acrescimo +  
        procedimento.valor_custo_operacional +  
@@ -77,5 +77,5 @@ SELECT
        CASE WHEN COALESCE(glosaAnterior.ehRecebidaERecebidaParcial,0) = 1 AND COALESCE(ultimoProcedimentoGlosado.situacao,0) = 0 
            THEN glosaAnterior.valor_total_glosa_anterior  
          ELSE ultimoProcedimentoGlosado.valor_total_glosa_atual END 
-	AND (COALESCE(ultimoProcedimentoGlosado.valor_total_glosa_atual,0) + COALESCE(pagamentoProcedimento.valor_total_pagamento,0))
-	= (procedimento.valor_honorario+procedimento.valor_custo_operacional+procedimento.valor_filme+procedimento.valor_acrescimo)
+	--AND (COALESCE(ultimoProcedimentoGlosado.valor_total_glosa_atual,0) + COALESCE(pagamentoProcedimento.valor_total_pagamento,0))
+	--= (procedimento.valor_honorario+procedimento.valor_custo_operacional+procedimento.valor_filme+procedimento.valor_acrescimo)
