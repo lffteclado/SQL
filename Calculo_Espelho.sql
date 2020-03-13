@@ -26,7 +26,7 @@ select sum(coalesce(pagamento.valor_desconto,0)) from tb_pagamento_procedimento 
 inner join tb_procedimento procedimento on(pagamento.fk_procedimento=procedimento.id  and procedimento.registro_ativo=1) 
 inner join tb_atendimento atendimento on(atendimento.id=procedimento.fk_atendimento)
 where atendimento.fk_espelho=tb_espelho.id and pagamento.fk_fatura is null and pagamento.registro_ativo=1)
-where tb_espelho.id=934365
+where tb_espelho.id=20413
 GO
 If Exists(Select * from Tempdb..SysObjects Where Name Like '##TempEspelho%')
 BEGIN
@@ -35,7 +35,7 @@ END
 select *,'L' as status,0 as qtdeAtendimento
 into ##TempEspelho
 from
-tb_espelho where id=934365
+tb_espelho where id=20413
 GO
 update ##TempEspelho set valor_total_custo_operacional = valor_total_custo_operacional+valor_total_filme
 GO

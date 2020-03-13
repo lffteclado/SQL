@@ -1,0 +1,1 @@
+select *from ad_recolhimento_inss where CodSascJava in(8425928)
