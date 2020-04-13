@@ -1,6 +1,6 @@
 INSERT INTO [dbo].[tb_atendimento]
-           ([pk_importacao]
-           ,[resolveu_dependencia]
+           ([pk_importacao]--null
+           ,[resolveu_dependencia]--null
            ,[data_ultima_alteracao]
            ,[registro_ativo]
            ,[ano_atendimento]
@@ -34,33 +34,33 @@ INSERT INTO [dbo].[tb_atendimento]
            ,[fk_usuario]
            ,[fk_espelho]
            ,[fk_hospital]
-           ,[fk_importacao_unimed]
-           ,[fk_integracao_sus]
-           ,[fk_motivo_alta]
-           ,[fk_tipo_atendimento]
-           ,[fk_num_aten_temp]
-           ,[fk_entidade_temp]
-           ,[fk_hospital_fk_entidade_hospital]
-           ,[fk_entidade_fk_entidade_hospital]
-           ,[pk_importacao_fk_complemento]
-           ,[fk_tipo_tabela_tiss_fk_tipo_atendimento]
-           ,[pk_importacao_fk_tipo_atendimento]
-           ,[fk_entidade_fk_convenio]
-           ,[fk_convenio_fk_convenio]
-           ,[fk_tipo_tabela_tiss_fk_motivo_alta]
-           ,[pk_importacao_fk_motivo_alta]
-           ,[pk_importacao_fk_espelho]
-           ,[pk_importacao_fk_hospital]
-           ,[autorizado_unimed]
-           ,[pk_importacao_fk_entidade]
-           ,[anoFoiAlterado]
-           ,[valorDigitados]
-           ,[valorEspelhados]
-           ,[valorExcluidos]
-           ,[valorFaturados]
-           ,[valorPagos]
-           ,[valorRepassados]
-           ,[valorglosados]
+           ,[fk_importacao_unimed] -- null
+           ,[fk_integracao_sus]--null
+           ,[fk_motivo_alta]--null
+           ,[fk_tipo_atendimento]--null
+           ,[fk_num_aten_temp]--null
+           ,[fk_entidade_temp]--null
+           ,[fk_hospital_fk_entidade_hospital]--null
+           ,[fk_entidade_fk_entidade_hospital]--null
+           ,[pk_importacao_fk_complemento]--null
+           ,[fk_tipo_tabela_tiss_fk_tipo_atendimento]--null
+           ,[pk_importacao_fk_tipo_atendimento]--null
+           ,[fk_entidade_fk_convenio]--null
+           ,[fk_convenio_fk_convenio]--null
+           ,[fk_tipo_tabela_tiss_fk_motivo_alta]--null
+           ,[pk_importacao_fk_motivo_alta]--null
+           ,[pk_importacao_fk_espelho]--null
+           ,[pk_importacao_fk_hospital]--null
+           ,[autorizado_unimed]--Obrigatorio
+           ,[pk_importacao_fk_entidade]--null
+           ,[anoFoiAlterado]--nul
+           ,[valorDigitados]--nul
+           ,[valorEspelhados]--null
+           ,[valorExcluidos]--null
+           ,[valorFaturados]--nul
+           ,[valorPagos]--null
+           ,[valorRepassados]--null
+           ,[valorglosados]--null
            ,[numero_guia_origem_tiss]
            ,[hora_digitacao]
            ,[sql_update]

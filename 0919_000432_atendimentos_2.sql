@@ -64,33 +64,33 @@ INSERT INTO [dbo].[tb_atendimento]
            ,[numero_guia_origem_tiss]
            ,[hora_digitacao]
            ,[sql_update]
-           ,[fk_integracao_unimed]
-           ,[cid]
-           ,[total_atendimento]
-           ,[fk_entidade_fk_complemento]
-           ,[fk_com_con_fk_complemento]
-           ,[fk_convenio_fk_complemento]
-           ,[fk_entidade_fk_espelho]
-           ,[fk_num_fat_fk_espelho]
-           ,[numero_atendimento_automatico_anterior]
-           ,[matricula_anterior]
-           ,[pendente_calculo_integracao]
-           ,[referencia_atendimento_integracao]
-           ,[fk_integracao_sus_valores]
-           ,[fk_complemento_hospital]
-           ,[atendimentoInconsistente]
-           ,[fk_espelho_antigo]
+           ,[fk_integracao_unimed]--null
+           ,[cid]--null
+           ,[total_atendimento]--null
+           ,[fk_entidade_fk_complemento]--null
+           ,[fk_com_con_fk_complemento]--null
+           ,[fk_convenio_fk_complemento]--null
+           ,[fk_entidade_fk_espelho]--null
+           ,[fk_num_fat_fk_espelho]--null
+           ,[numero_atendimento_automatico_anterior]--null
+           ,[matricula_anterior]--null
+           ,[pendente_calculo_integracao]--null
+           ,[referencia_atendimento_integracao]--null
+           ,[fk_integracao_sus_valores]--null
+           ,[fk_complemento_hospital]--null
+           ,[atendimentoInconsistente]--null
+           ,[fk_espelho_antigo]--null
            ,[rateio]
-           ,[fk_integracao_ws]
-           ,[referencia_atendimento_integracao_entidade]
-           ,[fk_integracao_entidade]
-           ,[fk_integracao_hospital]
-           ,[referencia_atendimento_unimed]
-           ,[referencia_atendimento_prontuario]
-           ,[num_esp_ori]
-           ,[exibe_tag_guia_completa_tiss]
-           ,[antigoNumeroImportacao]
-           ,[fk_protocolo_agil])
+           ,[fk_integracao_ws]--null
+           ,[referencia_atendimento_integracao_entidade]--null
+           ,[fk_integracao_entidade]--null
+           ,[fk_integracao_hospital]--null
+           ,[referencia_atendimento_unimed]--null
+           ,[referencia_atendimento_prontuario]--null
+           ,[num_esp_ori]--null
+           ,[exibe_tag_guia_completa_tiss]--null
+           ,[antigoNumeroImportacao]--null
+           ,[fk_protocolo_agil])--null
      SELECT 
 	         planilha.pk_importacao as pk_importacao
             ,null as resolveu_dependencia

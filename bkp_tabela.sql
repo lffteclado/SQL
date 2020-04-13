@@ -1,0 +1,1 @@
+select * into  tb_caso_de_usoBkp31032020 from tb_caso_de_uso

@@ -1,0 +1,74 @@
+try {					
+				JSONObject pedidoJson = new JSONObject(retorno);
+				JSONArray pedido = pedidoJson.getJSONArray("Pedidos");
+		        for (int i = 0; i < pedido.length(); i++) {
+		        	importou = true;
+		            String numPedido = pedido.getJSONObject(i).getString("NumPedido");
+		            System.out.println(numPedido);		            
+		            JSONArray itens = pedido.getJSONObject(i).getJSONArray("Itens");
+		            for (int j = 0; j < itens.length(); j++) {
+		            	String item = itens.getJSONObject(i).getString("ItemCode");
+			            System.out.println(item);
+		            }		            
+		        }				
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+            
+            
+  {
+    "codRetorno": null,
+    "descrRetorno": null,
+    "Pedidos": [
+        {
+            "NumPedido": "2508",
+            "Paciente": "JULIO CESAR MYRRHA GUIMARAES",
+            "CNPJ": "Hospital MATER DEI Santo Agostinho",
+            "Matricula": "540503",
+            "Senha": "2019200903",
+            "Guia": "409331",
+            "DS_Convenio": "FUNDAFFEMG",
+            "NM_Anestesista": "MAURO DE OLIVEIRA BARBOSA",
+            "NM_Anestesista_Aux": "",
+            "TX_Acesso": "PROCEDIMENTO ISOLADO",
+            "Categoria_Convenio": "APARTAMENTO",
+            "Hr_Inicio": "07:45:00",
+            "Hr_Termino": "11:00:00",
+            "Urgencia": "0",
+            "Boletim": "246808",
+            "Itens": [
+                {
+                    "NumLinha": null,
+                    "ItemCode": "C30907136",
+                    "Quantidade": "1,000000",
+                    "Price": null
+                }
+            ]
+        },
+        {
+            "NumPedido": "2524",
+            "Paciente": "HENRIQUE BARBALHO GUERRA",
+            "CNPJ": "Hospital MATER DEI Contorno",
+            "Matricula": "415059",
+            "Senha": "184091194 /",
+            "Guia": "157503 /",
+            "DS_Convenio": "CASSI",
+            "NM_Anestesista": "CLAUDIA LEAL FERREIRA HORIGUCHI",
+            "NM_Anestesista_Aux": "",
+            "TX_Acesso": "PROCEDIMENTO ISOLADO",
+            "Categoria_Convenio": "APARTAMENTO",
+            "Hr_Inicio": "09:40:00",
+            "Hr_Termino": "10:15:00",
+            "Urgencia": "0",
+            "Boletim": "",
+            "Itens": [
+                {
+                    "NumLinha": null,
+                    "ItemCode": "C20104260",
+                    "Quantidade": "1,000000",
+                    "Price": null
+                }
+            ]
+        }...
+
+        
