@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Editor de Texto JavaScript ::: Linha de Código</title>
+<script language="JavaScript">
+
+	function Iniciar() {
+		editor.document.designMode = 'On';
+	}
+	
+	function italico() {
+		editor.document.execCommand('italic', false, null);
+	}
+
+</script>
+
+<body onLoad="Iniciar()">
+			
+	<a href="#" onClick="italico()">Italico</a><br>
+
+	<iframe id="editor" frameborder="0" 
+		style="border:1px solid; width: 200px; height:100px"></iframe>
+
+</body>
+</html>

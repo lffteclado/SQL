@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>Editor de Texto JavaScript ::: Linha de Código</title>
+<script language="JavaScript">
+
+	function Iniciar() {
+		editor.document.designMode = 'On';
+	}
+
+	function recortar() {
+		editor.document.execCommand('cut', false, null);
+	}
+
+	function copiar() {
+		editor.document.execCommand('copy', false, null);
+	}
+	
+	function colar() {
+		editor.document.execCommand('paste', false, null);
+	}
+
+	function desfazer() {
+		editor.document.execCommand('undo', false, null);
+	}
+
+	function refazer() {
+		editor.document.execCommand('redo', false, null);
+	}
+
+	function negrito() {
+		editor.document.execCommand('bold', false, null);
+	}
+
+	function italico() {
+		editor.document.execCommand('italic', false, null);
+	}
+
+	function sublinhado() {
+		editor.document.execCommand('underline', false, null);
+	}
+
+	function alinharEsquerda() {
+		editor.document.execCommand('justifyleft', false, null);
+	}
+
+	function centralizado()	{
+		editor.document.execCommand('justifycenter', false, null);
+	}
+
+	function alinharDireita() {
+		editor.document.execCommand('justifyright', false, null);
+	}
+
+	function numeracao() {
+		editor.document.execCommand('insertorderedlist', false, null);
+	}
+
+	function marcadores() {
+		editor.document.execCommand('insertunorderedlist', false, null);
+	}
+
+	function fonte(fonte) {
+		if(fonte != '')
+			editor.document.execCommand('fontname', false, fonte);
+	}
+
+	function tamanho(tamanho) {
+		if(tamanho != '')
+			editor.document.execCommand('fontsize', false, tamanho);
+	}
+
+</script>
+
+<body onLoad="Iniciar()" bgcolor="#EFEDE1">
+<table align="center" width="600px" height="30px" border="0" cellspacing="0" cellpadding="0" >	
+	<tr>
+	<td align="center">
+
+	<select name="fonte" onChange="fonte(this.options[this.selectedIndex].value)">
+		<option value=""></option>
+        <option value="Arial">Arial</option>
+        <option value="Courier">Courier</option>
+        <option value="Sans Serif">Sans Serif</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Verdana">Verdana</option>
+	</select>
+	&nbsp;		
+	<select name="tamanho" onChange="tamanho(this.options[this.selectedIndex].value)">
+		<option value=""></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+	</select>
+
+	</td>
+
+	<td align="center">
+		
+		<!-- Recortar -->
+		<img src="recortar.gif" onClick="recortar()" style="cursor:hand">
+			
+		<!-- Copiar -->
+		<img src="copiar.gif" onClick="copiar()" style="cursor:hand">
+			
+		<!-- Colar -->
+		<img src="colar.gif" onClick="colar()" style="cursor:hand">
+			
+		<!-- Desfazer --> 
+		<img src="desfazer.gif" onClick="desfazer()" style="cursor:hand">
+			
+		<!-- Refazer -->
+		<img src="refazer.gif" onClick="refazer()" style="cursor:hand">
+			
+		<!-- Negrito --> 
+		<img src="negrito.gif" onClick="negrito()" style="cursor:hand">
+			
+		<!-- Itálico -->
+		<img src="italico.gif" onClick="italico()" style="cursor:hand">
+			
+		<!-- Sublinhado -->
+		<img src="sublinhado.gif" onClick="sublinhado()" style="cursor:hand">
+			
+		<!-- Alinhar à Esquerda -->
+		<img src="alinhamentoesquerda.gif" onClick="alinharEsquerda();" style="cursor:hand">
+			
+		<!-- Alinhar ao Centro -->
+		<img src="centralizado.gif" onClick="centralizado()" style="cursor:hand">
+			
+		<!-- Alinha à Direita -->
+		<img src="alinhamentodireita.gif" onClick="alinharDireita()" style="cursor:hand">
+			
+		<!-- Numeração -->
+		<img src="numeracao.gif" onClick="numeracao()" style="cursor:hand">
+
+		<!-- Marcadores -->
+		<img src="marcador.gif" onClick="marcadores()" style="cursor:hand">
+	
+	</td>
+	</tr>
+	</table>
+
+	<center>
+	<iframe id="editor" frameborder="0" 
+		style="border:1px solid; width: 582px; height:350px"></iframe>
+		
+	<br><br>
+	
+	<font size="-1">
+		Editor de Texto JavaScript <br>
+		<a href="http://www.linhadecodigo.com.br">http://www.linhadecodigo.com.br</a>
+	</font>
+	</center>
+
+</body>
+</html>
