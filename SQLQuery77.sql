@@ -1,0 +1,1 @@
+select TOP 1000 * from rl_seguranca_entidade_perfil_acesso where id = 266564 ORDER BY ID DESC
