@@ -12,13 +12,13 @@ select  cooperado.numero_conselho as 'CRM'
 		,declaracao.tipo_declaracao
 from tb_declaracao_inss declaracao with(nolock)
 inner join tb_cooperado cooperado with(nolock) on(cooperado.id = declaracao.fk_cooperado and declaracao.registro_ativo = 1)
-inner join tb_integracao_inss_unimed inssUnimed with(nolock) on(LOWER(inssUnimed.nome_cooperado) = LOWER(cooperado.nome)
-                                                                and inssUnimed.cpf_cooperado = cooperado.cpf_cnpj
+inner join tb_integracao_inss_unimed inssUnimed with(nolock) on(inssUnimed.cpf_cooperado = cooperado.cpf_cnpj
 																and inssUnimed.registro_ativo = 1)
 inner join tb_importacao_base importacao with(nolock) on (inssUnimed.fk_importacao_base = importacao.id and importacao.registro_ativo = 1)
-where inssUnimed.fk_importacao_base = 141438
+where inssUnimed.fk_importacao_base = 142160
 and declaracao.fk_repasse is null
-and (coalesce(declaracao.valor_inss, 0.00) - coalesce(declaracao.valor_devolucao,0.0)) > 0
+--and (coalesce(declaracao.valor_inss, 0.00) - coalesce(declaracao.valor_devolucao,0.0)) > 0
+and coalesce(declaracao.base_inss, 0) > 0
 and YEAR(declaracao.data) = YEAR(importacao.competencia_inss)
 and MONTH(declaracao.data) = MONTH(importacao.competencia_inss)
 order by cooperado.nome
